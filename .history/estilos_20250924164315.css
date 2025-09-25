@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-rows: 80px 1fr 255px; /* Fila para nav, contenido y footer */
+    grid-template-columns: 1fr 1fr 1fr; /* Tres columnas iguales */
+    height: 100vh; /* Altura completa de la ventana */
+}
+.logo-text{
+    font-size: 32px;
+    font-family: 'Mouse Memoirs', sans-serif; /* Aplica la fuente importada */
+    font-weight: normal;
+}
+
+.nav {
+    grid-column: 1 / 4; /* Ocupa las 3 columnas */
+    background-color: #21213B;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: white 1px solid;
+}
+.logo-container {
+    display: flex;
+    align-items: center; /* Alinea el logo y el texto verticalmente */
+    gap: 10px; /* Espaciado entre el logo y el texto */
+}
+
+
+.home {
+    grid-column: 1 / 4; /* Ocupa las 3 columnas */
+    background-color: #21213B;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer {
+    grid-column: 1 / 4; /* Ocupa las 3 columnas */
+    background-color: #111429;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo {
+    width: 80px;
+    height: 70px;
+    object-fit: contain; /* Asegura que la imagen mantenga su proporción */
+}
+
+/*footer*/
+.footer {
+    grid-column: 1 / 4; /* Ocupa las 3 columnas */
+    background-color: #111429;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Divide el footer en 4 columnas iguales */
+    gap: 20px; /* Espaciado entre columnas */
+    padding: 10px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaciado entre los elementos de cada columna */
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    align-items: center;    
+}
+.footer-logo-text {
+    font-size: 32px;
+    font-family: 'Mouse Memoirs', sans-serif; /* Usa la misma fuente que en la nav */
+    color: white;
+}
+
+.footer-logo img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 5px;
+}
+
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+.subscribe-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.subscribe-form input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.subscribe-form button {
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.subscribe-form button:hover {
+    background-color: #2980b9;
+}
