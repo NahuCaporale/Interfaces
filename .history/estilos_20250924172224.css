@@ -66,6 +66,8 @@ body {
 }
 
 
+
+
 .footer-column {
     display: flex;
     flex-direction: column; /* Mantiene los elementos apilados verticalmente */
@@ -84,12 +86,8 @@ body {
     padding: 0;
     text-align: center;
 }
-.footer p{
-        font-family: 'NATS', sans-serif; /* Aplica la fuente NATS */
-}
 .footer-column ul li a {
         font-family: 'NATS', sans-serif; /* Aplica la fuente NATS */
-
     text-decoration: none; /* Elimina el subrayado predeterminado */
     color: white; /* Cambia el color del texto a blanco */
     font-size: 14px; /* Ajusta el tamaño de la fuente */

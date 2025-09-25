@@ -84,9 +84,7 @@ body {
     padding: 0;
     text-align: center;
 }
-.footer p{
-        font-family: 'NATS', sans-serif; /* Aplica la fuente NATS */
-}
+.footer 
 .footer-column ul li a {
         font-family: 'NATS', sans-serif; /* Aplica la fuente NATS */
 

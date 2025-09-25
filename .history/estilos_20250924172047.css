@@ -46,7 +46,15 @@ body {
     align-items: center;
     justify-content: center;
 }
-
+.footer {
+    grid-column: 1 / 7; /* Ocupa las 6 columnas */
+    background-color: #111429;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Divide el footer en 6 columnas */
+    gap: 20px; /* Espaciado entre columnas */
+    padding: 10px;
+}
 .logo {
     width: 80px;
     height: 70px;
@@ -64,7 +72,6 @@ body {
     padding: 20px;
     align-items: center; /* Centra el contenido verticalmente en el footer */
 }
-
 
 .footer-column {
     display: flex;
@@ -84,12 +91,7 @@ body {
     padding: 0;
     text-align: center;
 }
-.footer p{
-        font-family: 'NATS', sans-serif; /* Aplica la fuente NATS */
-}
 .footer-column ul li a {
-        font-family: 'NATS', sans-serif; /* Aplica la fuente NATS */
-
     text-decoration: none; /* Elimina el subrayado predeterminado */
     color: white; /* Cambia el color del texto a blanco */
     font-size: 14px; /* Ajusta el tamaño de la fuente */
