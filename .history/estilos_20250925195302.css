@@ -92,10 +92,10 @@ body {
     /* Espaciado entre columnas */
     padding: 20px;
     /* Espaciado interno del footer */
-    align-items: start;
-    /* Alinea el contenido al inicio de cada columna */
+    align-items: center;
+    /* Centra las columnas verticalmente */
     justify-items: center;
-    /* Centra cada columna horizontalmente */
+    /* Centra las columnas horizontalmente */
     height: auto;
     /* Ajusta la altura automáticamente según el contenido */
     box-sizing: border-box;
@@ -185,56 +185,11 @@ body {
 .footer-logo {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    align-items: center; /* Centra el contenido horizontalmente */
+    justify-content: center; /* Centra el contenido verticalmente */
     text-align: center;
-    height: auto;
-    margin-bottom: 30px;
-    /* Asegura que el contenedor ocupe todo el ancho disponible */
-}
-
-.footer-column p {
-    font-family: 'Mouse Memoirs', sans-serif;
-    /* Aplica la fuente importada */
-    max-width: 250px;
-    /* Limita el ancho del texto para mejor legibilidad */
-    color: #04327A;
-    font-size: 18px;
-    margin-bottom: 7px;
-}
-
-.footer-column:last-child p {
-    font-family: 'NATS', sans-serif;
-    /* Aplica la fuente NATS a todo el footer */
-    color: white;
-    /* Cambia el color del texto a blanco */
-    font-size: 14px;
-    /* Ajusta el tamaño de la fuente si es necesario */
-    line-height: 1.5;
-    /* Mejora la legibilidad con un espaciado entre líneas */
-}
-
-.social-icons {
-    display: flex;
-    align-items: center;
-    /* Alinea los íconos verticalmente con el texto */
-    width: 100%;
-    /* Asegura que ocupen todo el ancho disponible */
-
-    gap: 20px;
-    /* Espaciado entre los iconos */
-    color: white;
-    /* Color de los iconos */
-    justify-content: flex-start;
-    margin-bottom: 7px;
-}
-
-.social-icons i {
-    height: 5px;
-    /* Ajusta la altura de los íconos */
-    width: 5px;
-    /* Ajusta el ancho de los íconos */
-
+    height: 100%; /* Asegura que ocupe todo el espacio disponible */
+    gap: 10px; /* Espaciado entre el logo y el texto */
 }
 
 .footer-logo img {
@@ -256,38 +211,27 @@ body {
 }
 
 .subscribe-form input {
-    width: 119px;
-    /* Ancho del input */
-    height: 19px;
-    /* Alto del input */
-    padding: 0;
-    /* Elimina el padding adicional */
+    width: 100%;
+    /* Asegura que el input ocupe todo el ancho disponible */
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 12px;
-    /* Ajusta el tamaño de la fuente para que se adapte al tamaño */
+    font-size: 14px;
 }
 
 .subscribe-form button {
-    width: 120px;
-    /* Ancho del botón */
-    height: 19px;
-    /* Alto del botón */
-    padding: 0;
-    /* Elimina el padding adicional */
+    padding: 10px;
     background-color: #3498db;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 12px;
-    /* Ajusta el tamaño de la fuente para que se adapte al tamaño */
+    font-size: 14px;
     text-align: center;
 }
 
 .subscribe-form button:hover {
     background-color: #2980b9;
-    /* Cambia el color al pasar el mouse */
 }
 
 .form-icons {
@@ -309,19 +253,15 @@ body {
 }
 
 .icon-row i {
-    font-size: 12px;
-    /* Reduce el tamaño del ícono ligeramente */
-    width: 12px;
-    /* Ajusta el ancho del ícono */
-    height: 12px;
-    /* Ajusta la altura del ícono */
+    font-size: 16px;
+    /* Tamaño del ícono */
 }
 
 .icon-row span {
-    font-size: 12px;
-    /* Reduce el tamaño del texto ligeramente */
+    font-size: 14px;
+    /* Tamaño del texto */
     color: white;
-    /* Mantiene el color blanco */
+    /* Color del texto */
     font-family: 'NATS', sans-serif;
     /* Aplica la fuente NATS */
 }

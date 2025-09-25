@@ -185,11 +185,10 @@ body {
 .footer-logo {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    align-items: flex-start;
+    justify-content: center;
     text-align: center;
-    height: auto;
-    margin-bottom: 30px;
+    height: 100%;
     /* Asegura que el contenedor ocupe todo el ancho disponible */
 }
 
@@ -200,7 +199,6 @@ body {
     /* Limita el ancho del texto para mejor legibilidad */
     color: #04327A;
     font-size: 18px;
-    margin-bottom: 7px;
 }
 
 .footer-column:last-child p {
@@ -226,7 +224,6 @@ body {
     color: white;
     /* Color de los iconos */
     justify-content: flex-start;
-    margin-bottom: 7px;
 }
 
 .social-icons i {
@@ -256,38 +253,27 @@ body {
 }
 
 .subscribe-form input {
-    width: 119px;
-    /* Ancho del input */
-    height: 19px;
-    /* Alto del input */
-    padding: 0;
-    /* Elimina el padding adicional */
+    width: 100%;
+    /* Asegura que el input ocupe todo el ancho disponible */
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 12px;
-    /* Ajusta el tamaño de la fuente para que se adapte al tamaño */
+    font-size: 14px;
 }
 
 .subscribe-form button {
-    width: 120px;
-    /* Ancho del botón */
-    height: 19px;
-    /* Alto del botón */
-    padding: 0;
-    /* Elimina el padding adicional */
+    padding: 10px;
     background-color: #3498db;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 12px;
-    /* Ajusta el tamaño de la fuente para que se adapte al tamaño */
+    font-size: 14px;
     text-align: center;
 }
 
 .subscribe-form button:hover {
     background-color: #2980b9;
-    /* Cambia el color al pasar el mouse */
 }
 
 .form-icons {
@@ -309,19 +295,15 @@ body {
 }
 
 .icon-row i {
-    font-size: 12px;
-    /* Reduce el tamaño del ícono ligeramente */
-    width: 12px;
-    /* Ajusta el ancho del ícono */
-    height: 12px;
-    /* Ajusta la altura del ícono */
+    font-size: 16px;
+    /* Tamaño del ícono */
 }
 
 .icon-row span {
-    font-size: 12px;
-    /* Reduce el tamaño del texto ligeramente */
+    font-size: 14px;
+    /* Tamaño del texto */
     color: white;
-    /* Mantiene el color blanco */
+    /* Color del texto */
     font-family: 'NATS', sans-serif;
     /* Aplica la fuente NATS */
 }
