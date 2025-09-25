@@ -1,0 +1,167 @@
+/*Fuentes usadas*/
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=NATS&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-rows: 74px 1fr 255px; /* Fila para nav, contenido y footer */
+    grid-template-columns: repeat(6, 1fr); /* Seis columnas iguales */
+    height: 100vh; /* Altura completa de la ventana */
+}
+
+.logo-text{
+    font-size: 32px;
+    font-family: 'Mouse Memoirs', sans-serif; /* Aplica la fuente importada */
+    font-weight: normal;
+}
+.nav {
+    grid-column: 1 / 7; /* Ocupa las 6 columnas */
+    background-color: #0A0C19;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: white 1px solid;
+}
+.logo-img{
+    width: 131px;
+    height: 68px;
+}
+.logo-footer{
+       width: 216px; /* Cambia el ancho del logo */
+    height: 108px; /* Cambia el alto del logo */
+}
+.logo-container {
+    display: flex;
+    align-items: center; /* Alinea el logo y el texto verticalmente */
+    gap: 10px; /* Espaciado entre el logo y el texto */
+}
+
+.home {
+    grid-column: 1 / 7; /* Ocupa las 6 columnas */
+    background-color: #0A0C19;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    width: 80px;
+    height: 70px;
+    object-fit: contain; /* Asegura que la imagen mantenga su proporción */
+}
+
+/*footer*/
+.footer {
+    grid-column: 1 / 7; /* Ocupa las 6 columnas */
+    background-color: #111429;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Divide el footer en 4 columnas iguales */
+    gap: 20px; /* Espaciado entre columnas */
+    padding: 20px;
+    align-items: center; /* Centra el contenido verticalmente en el footer */
+}
+
+
+.footer-column {
+    display: flex;
+    flex-direction: column; /* Mantiene los elementos apilados verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+    gap: 10px; /* Espaciado entre los elementos */
+    height: 100%; /* Asegura que la columna ocupe todo el espacio disponible */
+}
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+.footer p{
+        font-family: 'NATS', sans-serif; /* Aplica la fuente NATS */
+}
+.footer-column ul li a {
+        font-family: 'NATS', sans-serif; /* Aplica la fuente NATS */
+
+    text-decoration: none; /* Elimina el subrayado predeterminado */
+    color: white; /* Cambia el color del texto a blanco */
+    font-size: 14px; /* Ajusta el tamaño de la fuente */
+    transition: color 0.3s ease; /* Agrega una transición suave para el hover */
+}
+
+.footer-column ul li a:hover {
+    color: #3498db; /* Cambia el color del texto al pasar el mouse */
+}
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+}
+.footer-column p {
+    font-family: 'Mouse Memoirs', sans-serif; /* Aplica la fuente importada */
+    max-width: 250px; /* Limita el ancho del texto para mejor legibilidad */
+    color: #04327A;
+    font-size: 18px;
+
+}
+.social-icons {
+    display: flex;
+    align-items: center; /* Alinea los íconos verticalmente con el texto */
+    width: 100%; /* Asegura que ocupen todo el ancho disponible */
+
+    gap: 7px; /* Espaciado entre los iconos */
+    color: white; /* Color de los iconos */
+    justify-content:flex-start;
+    margin-left: 90px;
+}
+.footer-logo img {
+    width: 216px; /* Cambia el ancho del logo */
+    height: 108px; /* Cambia el alto del logo */
+}
+
+
+.subscribe-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.subscribe-form input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%; /* Asegura que el input no se desborde */
+}
+
+.subscribe-form button {
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.subscribe-form button:hover {
+    background-color: #2980b9;
+}
