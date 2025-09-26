@@ -1,53 +1,115 @@
-@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=NATS&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ropa+Sans:ital@0;1&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-	background-color: #0A0C19;
+body {
+  background-color: #0A0C19;
+}
+.container {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.login-section {
+  width: 404px;
+  height: 837px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.login{
-	width: 404;
-	height: 436px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+.login-section img {
+  width: 232px;
+  height: 119px;
 }
 
-.login img{
-	width: 232px;
-	height: 119px;
-}
-.form-login{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+.form {
+  display: none;
 }
 
-.form-login input{
-	width: 404px;
-	height: 49px;
-	margin: 20px;
-	border-radius: 35px;
-	text-indent: 10px;
-	
+.form input {
+  width: 404px;
+  height: 49px;
+  margin: 20px;
+  border-radius: 35px;
+  text-indent: 10px;
 }
-.form-login input::placeholder{
-	font-family: 'Ropa Sans';
+.form input::placeholder {
+  font-family: 'Ropa Sans';
 }
 
-.form-btn{
-	width: 214px;
-	height: 49px;
-	border-radius: 35px;
-	background: #04327A;
-	color: white;
-	font-size: 40px;
+.form-btn {
+  width: 214px;
+  height: 49px;
+  border-radius: 35px;
+  border: 0;
+  background: #04327A;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.form.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggleContainer {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 0;
+  border-radius: 20px;
+  background: white;
+  font-weight: bold;
+  color: #04327A;
+  cursor: pointer;
+  width: 200px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.toggleContainer::before {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  left: 0%;
+  border-radius: 20px;
+  background: #04327A;
+  transition: all 0.3s;
+}
+
+.toggleCheckbox {
+  display: none;
+}
+
+.toggleContainer div {
+  padding: 10px;
+  z-index: 1;
+}
+
+.toggleCheckbox:checked + .toggleContainer::before {
+  left: 50%;
+}
+
+.toggleCheckbox + .toggleContainer div:first-child {
+  color: white;
+}
+.toggleCheckbox + .toggleContainer div:last-child {
+  color: #04327A;
+}
+.toggleCheckbox:checked + .toggleContainer div:first-child {
+  color: #04327A;
+}
+.toggleCheckbox:checked + .toggleContainer div:last-child {
+  color: white;
 }
