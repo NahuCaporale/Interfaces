@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=NATS&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ropa+Sans:ital@0;1&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+	background-color: #0A0C19;
+}
+
+.login{
+	width: 404;
+	height: 436px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.login img{
+	width: 232px;
+	height: 119px;
+}
+.form-login{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.form-login input{
+	width: 404px;
+	height: 49px;
+	margin: 20px;
+	border-radius: 35px;
+	text-indent: 10px;
+	
+}
+.form-login input::placeholder{
+	font-family: 'Ropa Sans';
+}
+
+.form-btn{
+	width: 214px;
+	height: 49px;
+	border-radius: 35px;
+	background: #04327A;
+	color: white;
+	font-size: 40px;
+}
