@@ -1,17 +1,33 @@
 /*Fuentes usadas*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=NATS&display=swap');
+
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+@font-face {
+    font-family: 'NATS';
+    src: url("../assets/natsFont/NATS-Regular.woff") format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
 
 body {
     font-family: Arial, sans-serif;
 }
-
+a{
+    text-decoration:none;
+    color: white;
+}
+a:hover{
+    transition: ease .4s;
+    color: #D37F85;
+}
 .grid-container {
     display: grid;
     grid-template-rows: 74px 1fr auto;

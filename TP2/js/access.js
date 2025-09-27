@@ -11,3 +11,12 @@ toggle.addEventListener("change", () => {
     loginForm.classList.add("active");
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  loginForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    setTimeout(() => {
+      window.location.replace("index.html");
+    }, 300); // ajustá el tiempo si hace falta
+  });
+});
