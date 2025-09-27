@@ -8,7 +8,9 @@ async function get() {
       throw new Error(`Error al obtener datos"- ${res.statusText}`);
     }
     const json = await res.json();
-    return json;
+    //limitados para no romper el home
+    const limit = json.slice(0,2);
+    return limit;
   } catch (error) {
     console.log(error);
     return null;
