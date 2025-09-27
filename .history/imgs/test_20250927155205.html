@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ayúdanos a llegar a más</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#8A5CF6", // A purple tone, can be adjusted
+                        "background-light": "#F3F4F6", // Light gray for light mode
+                        "background-dark": "#0D1117", // Dark blue/black for dark mode
+                        "card-dark": "#161B22",
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: radial-gradient(circle at top right, rgba(21, 29, 49, 0.8), #0D1117 60%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-200 antialiased">
+<div class="min-h-screen flex items-center justify-center p-4 gradient-bg">
+<div class="max-w-4xl w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="text-white">
+<h1 class="text-5xl font-extrabold mb-6">Ayúdanos a llegar a más</h1>
+<p class="text-lg text-gray-300">
+                    Así como un cometa necesita impulso para brillar, tu ayuda nos da la energía para seguir creando.
+                </p>
+<div class="mt-8">
+<img alt="Ilustración de un cometa azul brillante" class="w-48 h-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkl5Mo4q0X4bFslu0Z2v9Nniacw2aSiZztQ9yxI5vRqthVdDZDQcgsQE_pgFeXgehIns5WCORNKGQ0kCe9ufmTgDTr1XUz7Un75jREXERw2IZWRpzoyxbocO6DSZKWNMyDsANxYaLAnpietDK8ZaZAj86F9WX-VL51AOjIteFX24KK8jC8PNz-Gh51spYszupxwUJvKgbJ_UY_P63o8TklXgYmWN9cPpiIPQqbQmSNKcaZXbNYUzT9EJnYW-OhxBGdo8esOdSayCo"/>
+</div>
+</div>
+<div class="bg-card-dark/70 backdrop-blur-sm p-8 rounded-lg shadow-2xl border border-gray-700">
+<form>
+<div class="mb-6">
+<label class="block text-sm font-medium text-gray-300 mb-2">Selecciona la frecuencia!</label>
+<div class="flex items-center gap-2">
+<button class="w-full bg-gray-600/50 text-white py-2 px-4 rounded-full transition-colors hover:bg-gray-500/70 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-card-dark focus:ring-primary" type="button">Mensualmente</button>
+<button class="w-full bg-gray-800 text-white py-2 px-4 rounded-full transition-colors hover:bg-gray-700 ring-2 ring-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-card-dark focus:ring-primary" type="button">Solo esta vez</button>
+</div>
+</div>
+<div class="mb-6">
+<label class="block text-sm font-medium text-gray-300 mb-2">Selecciona el monto (pesos argentinos)</label>
+<div class="grid grid-cols-3 gap-2 mb-2">
+<button class="bg-gray-800 text-white py-2 px-4 rounded-full transition-colors hover:bg-gray-700 ring-1 ring-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-card-dark focus:ring-primary" type="button">5000$</button>
+<button class="bg-gray-800 text-white py-2 px-4 rounded-full transition-colors hover:bg-gray-700 ring-1 ring-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-card-dark focus:ring-primary" type="button">100$</button>
+<button class="bg-gray-800 text-white py-2 px-4 rounded-full transition-colors hover:bg-gray-700 ring-1 ring-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-card-dark focus:ring-primary" type="button">500$</button>
+<button class="col-span-1 bg-gray-800 text-white py-2 px-4 rounded-full transition-colors hover:bg-gray-700 ring-1 ring-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-card-dark focus:ring-primary" type="button">1000$</button>
+<button class="col-span-2 bg-gray-800 text-white py-2 px-4 rounded-full transition-colors hover:bg-gray-700 ring-1 ring-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-card-dark focus:ring-primary" type="button">Ingresa otro monto</button>
+</div>
+</div>
+<div class="mb-8">
+<label class="block text-sm font-medium text-gray-300 mb-2" for="nombre">Nombre</label>
+<div class="relative">
+<input class="w-full bg-gray-800 border border-gray-600 text-white rounded-full py-3 px-4 focus:ring-primary focus:border-primary placeholder-gray-500" id="nombre" name="nombre" placeholder="Ingresa tu nombre" type="text"/>
+<div class="absolute inset-y-0 right-0 flex items-center pr-3">
+<svg class="h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" fill-rule="evenodd"></path>
+</svg>
+</div>
+</div>
+</div>
+<button class="w-full bg-gray-700 text-white font-bold py-3 px-4 rounded-full transition-colors hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-card-dark focus:ring-primary" type="submit">
+                        Donar
+                    </button>
+</form>
+</div>
+</div>
+</div>
+
+</body></html>
