@@ -9,25 +9,177 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    font-family: roboto, sans-serif;
+    background: url("../assets/Fondo.svg") no-repeat;
+    background-size: cover;
+}
+
 @font-face {
     font-family: 'NATS';
     src: url("../assets/natsFont/NATS-Regular.woff") format('opentype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
-  }
-
-body {
-    font-family: Arial, sans-serif;
 }
-a{
-    text-decoration:none;
+
+nav {
+    font-family: NATS;
+}
+
+/*NAVBAR*/
+.donacionBoton {
+    margin-right: 20px;
+    justify-content: flex-end;
+    border-radius: 20px;
+    padding: 8px 16px;
+    background-color: #21213B;
+}
+
+.donacionBoton:hover {
+    background-color: #D37F85;
+    transition: ease-in-out.4s;
+}
+
+.donacionBoton a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.767);
+    font-family: 'NATS', sans-serif;
+}
+
+.donacionBoton a:hover {
+    color: white;
+    transition: ease-in-out .4s;
+}
+
+.navbar-collapse .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    padding-top: 16px;
+}
+
+.navbar-collapse .nav-item {
+    width: 60%;
+}
+
+.navbar-collapse .nav-link {
+
+    display: block;
+    background: #d3d3d3;
+    color: #0A0C19 !important;
+    font-weight: bold;
+    border-radius: 12px;
+    padding: 10px 18px;
+    text-align: center;
+    font-family: 'NATS', sans-serif;
+    box-shadow: 0 1 1rem rgba(0, 0, 0, 0.08);
+    transition: background 0.2s, color 0.2s;
+}
+
+.navbar-collapse .nav-link:hover {
+    color: #D37F85 !important;
+}
+
+
+.navbar-collapse {
+    max-width: 332px;
+    width: 80vw;
+    /* O usa porcentaje */
+    left: 0;
+    top: 56px;
+    /* Altura de la navbar */
+    position: fixed;
+    height: 100vh;
+    background: rgba(10, 12, 25, 0.95);
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.2);
+    z-index: 1050;
+    border-radius: 0 12px 12px 0;
+    padding-top: 1rem;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.inicio {
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inicio a {
+    color: white;
+    margin-right: 20px;
+    justify-content: flex-end;
+    border-radius: 20px;
+    padding: 8px 16px;
+    background-color: #21213B;
+    border: none;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.inicio a:hover {
+    color: white;
+    background-color: #D37F85;
+    transition: ease-in-out.4s;
+}
+
+/*
+.perfil {
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.perfil>div {
+    display: inline-block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 0.5rem 0 0;
+}
+
+.perfil p {
+
+    color: white;
+    margin-left: 0.2rem;
+    font-size: 14px;
+    font-family: 'NATS', sans-serif;
+    align-self: center;
+    margin-bottom: 0;
+
+}
+
+.perfil img {
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+}
+*/
+
+
+
+
+a {
+    text-decoration: none;
     color: white;
 }
-a:hover{
+
+a:hover {
     transition: ease .4s;
     color: #D37F85;
 }
+
 .grid-container {
     display: grid;
     grid-template-rows: 74px 1fr auto;
@@ -47,21 +199,6 @@ a:hover{
     font-weight: normal;
 }
 
-.nav {
-    grid-column: 1 / 7;
-    /* Ocupa las 6 columnas */
-    background-color: #0A0C19;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: white 1px solid;
-}
-
-.logo-img {
-    width: 131px;
-    height: 68px;
-}
 
 .logo-footer {
     width: 216px;
@@ -70,13 +207,6 @@ a:hover{
     /* Cambia el alto del logo */
 }
 
-.logo-container {
-    display: flex;
-    align-items: center;
-    /* Alinea el logo y el texto verticalmente */
-    gap: 10px;
-    /* Espaciado entre el logo y el texto */
-}
 
 .home {
     grid-column: 1 / 7;

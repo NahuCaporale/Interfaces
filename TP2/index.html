@@ -6,63 +6,145 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/home.css">
     <title>Comet</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 </head>
 
 <body>
 
-    <div class="grid-container">
-        <div class="nav">
-            <div class="logo-container">
-                <a href=""><i class="logo-text">Comet</i></a>
-                <img src="./assets/imgs/comet-logo2.png" alt="logo de cometa" class="logo">
-                <a href="./home.html">Home</a>
-                <a href="./login.html">Login</a>
-                <a href="./donaciones.html">Donaciones</a>
+    <nav class="navbar fixed-top" style="background-color: #0A0C19;">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand mx-auto" href="#">
+                <img src="assets/imgs/logocometweb.png" alt="Logo" style="height: 50px;">
+            </a>
+            <div class="d-flex donacionBoton">
+                <a class="" href="donaciones.html" id="">Donaciones</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-3">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Destacados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Todos los juegos</a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Accion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Arcade</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Aventura</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Creatividad</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Deportes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Estrategia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Multijugador</a>
+                    </li>
+                </ul>
+                <div class="inicio">
+                    <a href="login.html">Iniciar sesion</a>
+                </div>
+                <!--                <div class="perfil">
+                    <img src="assets/imgs/full_Turnstile__Never_Enough-Clean-16x9-02-rev.png" alt="">
+                    <div>
+                        <p>@geromoroniii</p>
+                        <p>geromoroni@gmail.com</p>
+                        
+                    </div>
+-->
 
             </div>
         </div>
-        <main class="home" id="games">Contenido Principal</main>
-        <footer class="footer">
-            <div class="footer-column">
-                <div class="footer-logo">
-                    <span class="footer-logo-text">Comet</span>
-                    <img src="./assets/imgs/comet-logo2.png" alt="logo de cometa" class="logo">
+        </div>
+    </nav>
+    
+    <main class="home" id="games">Contenido Principal</main>
+    <footer class="footer">
+        <div class="footer-column">
+            <div class="footer-logo">
+                <img src="./assets/imgs/logofooter.png" alt="logo de cometa" class="logo-footer">
+            </div>
+            <p>Tu destino retro para los mejores juegos online.
+                Descubre, juega y conecta con millones
+                de jugadores en el universo Comet.
+            </p>
+            <div class="social-icons">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-x-twitter"></i>
+                <i class="fa-regular fa-comment"></i>
+                <i class="fa-brands fa-facebook"></i>
+            </div>
+
+        </div>
+        <div class="footer-column">
+            <h3>Categorías</h3>
+            <ul>
+                <li><a href="#">Deportes</a></li>
+                <li><a href="#">Estrategia</a></li>
+                <li><a href="#">Arcade</a></li>
+                <li><a href="#">Aventura</a></li>
+                <li><a href="#">Accion</a></li>
+                <li><a href="#">Deportes</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Enlaces Rápidos</h3>
+            <ul>
+                <li><a href="#">Acerca de</a></li>
+                <li><a href="#">Ayuda</a></li>
+                <li><a href="#">Privacidad</a></li>
+                <li><a href="#">Términos</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Blog</a></li>
+
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Mantente Conectado</h3>
+            <p>Suscríbete para recibir las ultimas
+                novedades y lanzamientos.</p>
+            <form class="subscribe-form">
+                <input type="email" placeholder="Ingresa tu email" required>
+                <button type="submit">Suscribirte</button>
+            </form>
+            <div class="form-icons">
+                <div class="icon-row">
+                    <i class="fa-regular fa-envelope"></i>
+                    <span>geromoroniii@hotmail.com</span>
                 </div>
-                <p>Tu destino retro para los mejores juegos online.
-                    Descubre, juega y conecta con millones
-                    de jugadores en el universo Comet.
-                </p>
+                <div class="icon-row">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>23144633386</span>
+                </div>
+                <div class="icon-row">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Tandil, Buenos Aires</span>
+                </div>
             </div>
-            <div class="footer-column">
-                <h3>Categorías</h3>
-                <ul>
-                    <li><a href="#">Acción</a></li>
-                    <li><a href="#">Aventura</a></li>
-                    <li><a href="#">Estrategia</a></li>
-                    <li><a href="#">Deportes</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Enlaces Rápidos</h3>
-                <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Acerca de</a></li>
-                    <li><a href="#">Contacto</a></li>
-                    <li><a href="#">Términos y Condiciones</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Suscríbete</h3>
-                <p>Suscríbete para recibir las ultimas
-                    novedades y lanzamientos.</p>
-                <form class="subscribe-form">
-                    <input type="email" placeholder="Tu correo" required>
-                    <button type="submit">Suscribirse</button>
-                </form>
-            </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
     <script src="js/api.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+
 </body>
 
 </html>

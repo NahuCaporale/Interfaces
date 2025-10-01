@@ -9,7 +9,7 @@ async function get() {
     }
     const json = await res.json();
     //limitados para no romper el home
-    const limit = json.slice(0,2);
+    const limit = json.slice(0, 2);
     return limit;
   } catch (error) {
     console.log(error);
@@ -17,13 +17,14 @@ async function get() {
   }
 }
 
-async function imprimir() {
-  try {
-    let juegos = await get();
+document.addEventListener("DOMContentLoaded", () => {
+  async function imprimir() {
+    try {
+      let juegos = await get();
 
-    const html = juegos
-      .map(
-        (game) => `
+      const html = juegos
+        .map(
+          (game) => `
 
     <!-- Ejemplo estático (opcional) -->
     
@@ -38,12 +39,13 @@ async function imprimir() {
     </div>
   </div>
       `
-      )
-      .join("");
-    home.innerHTML = html;
-  } catch (error) {
-    console.log(error);
+        )
+        .join("");
+      home.innerHTML = html;
+    } catch (error) {
+      console.log(error);
+    }
   }
-}
+  imprimir();
+});
 
-imprimir();

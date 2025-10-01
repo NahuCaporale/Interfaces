@@ -12,8 +12,19 @@ toggle.addEventListener("change", () => {
   }
 });
 
+//hacer animacion
 document.addEventListener("DOMContentLoaded", () => {
   loginForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    setTimeout(() => {
+      window.location.replace("index.html");
+    }, 300); // ajustá el tiempo si hace falta
+  });
+});
+
+//Queda hacer checkeo de inputs
+document.addEventListener("DOMContentLoaded", () => {
+  registerForm.addEventListener("submit", (e) => {
     e.preventDefault();
     setTimeout(() => {
       window.location.replace("index.html");
