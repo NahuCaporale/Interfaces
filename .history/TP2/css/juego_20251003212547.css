@@ -22,21 +22,16 @@
     font-weight: normal;
     font-style: normal;
     font-display: swap;
-}
+  }
 
 body {
     background-color: #0A0C19;
 }
-
-html,
-body {
+html, body{
     height: 100%;
 }
-
-.footer {
-    height: max-content;
+.footer{}
 }
-
 
 .layout {
     display: grid;
@@ -49,14 +44,6 @@ body {
 .img-peg img {
     width: 100%;
     display: block;
-}
-.img-peg p {
-    color: white;
-    font-family: 'NATS', sans-serif;
-    font-size: 16px;
-    
-    margin: 5px;
-   
 }
 
 /* 2. Carrusel: puede ser flex dentro */
@@ -91,7 +78,6 @@ body {
     width: 65%;
     height: 298px;
 }
-
 .controles .controles-body {
     display: flex;
     align-items: center;
@@ -99,18 +85,16 @@ body {
     gap: 20px;
     height: 70%;
 }
-
-.controles .controles-body i {
+.controles .controles-body i{
     font-size: 40px;
 }
-
 .tecla-space {
-    display: inline-block;
-    padding: 10px 40px;
-    border: 2px solid white;
-    border-radius: 5px;
-    font-family: monospace;
-    text-align: center;
+  display: inline-block;
+  padding: 10px 40px;
+  border: 2px solid white;
+  border-radius: 5px;
+  font-family: monospace;
+  text-align: center;
 }
 
 .controles-header {
@@ -127,15 +111,8 @@ body {
 .controles .controles-header p {
     font-size: 22px;
     font-family: 'NATS';
-    margin-bottom: 0px;
 
 }
-.controles-body p {
-    margin-bottom: 0px;
-    font-family: 'NATS';
-    font-size: 16px;
-}
-
 /*Compartilo*/
 .compartir {
     border: #04327A 1px solid;
@@ -143,8 +120,7 @@ body {
     width: 35%;
     height: 147px;
 }
-
-.compartilo-header {
+.compartilo-header{
     display: flex;
     gap: 10px;
     background-color: #FF9800;
@@ -155,21 +131,17 @@ body {
     align-items: center;
     font-family: 'NATS';
 }
-
-.compartilo-header p {
+.compartilo-header p{
     font-size: 22px;
     font-family: 'NATS';
-    margin-bottom: 0px;
 }
-
-.compartilo-body {
+.compartilo-body{
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 5px;
 }
-
-.compartilo-body i {
+.compartilo-body i{
     margin: 10px;
     font-size: 20px;
     color: white;
@@ -186,11 +158,9 @@ body {
     height: 30%;
     align-items: center;
 }
-
-.sobre-juego-header p {
+.sobre-juego-header p{
     font-size: 22px;
     font-family: 'NATS';
-    margin-bottom: 0px;
 }
 
 .sobre-juego {
@@ -200,34 +170,25 @@ body {
     height: 270px;
     gap: 20px;
 }
-
-.sobre-juego .reglas {
+.sobre-juego .reglas{
     margin-top: 10px;
 }
-
-.sobre-juego .objetivo {
+.sobre-juego .objetivo{
     margin-top: 10px;
 }
-
-.sobre-juego-body {
+.sobre-juego-body{
     margin: 10px 0px 0px 40px;
     width: 90%;
-    line-height: 1.3;
-}
 
-.sobre-juego-body p {
+}
+.sobre-juego-body p{
     font-family: 'NATS';
     font-size: 12px;
     font-weight: normal;
-    line-height: 1.2;
-    margin-bottom: 0px;
 }
-
-.sobre-juego-body h2 {
+.sobre-juego-body h2{
     font-size: 24px;
     font-family: 'NATS';
-    margin: 6px 0;
-    line-height: 1.2;
 }
 
 /*header comentarios*/
@@ -278,12 +239,10 @@ body {
     transition: transform 0.2s ease, background-color 0.3s;
 
 }
-
 .comentario-input i:hover {
     transform: rotate(45deg);
     color: #1a52c4;
 }
-
 .comentario-input .btn-icon {
     background: none;
     border: none;

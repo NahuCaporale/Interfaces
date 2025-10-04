@@ -13,7 +13,9 @@ body{
     background: url("../assets/Fondo.svg") no-repeat;
     background-size: cover;
 }
-
+.footer {
+    height: 255px !important;
+}
 .home {
     display: grid;
     grid-template-columns: 70% 30%;

@@ -131,9 +131,7 @@ body {
 
 }
 .controles-body p {
-    margin-bottom: 0px;
-    font-family: 'NATS';
-    font-size: 16px;
+    margin-bottom: ;
 }
 
 /*Compartilo*/
@@ -159,7 +157,6 @@ body {
 .compartilo-header p {
     font-size: 22px;
     font-family: 'NATS';
-    margin-bottom: 0px;
 }
 
 .compartilo-body {
@@ -190,7 +187,6 @@ body {
 .sobre-juego-header p {
     font-size: 22px;
     font-family: 'NATS';
-    margin-bottom: 0px;
 }
 
 .sobre-juego {
@@ -220,7 +216,6 @@ body {
     font-size: 12px;
     font-weight: normal;
     line-height: 1.2;
-    margin-bottom: 0px;
 }
 
 .sobre-juego-body h2 {

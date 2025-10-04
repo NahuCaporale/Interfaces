@@ -54,8 +54,8 @@ body {
     color: white;
     font-family: 'NATS', sans-serif;
     font-size: 16px;
-    
-    margin: 5px;
+    line-height: 1.2;
+    margin-bottom: 0px;
    
 }
 
@@ -127,13 +127,7 @@ body {
 .controles .controles-header p {
     font-size: 22px;
     font-family: 'NATS';
-    margin-bottom: 0px;
 
-}
-.controles-body p {
-    margin-bottom: 0px;
-    font-family: 'NATS';
-    font-size: 16px;
 }
 
 /*Compartilo*/
@@ -159,7 +153,6 @@ body {
 .compartilo-header p {
     font-size: 22px;
     font-family: 'NATS';
-    margin-bottom: 0px;
 }
 
 .compartilo-body {
@@ -190,7 +183,6 @@ body {
 .sobre-juego-header p {
     font-size: 22px;
     font-family: 'NATS';
-    margin-bottom: 0px;
 }
 
 .sobre-juego {
@@ -220,7 +212,6 @@ body {
     font-size: 12px;
     font-weight: normal;
     line-height: 1.2;
-    margin-bottom: 0px;
 }
 
 .sobre-juego-body h2 {
