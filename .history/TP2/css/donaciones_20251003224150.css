@@ -20,22 +20,6 @@ main {
 }
 
 /*NAV */
-.nav-center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #2246A2;
-    font-family: 'Mouse Memoirs', sans-serif;
-    font-size: 32px;
-    letter-spacing: 1.5px;
-    margin-left: 1rem;
-    margin-right: 1rem;
-}
-.nav-center a{
-    margin-top: 10px;
-   text-decoration: none;
-   color: #2246A2;
-}
 
 nav {
     
@@ -294,7 +278,7 @@ nav {
   position: absolute;
   bottom: 100%; /* aparece arriba del icono */
   left: 50%;
-  transform: translateX(85%);
+  transform: translateX(80%);
   background-color: #ffb84dc2;
   color: black;
   padding: 5px 10px;
