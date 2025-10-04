@@ -2,9 +2,7 @@ body, html{
     
      background: url("../assets/Fondo.svg") no-repeat;
     background-size: cover;
-    
 }
-
 main {
     display: grid;
     grid-template-columns: 70% 30%;
@@ -16,7 +14,7 @@ main {
     box-shadow: 4px 4px 8px #04327A;
     border-radius: 10px;
     height: 553px;
-    width: 957px;
+    width: 100%;
 }
 
 /*NAV */

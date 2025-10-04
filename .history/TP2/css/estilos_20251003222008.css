@@ -32,7 +32,7 @@ body {
     box-sizing: border-box;
     /* Incluye el padding en el cálculo del tamaño */
     align-items: center;
-    justify-items: center;
+    justify-content: ;
 }
 
 .logo-text {

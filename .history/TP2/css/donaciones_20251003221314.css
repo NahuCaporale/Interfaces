@@ -1,10 +1,6 @@
-body, html{
-    
-     background: url("../assets/Fondo.svg") no-repeat;
-    background-size: cover;
-    
+body{
+    background-color: #0A0C19;
 }
-
 main {
     display: grid;
     grid-template-columns: 70% 30%;

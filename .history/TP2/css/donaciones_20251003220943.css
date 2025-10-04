@@ -1,16 +1,13 @@
-body, html{
-    
-     background: url("../assets/Fondo.svg") no-repeat;
-    background-size: cover;
-    
+body{
+    background-color: #0A0C19;
 }
-
 main {
     display: grid;
     grid-template-columns: 70% 30%;
     gap: 20px;
     padding: 40px;
     max-width: 1200px;
+    margin: 60px auto;
     /* Más margen arriba y abajo */
     background-image: linear-gradient(to bottom, #11142a81, #373d6dab);
     box-shadow: 4px 4px 8px #04327A;
