@@ -9,12 +9,104 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+
 }
 
+
+
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
+
+
+section>div {
+    margin-top: 2.4rem;
+    ;
+}
+.content h4 a{
+    text-decoration: none;
+    color: white;
+}
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    gap: 10px;
+
+    >div {
+        flex: 0 0 160px;
+        border-radius: 0.5rem;
+        transition: 0.5s ease-in-out;
+        cursor: pointer;
+        box-shadow: 1px 5px 15px #1e0e3e;
+        position: relative;
+        overflow: hidden;
+
+        &:nth-of-type(1) {
+            background: url("../assets/imgs/thumbnails/copa-toon.jpg") no-repeat 40%/ cover;
+        }
+
+        &:nth-of-type(2) {
+            background: url("../assets/imgs/thumbnails/jump-up-3d.jpg") no-repeat 10% / cover;
+        }
+
+        &:nth-of-type(3) {
+            background: url("../assets/imgs/thumbnails/pegarg.png") no-repeat 50% / cover;
+        }
+
+        &:nth-of-type(4) {
+            background: url("../assets/imgs/thumbnails/table-tennis-ultra-mega-tournament.jpg") no-repeat 50% / cover;
+        }
+
+        .content {
+            font-size: 0.5rem;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            opacity: 0;
+            flex-direction: column;
+            height: 100%;
+            justify-content: flex-end;
+            background: rgb(2, 2, 46);
+            background: linear-gradient(0deg,
+                    rgba(2, 2, 46, 0.6755077030812324) 0%,
+                    rgba(255, 255, 255, 0) 100%);
+            transform: translatey(100%);
+            transition: opacity 0.5s ease-in-out, transform 0.5s 0.2s;
+            visibility: hidden;
+
+            span {
+                display: block;
+                margin-top: 5px;
+                font-size: 1rem;
+            }
+        }
+
+        &:hover {
+            flex: 0 0 250px;
+            box-shadow: 1px 3px 15px #CC5656;
+            transform: translatey(-30px);
+        }
+
+        &:hover .content {
+            opacity: 1;
+            transform: translatey(0%);
+            visibility: visible;
+        }
+    }
+}
+
+
+html,
 body {
-    font-family: roboto, sans-serif;
-    background: url("../assets/Fondo.svg") no-repeat;
-    background-size: cover;
+    margin: 0;
+    /* Elimina márgenes predeterminados que podrían causar espacios */
+    padding: 0;
+    /* Elimina paddings extras */
+    background: url(../assets/Fondo.svg);
+    background-position: center;  
+    background-attachment: fixed; 
+    background-color: #0A0C19;
 }
 
 @font-face {
@@ -38,15 +130,16 @@ main h1 {
 }
 
 main {
+    margin-top: 20px;
     overflow-wrap: break-word;
     word-break: break-word;
     grid-row: 2/3;
     grid-column: 1/7;
     padding-top: 5rem;
-    background-color: #0A0C19;
 }
 
 
+/*NAVBAR*/
 
 nav {
 
@@ -56,7 +149,6 @@ nav {
     grid-column: 1 / 7;
 }
 
-/*NAVBAR*/
 .nav-center {
     display: flex;
     justify-content: center;
@@ -71,7 +163,7 @@ nav {
 
 .nav-center a {
     text-decoration: none;
-color: #2246A2;
+    color: #2246A2;
     margin-top: 10px;
 }
 
@@ -215,13 +307,22 @@ color: #2246A2;
 /*
 MAIN SECTION
 */
+.slider img {
+    display: none;
+}
+
+.slider img.active {
+    display: block;
+}
+
 section .container-slider {
+    max-width: 100%;
     padding: 2rem;
 }
 
 .slider-wrapper {
-
     position: relative;
+    width: 100%;
     max-width: 48rem;
     margin: 0 auto;
 }
@@ -260,24 +361,16 @@ section .container-slider {
     width: 0.6rem;
     height: 0.6rem;
     border-radius: 50%;
-    background-color: #04327A;
+    background-color: white;
     opacity: 1;
     transition: 250ms ease-in-out;
 }
 
 .slider-nav a:hover {
-    background-color: #D37F85;
+    background-color: #04327A;
 }
 
-a {
-    text-decoration: none;
-    color: white;
-}
 
-a:hover {
-    transition: ease .4s;
-    color: #D37F85;
-}
 
 .grid-container {
     margin: 0;

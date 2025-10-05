@@ -1,4 +1,4 @@
-const url = "https://vj.interfaces.jima.com.ar/api/v2";
+/*const url = "https://vj.interfaces.jima.com.ar/api/v2";
 let home = document.getElementById("games");
 
 async function get() {
@@ -49,3 +49,4 @@ document.addEventListener("DOMContentLoaded", () => {
   imprimir();
 });
 
+*/
