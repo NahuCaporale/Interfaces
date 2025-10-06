@@ -17,6 +17,15 @@
     @import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
 
 
+    .hide-content {
+        display: none !important;
+    }
+
+    .content-wrapper {
+
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
 
     html,
     body {
@@ -36,6 +45,62 @@
         font-weight: normal;
         font-style: normal;
         font-display: swap;
+    }
+
+    #loader {
+        z-index: 1;
+
+        top: 0;
+        left: 0;
+        width: 150px;
+        /* Llena el contenedor */
+        height: 150px;
+        border: 14px solid #1C2143;
+        border-radius: 50%;
+        border-style: dotted;
+        border-left-color: #FF6B6B;
+        animation: giro 5s infinite;
+        margin: auto
+    }
+
+    @keyframes giro {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .loader-container {
+        display: flex;
+        justify-content: center;
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+        position: fixed;
+        /* Fijo en pantalla, no se mueve */
+        top: 0;
+        left: 0;
+        width: 100vw;
+        /* Ancho full viewport */
+        height: 100vh;
+        /* Alto full */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .loader-container img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 120px;
+        height: auto;
+        z-index: 2;
+        margin: auto;
+        padding: 20px;
     }
 
     .home {
