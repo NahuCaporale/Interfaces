@@ -892,6 +892,7 @@
 
   .nav-center a {
     font-size: 26px;
+    color: #447cff;
     margin-top: 0px !important;
   }
 
@@ -900,13 +901,14 @@
   }
 
   
- /*le saco la clase de boostrap que le da ml-mr*/
+
   .navbar-brand.mx-auto {
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
  
 
+  /* Menú colapsable */
   .navbar-collapse {
     width: 100vw;
     height: 100vh;

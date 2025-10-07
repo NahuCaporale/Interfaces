@@ -859,7 +859,7 @@
 
 /*mobile nav*/
 @media (max-width: 768px) {
-  
+  /* Navbar general */
   .navbar {
     background-color: rgba(10, 12, 25, 0.9);
     padding: 8px 16px;
@@ -892,6 +892,7 @@
 
   .nav-center a {
     font-size: 26px;
+    color: #447cff;
     margin-top: 0px !important;
   }
 
@@ -900,13 +901,14 @@
   }
 
   
- /*le saco la clase de boostrap que le da ml-mr*/
+
   .navbar-brand.mx-auto {
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
  
 
+  /* Menú colapsable */
   .navbar-collapse {
     width: 100vw;
     height: 100vh;
@@ -973,8 +975,7 @@
 
 @media (max-width: 350px)
 {
-    /*cuando la pantalla es demasiado chica, desaparece
-    boton donaciones*/
+    /*
   .donacionBoton {
     display: none;
   }

@@ -771,9 +771,9 @@
     }
 
     @media screen and (max-width: 480px) {
-        /*.donacionBoton {
+        .donacionBoton {
             display: none;
-        }*/
+        }
 
         .carousel {
             display: none;
@@ -859,7 +859,7 @@
 
 /*mobile nav*/
 @media (max-width: 768px) {
-  
+  /* Navbar general */
   .navbar {
     background-color: rgba(10, 12, 25, 0.9);
     padding: 8px 16px;
@@ -870,13 +870,7 @@
     width: 100%;
     z-index: 1000;
     backdrop-filter: blur(6px);
-    align-content: center;
   }
-  .container-fluid{
-    padding: 0 !important;
-  }
-  
-
 
   /* Centro: logo + nombre */
   .nav-center {
@@ -884,29 +878,21 @@
     justify-content: center;
     align-items: center;
     margin: 0;
-    margin-left: 40px;
-  }
-  .donacionBoton{
-    margin: 0;
   }
 
   .nav-center a {
     font-size: 26px;
-    margin-top: 0px !important;
+    color: #447cff;
   }
 
   .nav-center img {
     height: 40px;
   }
 
+  /* Ocultar el botón de donaciones en mobile (si querés dejarlo solo en el menú) */
   
- /*le saco la clase de boostrap que le da ml-mr*/
-  .navbar-brand.mx-auto {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
- 
 
+  /* Menú colapsable */
   .navbar-collapse {
     width: 100vw;
     height: 100vh;
@@ -966,17 +952,6 @@
     width: 25px;
     height: 25px;
   }
-
-
- 
 }
 
-@media (max-width: 350px)
-{
-    /*cuando la pantalla es demasiado chica, desaparece
-    boton donaciones*/
-  .donacionBoton {
-    display: none;
-  }
-}
    
