@@ -15,7 +15,9 @@ html, body {
 }
 
 body {
-    background: url("../assets/Fondo.svg") no-repeat center center fixed;
+    background: url("../assets/Fondo.svg");
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
     position: relative;
 }
