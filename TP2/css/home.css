@@ -527,9 +527,8 @@
             }
 
             &:hover {
-                flex: 0 0 250px;
+                flex: 0 0 210px;
                 box-shadow: 1px 3px 15px #CC5656;
-                transform: translatey(-30px);
             }
 
             &:hover .content {
