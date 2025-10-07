@@ -976,7 +976,7 @@
 
         /*boton cerrar menu*/
         .close-menu {
-            
+            .
                 display: block;
                 position: absolute;
                 top: 20px;
@@ -988,7 +988,7 @@
                 cursor: pointer;
                 z-index: 2000;
                 transition: color 0.3s ease;
-            
+            }
         }
 
         .close-menu:hover {

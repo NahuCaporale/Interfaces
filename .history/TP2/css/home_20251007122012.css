@@ -157,8 +157,7 @@
         color: #2246A2;
         margin-top: 10px;
     }
-
-    /*oculto boton cerrar menu que uso en mobile*/
+/*oculto boton cerrar menu que uso en el*/
     .close-menu {
         display: none;
     }
@@ -976,19 +975,16 @@
 
         /*boton cerrar menu*/
         .close-menu {
-            
-                display: block;
-                position: absolute;
-                top: 20px;
-                right: 25px;
-                background: none;
-                border: none;
-                font-size: 40px;
-                color: white;
-                cursor: pointer;
-                z-index: 2000;
-                transition: color 0.3s ease;
-            
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            background: none;
+            border: none;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+            z-index: 2000;
+            transition: color 0.3s ease;
         }
 
         .close-menu:hover {

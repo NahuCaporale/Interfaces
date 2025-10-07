@@ -157,11 +157,9 @@
         color: #2246A2;
         margin-top: 10px;
     }
-
-    /*oculto boton cerrar menu que uso en mobile*/
     .close-menu {
-        display: none;
-    }
+  display: none;
+}
 
     .donacionBoton {
         margin-right: 20px;
@@ -810,205 +808,198 @@
 
     /*footer responsive*/
     @media (max-width: 768px) {
-        .footer {
-            grid-template-columns: 1fr;
-            text-align: center;
-            justify-items: center;
-            align-items: center;
-            padding: 30px 10px;
-            position: fixed;
-            /* Se mantiene abajo */
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            z-index: 10;
-        }
+  .footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+    padding: 30px 10px;
+    position: fixed; /* Se mantiene abajo */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+  }
 
-        /* Ocultamos todas las columnas excepto la primera (logo + frase + redes) */
-        .footer-column:not(:first-child) {
-            display: none;
-        }
+  /* Ocultamos todas las columnas excepto la primera (logo + frase + redes) */
+  .footer-column:not(:first-child) {
+    display: none;
+  }
 
-        /* Ajustamos la primera columna */
-        .footer-column:first-child {
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            gap: 15px;
-        }
+  /* Ajustamos la primera columna */
+  .footer-column:first-child {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 15px;
+  }
 
-        .footer-logo img {
-            width: 140px;
-            height: auto;
-        }
+  .footer-logo img {
+    width: 140px;
+    height: auto;
+  }
 
-        .footer-column p {
-            max-width: 90%;
-            font-size: 14px;
-            line-height: 1.3;
-            margin: 0 auto;
-        }
+  .footer-column p {
+    max-width: 90%;
+    font-size: 14px;
+    line-height: 1.3;
+    margin: 0 auto;
+  }
 
-        .social-icons {
-            justify-content: center;
-            gap: 25px;
-            margin-top: 10px;
-        }
+  .social-icons {
+    justify-content: center;
+    gap: 25px;
+    margin-top: 10px;
+  }
 
-        .social-icons i {
-            font-size: 15px;
-            cursor: pointer;
-        }
-    }
-
-
-    /*mobile nav*/
-    @media (max-width: 768px) {
-
-        .navbar {
-            background-color: rgba(10, 12, 25, 0.9);
-            padding: 8px 16px;
-            height: 60px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            backdrop-filter: blur(6px);
-            align-content: center;
-        }
-
-        .container-fluid {
-            padding: 0 !important;
-        }
+  .social-icons i {
+    font-size: 15px;
+    cursor: pointer;
+  }
+}
 
 
-
-        /* Centro: logo + nombre */
-        .nav-center {
-            flex: 1;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-            margin-left: 40px;
-        }
-
-        .donacionBoton {
-            margin: 0;
-        }
-
-        .nav-center a {
-            font-size: 26px;
-            margin-top: 0px !important;
-        }
-
-        .nav-center img {
-            height: 40px;
-        }
+/*mobile nav*/
+@media (max-width: 768px) {
+  
+  .navbar {
+    background-color: rgba(10, 12, 25, 0.9);
+    padding: 8px 16px;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(6px);
+    align-content: center;
+  }
+  .container-fluid{
+    padding: 0 !important;
+  }
+  
 
 
-        /*le saco la clase de boostrap que le da ml-mr*/
-        .navbar-brand.mx-auto {
-            margin-left: 0 !important;
-            margin-right: 0 !important;
-        }
+  /* Centro: logo + nombre */
+  .nav-center {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    margin-left: 40px;
+  }
+  .donacionBoton{
+    margin: 0;
+  }
+
+  .nav-center a {
+    font-size: 26px;
+    margin-top: 0px !important;
+  }
+
+  .nav-center img {
+    height: 40px;
+  }
+
+  
+ /*le saco la clase de boostrap que le da ml-mr*/
+  .navbar-brand.mx-auto {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+ 
+
+  .navbar-collapse {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: rgba(10, 12, 25, 0.98);
+    border-radius: 0;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    z-index: 999;
+  }
+
+  .navbar-collapse .navbar-nav {
+    width: 100%;
+    align-items: center;
+  }
+
+  .navbar-collapse .nav-item {
+    width: 80%;
+  }
+
+  .navbar-collapse .nav-link {
+    background: transparent;
+    color: #fff !important;
+    font-size: 20px;
+    padding: 12px;
+    text-align: center;
+    border: none;
+    box-shadow: none;
+  }
+
+  .navbar-collapse .nav-link:hover {
+    color: #D37F85 !important;
+  }
+
+  .inicio {
+    margin-top: 20px;
+  }
+
+  .inicio a {
+    font-size: 18px;
+    color: #D37F85;
+  }
+
+  /* Aseguramos que el menú hamburguesa se vea bien */
+  .navbar-toggler {
+    border: none;
+    background: transparent;
+  }
+
+  .navbar-toggler-icon {
+    width: 25px;
+    height: 25px;
+  }
+/*boton cerrar menu*/
+  .close-menu {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background: none;
+    border: none;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    z-index: 2000;
+    transition: color 0.3s ease;
+  }
+
+  .close-menu:hover {
+    color: #D37F85;
+  }
+  /*saco clase ms-3 de boostrap*/
+  .navbar .navbar-nav.ms-3 {
+  margin-left: 0 !important;
+}
 
 
-        .navbar-collapse {
-            width: 100vw;
-            height: 100vh;
-            top: 0;
-            left: 0;
-            position: fixed;
-            background: rgba(10, 12, 25, 0.98);
-            border-radius: 0;
-            box-shadow: none;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 16px;
-            z-index: 999;
-        }
+ 
+}
 
-        .navbar-collapse .navbar-nav {
-            width: 100%;
-            align-items: center;
-        }
-
-        .navbar-collapse .nav-item {
-            width: 80%;
-        }
-
-        .navbar-collapse .nav-link {
-            background: transparent;
-            color: #fff !important;
-            font-size: 20px;
-            padding: 12px;
-            text-align: center;
-            border: none;
-            box-shadow: none;
-        }
-
-        .navbar-collapse .nav-link:hover {
-            color: #D37F85 !important;
-        }
-
-        .inicio {
-            margin-top: 20px;
-        }
-
-        .inicio a {
-            font-size: 18px;
-            color: #D37F85;
-        }
-
-        /* Aseguramos que el menú hamburguesa se vea bien */
-        .navbar-toggler {
-            border: none;
-            background: transparent;
-        }
-
-        .navbar-toggler-icon {
-            width: 25px;
-            height: 25px;
-        }
-
-        /*boton cerrar menu*/
-        .close-menu {
-            
-                display: block;
-                position: absolute;
-                top: 20px;
-                right: 25px;
-                background: none;
-                border: none;
-                font-size: 40px;
-                color: white;
-                cursor: pointer;
-                z-index: 2000;
-                transition: color 0.3s ease;
-            
-        }
-
-        .close-menu:hover {
-            color: #D37F85;
-        }
-
-        /*saco clase ms-3 de boostrap*/
-        .navbar .navbar-nav.ms-3 {
-            margin-left: 0 !important;
-        }
-
-
-
-    }
-
-    @media (max-width: 350px) {
-
-        /*cuando la pantalla es demasiado chica, desaparece
+@media (max-width: 350px)
+{
+    /*cuando la pantalla es demasiado chica, desaparece
     boton donaciones*/
-        .donacionBoton {
-            display: none;
-        }
-    }
+  .donacionBoton {
+    display: none;
+  }
+}
+   
