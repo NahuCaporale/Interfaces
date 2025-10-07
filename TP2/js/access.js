@@ -1,16 +1,80 @@
 const toggle = document.querySelector(".toggle");
 
+//botones
+let btnForm = document.querySelector(".form-btn");
+
 //login
+let labelUser = document.querySelector(".label-user");
+let labelPass = document.querySelector(".label-pass");
+
 const loginForm = document.querySelector("form.login");
 const logNick = document.getElementById("nicknameLogin");
 const logPass = document.getElementById("passwordLogin");
 const message = document.querySelector(".message");
 //registros
+let labelFullname = document.querySelector(".label-registro-nombre");
+let labelEmail = document.querySelector(".label-registro-email");
+let labelNick = document.querySelector(".label-registro-usuario");
+let labelContra = document.querySelector(".label-registro-pass");
+let labelRepetirContra = document.querySelector(".label-registro-repPass");
+
 const registerForm = document.querySelector("form.register");
 const regPass = document.getElementById("passwordRegister");
 const regEmail = document.getElementById("emailRegister");
 const regFullname = document.getElementById("fullnameRegister");
+const regNickname= document.getElementById("nicknameRegister");
 
+const regRepPass = document.getElementById("repPass");
+
+//label para accesbilidad de login
+
+logNick.addEventListener("focus", () => {
+  labelUser.classList.add("visible");
+});
+logNick.addEventListener("blur", () => {
+  labelUser.classList.remove("visible");
+});
+logPass.addEventListener("focus", () => {
+  labelPass.classList.add("visible");
+});
+logPass.addEventListener("blur", () => {
+  labelPass.classList.remove("visible");
+});
+//accesibilidad Registro
+regFullname.addEventListener("focus", () => {
+  labelFullname.classList.add("visible");
+});
+regFullname.addEventListener("blur", () => {
+  labelFullname.classList.remove("visible");
+});
+regEmail.addEventListener("focus", () => {
+  labelEmail.classList.add("visible");
+});
+regEmail.addEventListener("blur", () => {
+  labelEmail.classList.remove("visible");
+});
+regPass.addEventListener("focus", () => {
+  labelContra.classList.add("visible");
+});
+regPass.addEventListener("blur", () => {
+  labelContra.classList.remove("visible");
+});
+regRepPass.addEventListener("focus", () => {
+  labelRepetirContra.classList.add("visible");
+});
+regRepPass.addEventListener("blur", () => {
+  labelRepetirContra.classList.remove("visible");
+});
+regNickname.addEventListener("blur", () => {
+  labelNick.classList.remove("visible");
+});
+regNickname.addEventListener("focus", () => {
+  labelNick.classList.add("visible");
+});
+
+
+
+//cambio a registro y viceversa
 toggle.addEventListener("change", () => {
   if (toggle.checked) {
     loginForm.classList.remove("active");
@@ -21,7 +85,7 @@ toggle.addEventListener("change", () => {
   }
 });
 
-//hacer animacion
+//logear
 document.addEventListener("DOMContentLoaded", () => {
   loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -33,20 +97,27 @@ document.addEventListener("DOMContentLoaded", () => {
     } else if (logPass.value != "1234") {
       showError("Contraseña incorrecta");
     } else {
+      btnForm.classList.add("loading");
+      btnForm.value = "⏳";
+
       setTimeout(() => {
-        window.location.replace("index.html");
-      }, 300); // ajustá el tiempo si hace falta
+        btnForm.classList.remove("loading");
+        btnForm.classList.add("success");
+        btnForm.value = "✓";
+        setTimeout(() => {
+          btnForm.classList.add("form-btn-check");
+          window.location.replace("index.html");
+        }, 1200);
+      }, 1200);
     }
   });
 });
-
-
+//errores de log
 function showError(text) {
   const error = document.createElement("p");
 
-  error.textContent = text; // reemplaza el texto (no acumula)
+  error.textContent = text;
   if (!message.contains(error)) {
-    // solo lo añade si no está presente
     message.appendChild(error);
   }
   message.style.display = "block";
@@ -57,23 +128,31 @@ function clearError() {
     message.style.display = "none";
   }
 }
-
-
-
-//Queda hacer checkeo de inputs
+//registro
 document.addEventListener("DOMContentLoaded", () => {
+  let btnRegistro = registerForm.querySelector(".form-btn");
+  const originalValue = btnRegistro.value;
+
   registerForm.addEventListener("submit", (e) => {
     e.preventDefault();
     clearError();
+
+    // cargando
+    btnRegistro.classList.add("loading");
+    btnRegistro.value = "⏳";
+
     setTimeout(() => {
-      window.location.replace("index.html");
-    }, 300); // ajustá el tiempo si hace falta
+      // inicio correcto
+      btnRegistro.classList.remove("loading");
+      btnRegistro.classList.add("success");
+      btnRegistro.value = "✓";
+
+      setTimeout(() => {
+        window.location.replace("index.html");
+      }, 1200);
+    }, 1200);
   });
 });
-
-
-
-
 
 //errores registro
 regFullname.addEventListener("focusout", () => {
@@ -102,6 +181,7 @@ regPass.addEventListener("focusout", () => {
     mensaje.style.display = "none";
   }
 });
+
 function showErrorRegister(div, text) {
   let error = div.querySelector("p");
   if (!error) {
@@ -112,6 +192,6 @@ function showErrorRegister(div, text) {
     error.style.fontFamily = "NATS, sans-serif";
     div.appendChild(error);
   }
-  error.textContent = text; // reemplaza el texto (no acumula)
+  error.textContent = text;
   div.style.display = "block";
 }
