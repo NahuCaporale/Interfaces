@@ -33,9 +33,9 @@ body {
 
 /* Main container */
 main.home {
-    margin: 80px auto; 
+    margin: 80px auto; /* Ajusta según necesites */
     width: 957px;
-    max-width: 95%; 
+    max-width: 95%; /* Esto permite responsividad */
     height: auto; 
     min-height: 553px;
     box-sizing: border-box;

@@ -33,7 +33,7 @@ body {
 
 /* Main container */
 main.home {
-    margin: 80px auto; 
+    margin: 80px auto; /* Ajusta según necesites */
     width: 957px;
     max-width: 95%; 
     height: auto; 

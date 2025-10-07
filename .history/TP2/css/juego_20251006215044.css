@@ -352,7 +352,7 @@ body {
 
 .avatar-comentarios {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     gap: 10px;
     margin: 5px;
 }
