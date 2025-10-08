@@ -22,7 +22,7 @@ window.addEventListener("load", () => {
         contenido.style.opacity = 1;
       }, 5);
     }, 10);
-  }, 0);
+  }, 5000);
 });
 
 document.addEventListener("DOMContentLoaded", () => {
