@@ -85,7 +85,7 @@ toggle.addEventListener("change", () => {
   }
 });
 
-//logear
+//simular login
 document.addEventListener("DOMContentLoaded", () => {
   loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-//errores de log
+//errores de login
 function showError(text) {
   const error = document.createElement("p");
 
