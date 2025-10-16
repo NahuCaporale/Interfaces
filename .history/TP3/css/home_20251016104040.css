@@ -492,6 +492,10 @@
                 background: url("../assets/imgs/thumbnails/Deportes/copa-toon.jpg") no-repeat 40%/ cover;
             }
 
+            &:nth-of-type(5) {
+                background: url("../assets/imgs/thumbnails/puzzle.jpg") no-repeat 40%/ cover;
+            }
+
             &:nth-of-type(2) {
                 background: url("../assets/imgs/thumbnails/Deportes/jump-up-3d.jpg") no-repeat 10% / cover;
             }

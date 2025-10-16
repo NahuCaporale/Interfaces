@@ -60,7 +60,6 @@ body {
     gap: 10px;
     overflow-x: auto;
     justify-content: space-between;
-    margin: 20px;
 }
 
 /* 3. Dos columnas (60% y 30%) */
@@ -79,7 +78,6 @@ body {
 .controles-compartir {
     display: flex;
     gap: 10px;
-    margin-bottom: 20px;
 }
 
 .controles {
@@ -206,7 +204,6 @@ body {
     gap: 20px;
     border-radius: 10px;
     box-shadow: 0px 2px 8px #feffff38;
-    margin-bottom: 50px;
 
 }
 
@@ -461,6 +458,7 @@ section>div {
   background-color: #21213B;
   color: #FFFFFF;
   font-family: 'NATS', sans-serif;
+  marg
 }
 
 .footer-img h2 {
