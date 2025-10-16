@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/home.css">
+    <title>Comet</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <div class="loader-container">
+        <img src="assets/imgs/cometlogoFinal.png" alt="">
+
+        <div id="loader"></div>
+    </div>
+    <div class="hide-content content-wrapper">
+        <nav class="navbar fixed-top">
+            <div class="container-fluid d-flex justify-content-between align-items-center">
+                <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="nav-center">
+                    <a href="index.html">comet</a>
+                    <a class="navbar-brand mx-auto" href="#">
+                        <img src="assets/imgs/cometlogoFinal.png" alt="Logo" style="height: 50px;">
+                    </a>
+                </div>
+
+                <div class="donacionBoton">
+                    <a class="" href="donaciones.html" id="">Donaciones</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <button type="button" class="close-menu" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-label="Close">
+                        &times;
+                    </button>
+                    <ul class="navbar-nav ms-3">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#destacados">Destacados</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#carrusel-accion">Todos los juegos</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#carrusel-accion">Accion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#carrusel-arcade">Arcade</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#carrusel-aventura">Aventura</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#carrusel-creatividad">Creatividad</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#carrusel-deportes">Deportes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#carrusel-estrategia">Estrategia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#carrusel-multiplayer">Multijugador</a>
+                        </li>
+                    </ul>
+                    <div class="inicio">
+                        <a href="login.html">Iniciar sesion</a>
+                    </div>
+                    <!--                <div class="perfil">
+                    <img src="assets/imgs/full_Turnstile__Never_Enough-Clean-16x9-02-rev.png" alt="">
+                    <div>
+                        <p>@geromoroniii</p>
+                        <p>geromoroni@gmail.com</p>
+                        
+                    </div>
+-->
+
+                </div>
+            </div>
+        </nav>
+        <div class="grid-container">
+
+
+            <main class="home" id="">
+                <h2>Bienvenido de vuelta!</h2>
+                <h4>Seleccionamos estos juegos solo para ti</h4>
+                <section class="slider-juegos" id="destacados">
+
+                    <div class="carousel-wrapper">
+                        <div class="carousel-slides">
+                            <div class="carousel-slide">
+                                <img src="assets/imgs/thumbnails/Deportes/copa-toon.jpg" alt="Copa Toon">
+                                <div class="carousel-info">
+                                    <h3>Copa Toon</h3>
+                                    <p>El mejor fútbol animado con tus personajes favoritos</p>
+                                </div>
+                            </div>
+
+                            <div class="carousel-slide">
+                                <img src="assets/imgs/thumbnails/Deportes/TE2025-Metadata_Image_Graphics.jpg"
+                                    alt=" Jump Up 3D">
+                                <div class="carousel-info">
+                                    <h3>Top Eleven</h3>
+                                    <p>Dirigi y crea tus tacticas especiales en el equipo de tus sueños</p>
+                                </div>
+                            </div>
+
+                            <div class="carousel-slide">
+                                <img src="assets/imgs/thumbnails/Arcade/mzl.wkqkuqdm.1024x1024-65.jpg"
+                                    alt="Peg Argentina">
+                                <div class="carousel-info">
+                                    <h3>Zombie Lane</h3>
+                                    <p>Defende, recolecta y sobrevivi en tu barrio a una invasion zombie</p>
+                                </div>
+                            </div>
+
+                            <div class="carousel-slide">
+                                <img src="assets/imgs/thumbnails/Accion/fortzone-battle-royale-xkd_16x9-cover.jpg"
+                                    alt="Table Tennis">
+                                <div class="carousel-info">
+                                    <h3>Fortzone Battle Royale</h3>
+                                    <p>El battle royale que estabas esperando</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-indicators">
+                            <div class="indicator"></div>
+                            <div class="indicator"></div>
+                            <div class="indicator"></div>
+                            <div class="indicator"></div>
+                        </div>
+                    </div>
+
+
+                </section>
+                <section class="carousel">
+                    <div class="container">
+                        <div>
+                            <div class="content">
+                                <h4>Copa Toon </h4>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="content">
+                                <h4>Jump Up 3D</h4>
+                            </div>
+                        </div>
+                       
+                        <div>
+                            <div class="content">
+                                <h4><a href="juego.html">Peg Argentina</a></h4>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="content">
+                                <h4>Table Tennis Ultra...</h4>
+                            </div>
+                        </div>
+                         <div>
+                            <div class="content">
+                                <h4><a href="blocka.html">Blocka</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="carrusel-juegos" id="carrusel-accion">
+                    <h2>Accion</h2>
+                    <div class="container-juegos">
+                        <button class="btn-prev">
+                            < </button>
+                                <div class="container-slides">
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Accion/252915_3.jpg" alt="Farm Mafia">
+                                        <div class="slide-info">
+                                            <p>Farm Mafia</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Accion/254576_3.jpg" alt="Black Hawk Down">
+                                        <div class="slide-info">
+                                            <p>Black Hawk Down</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Accion/Horror farm.jpg" alt="Horror farm">
+                                        <div class="slide-info">
+                                            <p>Horror farm</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Accion/MK.jpg " alt="Mortal Kombat">
+                                        <div class="slide-info">
+                                            <p>Mortal Kombat</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Accion/nuclear day.jpg" alt="Nuclear Day">
+                                        <div class="slide-info">
+                                            <p>Nuclear Day</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Accion/Samurai shadow.jpg"
+                                            alt="Samurai Shadow">
+                                        <div class="slide-info">
+                                            <p>Samurai Shadow</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Accion/Street fighter.jpg" alt="Street Fighet">
+                                        <div class="slide-info">
+                                            <p>Street Fighet</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <button class="btn-next">> </button>
+                    </div>
+                </section>
+
+                <section class="carrusel-juegos" id="carrusel-arcade">
+                    <h2>Arcade</h2>
+                    <div class="container-juegos">
+                        <button class="btn-prev">
+                            < </button>
+                                <div class="container-slides">
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Arcade/Car-Town-Key-Art_400x400.jpg"
+                                            alt="Car Town">
+                                        <div class="slide-info">
+                                            <p>Car Town</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Arcade/chef-slide_16x9-cover.jpg"
+                                            alt="Chef Slide">
+                                        <div class="slide-info">
+                                            <p>Chef Slide</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Arcade/dino-domination-cover.jpg"
+                                            alt="Dino domination">
+                                        <div class="slide-info">
+                                            <p>Dino domination</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Arcade/gokarts-io_16x9-cover.jpg"
+                                            alt="Go Karts Io">
+                                        <div class="slide-info">
+                                            <p>Go Karts Io</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Arcade/hospital-surgeon-doctor-game_16x9-cover.jpg"
+                                            alt="Nuclear Day">
+                                        <div class="slide-info">
+                                            <p>Hospital surgeon</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Arcade/jetpack-joyride-pcp_16x9-cover.jpg"
+                                            alt="Jetpack joyride">
+                                        <div class="slide-info">
+                                            <p>Jetpack joyride</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Arcade/roller-coaster-rush-cover.jpg"
+                                            alt="Roller coaster rush">
+                                        <div class="slide-info">
+                                            <p>Roller coaster rush</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <button class="btn-next">> </button>
+                    </div>
+                </section>
+
+                <section class="carrusel-juegos" id="carrusel-aventura">
+                    <h2>Aventura</h2>
+                    <div class="container-juegos">
+                        <button class="btn-prev">
+                            < </button>
+                                <div class="container-slides">
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Aventura/bouncy-cubs.jpg" alt="Bouncy cubs">
+                                        <div class="slide-info">
+                                            <p>Bouncy cubs</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Aventura/Scooby Nights.jpg"
+                                            alt="Scooby Nights">
+                                        <div class="slide-info">
+                                            <p>Scooby Nights</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Aventura/los-pitufos-ocean-cleanup-1-364x242.jpg"
+                                            alt="Los pitufos: ocean cleanup">
+                                        <div class="slide-info">
+                                            <p>Los pitufos: ocean cleanup</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Aventura/morning-mayhem-1-364x242.jpg"
+                                            alt="Las chicas superpoderosas: morning mayhem">
+                                        <div class="slide-info">
+                                            <p>Las chicas superpoderosas:...</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Aventura/Santa Run.jpg" alt="Santa run">
+                                        <div class="slide-info">
+                                            <p>Santa run</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Aventura/Grand Survival.jpg"
+                                            alt="Grand Survival">
+                                        <div class="slide-info">
+                                            <p>Grand Survival</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Aventura/red ball.jpg" alt="Red ball">
+                                        <div class="slide-info">
+                                            <p>Red ball</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <button class="btn-next" id="btn-next">> </button>
+                    </div>
+                </section>
+                <section class="carrusel-juegos" id="carrusel-creatividad">
+                    <h2>Creatividad</h2>
+                    <div class="container-juegos">
+                        <button class="btn-prev">
+                            < </button>
+                                <div class="container-slides">
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Creatividad/color-pixel-art-classic_16x9-cover.jpg"
+                                            alt="Color pixer art classic">
+                                        <div class="slide-info">
+                                            <p>Color pixer art classic</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Creatividad/cover-1615480846281.jpg"
+                                            alt="Punk-o Matic">
+                                        <div class="slide-info">
+                                            <p>Punk-o Matic</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Creatividad/girls-nail-salon---nail-games_16x9-cover.jpg"
+                                            alt="Girls nail salon">
+                                        <div class="slide-info">
+                                            <p>Girls nail salon</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Creatividad/lofi-room_16x9-cover.jpg"
+                                            alt="Lofi room">
+                                        <div class="slide-info">
+                                            <p>Lofi room</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Creatividad/Perfect Piano.jpg"
+                                            alt="Perfect piano">
+                                        <div class="slide-info">
+                                            <p>Perfect piano</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Creatividad/Sneaker Art.png" alt="Sneaker art">
+
+                                        <div class="slide-info">
+                                            <p>Sneaker art</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Creatividad/Preguntados.jpg" alt="Preguntados">
+                                        <div class="slide-info">
+                                            <p>Preguntados</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <button class="btn-next">> </button>
+                    </div>
+                </section>
+                <section class="carrusel-juegos" id="carrusel-deportes">
+                    <h2>Deportes</h2>
+                    <div class="container-juegos">
+                        <button class="btn-prev">
+                            < </button>
+                                <div class="container-slides">
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Deportes/table-tennis-ultra-mega-tournament.jpg"
+                                            alt="table-tennis-ultra-mega-tournament">
+                                        <div class="slide-info">
+                                            <p>Table tennis ultra mega tournam...</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Deportes/cc759d63964223.Y3JvcCw0MDUwMCwzMTcwMCwwLDA.jpg"
+                                            alt="Gol mania">
+                                        <div class="slide-info">
+                                            <p>Gol mania</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Deportes/real-freekick.jpg"
+                                            alt="Real freekick">
+                                        <div class="slide-info">
+                                            <p>Real freekick</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Deportes/jump-up-3d.jpg" alt="Jump up 3D">
+                                        <div class="slide-info">
+                                            <p>Jump up 3D</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Deportes/boxing-stars-1.jpg" alt="Boxing star">
+                                        <div class="slide-info">
+                                            <p>Boxing star</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Deportes/ben10-tanda-de-penaltis.jpg"
+                                            alt="Ben 10 penales">
+                                        <div class="slide-info">
+                                            <p>Ben 10 tanda de penales</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Deportes/basketball-stars-1-364x242.jpg"
+                                            alt="Basketball stars">
+                                        <div class="slide-info">
+                                            <p>Basketball stars</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <button class="btn-next">> </button>
+                    </div>
+                </section>
+                <section class="carrusel-juegos" id="carrusel-estrategia">
+                    <h2>Estrategia</h2>
+                    <div class="container-juegos">
+                        <button class="btn-prev">
+                            < </button>
+                                <div class="container-slides">
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Estrategia/219241_3.jpg" alt="Cube.io">
+                                        <div class="slide-info">
+                                            <p>Cube.io</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Estrategia/atomic-champions_16x9-cover.jpg"
+                                            alt="Atomic champions">
+                                        <div class="slide-info">
+                                            <p>Atomic champions</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+
+                                        <img src="assets/imgs/thumbnails/Estrategia/battle-arena_16x9-cover.jpg"
+                                            alt="Battle arena">
+                                        <div class="slide-info">
+                                            <p>Battle arena</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Estrategia/world-z-defense---zombie-defense_16x9-cover.png"
+                                            alt="World z defense zombie">
+                                        <div class="slide-info">
+                                            <p>World z defense zombie</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Estrategia/tower-defense---alien-invasion-cpb_16x9-cover.jpg"
+                                            alt="Tower defense alien invasion">
+                                        <div class="slide-info">
+                                            <p>Tower defense alien invasion</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Estrategia/chess-arkadium.jpg"
+                                            alt="Chess online">
+                                        <div class="slide-info">
+                                            <p>Chess online</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Estrategia/qb-legend_16x9-cover.jpg"
+                                            alt="QB Legend">
+                                        <div class="slide-info">
+                                            <p>QB Legend</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <button class="btn-next">> </button>
+                    </div>
+                </section>
+                <section class="carrusel-juegos" id="carrusel-multiplayer">
+                    <h2>Multiplayer</h2>
+                    <div class="container-juegos">
+                        <button class="btn-prev">
+                            < </button>
+                                <div class="container-slides">
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Multiplayer/empire-world-war-3.webp"
+                                            alt="Empire world war 3">
+                                        <div class="slide-info">
+                                            <p>Empire world war 3</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Multiplayer/state-io-conquer-the-world.webp"
+                                            alt="State.io: conquer the world">
+                                        <div class="slide-info">
+                                            <p>State.io: conquer the world</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+
+                                        <img src="assets/imgs/thumbnails/Multiplayer/game-of-thrones.webp"
+                                            alt="Game of thrones">
+                                        <div class="slide-info">
+                                            <p>Game of thrones</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Multiplayer/zombs-royale-1.jpg"
+                                            alt="Zombs royale">
+                                        <div class="slide-info">
+                                            <p>Zombs royale</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Multiplayer/fortzone-battle-royale-1.jpg"
+                                            alt="Fortzone battle royale">
+                                        <div class="slide-info">
+                                            <p>Fortzone battle royale</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Multiplayer/charm-farm.webp" alt="Charm farm">
+                                        <div class="slide-info">
+                                            <p>Charm farm</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="assets/imgs/thumbnails/Multiplayer/agar-io.webp" alt="Agar.io">
+                                        <div class="slide-info">
+                                            <p>Agar.io</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <button class="btn-next">> </button>
+                    </div>
+                </section>
+
+            </main>
+
+            <footer class="footer">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="./assets/imgs/logofooter.png" alt="logo de cometa" class="logo-footer">
+                    </div>
+                    <p>Tu destino retro para los mejores juegos online.
+                        Descubre, juega y conecta con millones
+                        de jugadores en el universo Comet.
+                    </p>
+                    <div class="social-icons">
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-x-twitter"></i>
+                        <i class="fa-regular fa-comment"></i>
+                        <i class="fa-brands fa-facebook"></i>
+                    </div>
+
+                </div>
+                <div class="footer-column">
+                    <h3>Categorías</h3>
+                    <ul>
+                        <li><a href="#carrusel-deportes">Deportes</a></li>
+                        <li><a href="#carrusel-estrategia">Estrategia</a></li>
+                        <li><a href="#carrusel-arcade">Arcade</a></li>
+                        <li><a href="#carrusel-aventura">Aventura</a></li>
+                        <li><a href="#carrusel-accion">Accion</a></li>
+                        <li><a href="#carrusel-multiplayer">Multiplayer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#">Acerca de</a></li>
+                        <li><a href="#">Ayuda</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                        <li><a href="#">Términos</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Blog</a></li>
+
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Mantente Conectado</h3>
+                    <p>Suscríbete para recibir las ultimas
+                        novedades y lanzamientos.</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Ingresa tu email" required>
+                        <button type="submit">Suscribirte</button>
+                    </form>
+                    <div class="form-icons">
+                        <div class="icon-row">
+                            <i class="fa-regular fa-envelope"></i>
+                            <span>geromoroniii@hotmail.com</span>
+                        </div>
+                        <div class="icon-row">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>23144633386</span>
+                        </div>
+                        <div class="icon-row">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Tandil, Buenos Aires</span>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="js/home.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>
