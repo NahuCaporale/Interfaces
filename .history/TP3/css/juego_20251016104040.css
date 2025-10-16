@@ -54,6 +54,21 @@ body {
     /* espacio entre bloques */
 }
 
+/* 1. Imagen grande */
+.img-peg img {
+    width: 100%;
+    display: block;
+}
+
+.img-peg p {
+    color: white;
+    font-family: 'NATS', sans-serif;
+    font-size: 16px;
+
+    margin: 5px;
+
+}
+
 /* 2. Carrusel: puede ser flex dentro */
 .carousel {
     display: flex;
@@ -81,12 +96,10 @@ body {
 }
 
 .controles {
-    background-image: linear-gradient(to bottom, #11142a8f, #444fa32d);
+    background-color: #0A0C19;
     border-radius: 10px;
     width: 65%;
     height: 298px;
-    box-shadow: 0px 2px 8px #feffff38;
-
 }
 
 .controles .controles-body {
@@ -113,8 +126,7 @@ body {
 .controles-header {
     display: flex;
     gap: 10px;
-    background-color: #11142A;
-    box-shadow: 0px 5px 8px #04327A;
+    background-color: #FF9800;
     justify-content: center;
     margin: 0px 40px 0px 40px;
     border-radius: 10px;
@@ -137,19 +149,16 @@ body {
 
 /*Compartilo*/
 .compartir {
-    background-image: linear-gradient(to bottom, #11142a8f, #444fa32d);
+    background-color: #0A0C19;
     width: 35%;
     height: 147px;
     border-radius: 10px;
-    box-shadow: 0px 2px 8px #feffff38;
-
 }
 
 .compartilo-header {
     display: flex;
     gap: 10px;
-    background-color: #11142A;
-    box-shadow: 0px 5px 8px #04327A;
+    background-color: #FF9800;
     justify-content: center;
     margin: 0px 40px 0px 40px;
     border-radius: 10px;
@@ -168,7 +177,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .compartilo-body i {
@@ -181,9 +190,7 @@ body {
 .sobre-juego-header {
     display: flex;
     gap: 10px;
-    
-    background-color: #11142A;
-    box-shadow: 0px 5px 8px #04327A;
+    background-color: #FF9800;
     justify-content: center;
     margin: 0px 40px 0px 40px;
     border-radius: 10px;
@@ -198,13 +205,11 @@ body {
 }
 
 .sobre-juego {
-    background-image: linear-gradient(to bottom, #11142a8f, #444fa32d);
+    background-color: #0A0C19;
     width: 64.5%;
     height: 270px;
     gap: 20px;
     border-radius: 10px;
-    box-shadow: 0px 2px 8px #feffff38;
-
 }
 
 .sobre-juego .reglas {
@@ -258,6 +263,7 @@ body {
     font-weight: lighter;
 }
 
+/*avatar*/
 .avatar {
     display: flex;
     align-items: center;
@@ -266,6 +272,7 @@ body {
     align-items: flex-end;
 }
 
+/*input comentario*/
 .comentario-input {
     display: flex;
     align-items: center;
@@ -338,6 +345,7 @@ body {
 }
 
 
+/*comentarios */
 .comentarios {
     margin: 40px 0px 40px 0px;
 }
@@ -379,98 +387,4 @@ body {
    padding: 20px;
     box-shadow: 0px 0 4px #04327A;
 
-}
-section>div {
-    margin-top: 0 !important;}
-
-.game-component {
-  width: 100%;
-  max-width: 500px;
-}
-
-.breadcrumb {
-  font-family: 'NATS', sans-serif;
-  font-size: 16px;
-  color: #959ead;
-  padding-left: 5px; 
-  margin-bottom: 0px !important;
-}
-
-
-/*ESTILOS  PEG FOTO*/
-.img-peg {
-  display: inline-block;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-}
-
-.img-container {
-  position: relative;
-  cursor: pointer;
-}
-
-.img-container img {
-  display: block;
-  width: 100%;
-}
-
-
-.img-container::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.377);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 1;
-}
-
-.play-btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 70px;
-  text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8);
-  opacity: 0;
-  visibility: hidden;
-  z-index: 2;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.img-container:hover::after,
-.img-container:hover .play-btn {
-  opacity: 1;
-  visibility: visible;
-}
-
-
-.footer-img {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 15px;
-  background-color: #21213B;
-  color: #FFFFFF;
-  font-family: 'NATS', sans-serif;
-}
-
-.footer-img h2 {
-  margin: 0;
-  font-family: 'NATS', sans-serif;
-}
-
-.icons-juego i {
-  margin-left: 15px;
-  cursor: pointer;
-  transition: color 0.2s ease-in-out;
-}
-
-.icons-juego i:hover {
-  color: #959ead;
 }
