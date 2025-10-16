@@ -1,0 +1,244 @@
+/*Fuentes usadas*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-y: hidden;
+  overflow-x: hidden;
+
+}
+
+@font-face {
+  font-family: 'NATS';
+  src: url("../assets/natsFont/NATS-Regular.woff") format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  background-image: url(../assets/Fondo.svg);
+  background-position: center;
+  font-family: Roboto;
+  height: 100vh;
+
+}
+
+.container {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-section {
+  width: 404px;
+  height: 837px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-section img {
+  width: 232px;
+  height: 119px;
+}
+
+.form {
+  display: none;
+}
+
+.form input {
+  width: 404px;
+  height: 49px;
+  margin: 20px;
+  border-radius: 35px;
+  text-indent: 10px;
+}
+
+.form input::placeholder {
+  font-family: 'NATS';
+}
+
+/* Estilos base del botón */
+.form-btn {
+  font-family: NATS;
+  width: 214px;
+  height: 49px;
+  border-radius: 35px;
+  border: 0;
+  background: #04327A;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.form-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: #D37F85;
+}
+
+/* Estado de carga */
+.form-btn.loading {
+  pointer-events: none;
+  background: #D37F85;
+  font-size: 24px;
+  animation: rotate 1.5s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  50% {
+    transform: rotateZ(5deg);
+  }
+
+  100% {
+    transform: rotateZ(-5deg);
+  }
+
+}
+
+/* Estado de éxito */
+.form-btn.success {
+  text-align: center;
+  background: #f50000;
+  pointer-events: none;
+  font-size: 32px;
+  animation: successPulse 0.6s ease-out;
+}
+
+@keyframes successPulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.50);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.form.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggleContainer {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 0;
+  border-radius: 20px;
+  background: white;
+  font-weight: bold;
+  color: #04327A;
+  cursor: pointer;
+  width: 200px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.toggleContainer::before {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  left: 0%;
+  border-radius: 20px;
+  background: #04327A;
+  transition: all 0.3s;
+}
+
+.toggleCheckbox {
+  display: none;
+}
+
+.toggleContainer div {
+  padding: 10px;
+  z-index: 1;
+}
+
+.toggleCheckbox:checked+.toggleContainer::before {
+  left: 50%;
+}
+
+.toggleCheckbox+.toggleContainer div:first-child {
+  color: white;
+}
+
+.toggleCheckbox+.toggleContainer div:last-child {
+  color: #04327A;
+}
+
+.toggleCheckbox:checked+.toggleContainer div:first-child {
+  color: #04327A;
+}
+
+.toggleCheckbox:checked+.toggleContainer div:last-child {
+  color: white;
+}
+
+
+
+.message {
+  color: red;
+  font-family: 'NATS';
+  margin-top: 20px;
+  display: none;
+}
+
+#helpBtn {
+  position: absolute;
+  top: 50%;
+  left: 88%;
+  transform: translateY(-50%);
+  background-color: #04327A;
+  border-radius: 80%;
+  color: #3498db;
+  cursor: pointer;
+  box-shadow: 0px 1px 8px #04327A;
+  border-radius: 80%;
+  padding: 4px 2px;
+
+
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.label-user,
+.label-pass,
+.label-registro-usuario,
+.label-registro-repPass,
+.label-registro-nombre,
+.label-registro-email,
+.label-registro-pass {
+  color: white;
+  font-family: NATS;
+  display: none;
+  opacity: 0;
+}
+
+.visible {
+  display: block;
+  opacity: 1;
+}

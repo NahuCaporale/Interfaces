@@ -1,0 +1,495 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('assets/fonts/Roboto-Regular.woff2') format('woff2'),
+        url('assets/fonts/Roboto-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'RopaSans';
+    src: url('assets/fonts/RopaSans-Regular.woff2') format('woff2'),
+        url('assets/fonts/RopaSans-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NATS';
+    src: url("../assets/natsFont/NATS-Regular.woff") format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+body {
+    height: 100%;
+    background: url(../assets/Fondo.svg);
+
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.footer {
+    height: max-content;
+}
+
+
+.layout {
+    display: grid;
+    grid-template-columns: 1304px;
+    gap: 20px;
+    /* espacio entre bloques */
+}
+
+/* 2. Carrusel: puede ser flex dentro */
+.carousel {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    justify-content: space-between;
+}
+
+/* 3. Dos columnas (60% y 30%) */
+.info {
+    display: grid;
+    grid-template-columns: 60% 30%;
+    gap: 20px;
+}
+
+/* 4. Bloque inferior */
+.extra {
+    width: 60%;
+    /* o max-width */
+}
+
+.controles-compartir {
+    display: flex;
+    gap: 10px;
+}
+
+.controles {
+    background-image: linear-gradient(to bottom, #11142a8f, #444fa32d);
+    border-radius: 10px;
+    width: 65%;
+    height: 298px;
+    box-shadow: 0px 2px 8px #feffff38;
+
+}
+
+.controles .controles-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    height: 70%;
+}
+
+.controles .controles-body i {
+    font-size: 40px;
+}
+
+.tecla-space {
+    display: inline-block;
+    padding: 10px 40px;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-family: monospace;
+    text-align: center;
+}
+
+.controles-header {
+    display: flex;
+    gap: 10px;
+    background-color: #11142A;
+    box-shadow: 0px 5px 8px #04327A;
+    justify-content: center;
+    margin: 0px 40px 0px 40px;
+    border-radius: 10px;
+    height: 30%;
+    align-items: center;
+}
+
+.controles .controles-header p {
+    font-size: 22px;
+    font-family: 'NATS';
+    margin-bottom: 0px;
+
+}
+
+.controles-body p {
+    margin-bottom: 0px;
+    font-family: 'NATS';
+    font-size: 16px;
+}
+
+/*Compartilo*/
+.compartir {
+    background-image: linear-gradient(to bottom, #11142a8f, #444fa32d);
+    width: 35%;
+    height: 147px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px #feffff38;
+
+}
+
+.compartilo-header {
+    display: flex;
+    gap: 10px;
+    background-color: #11142A;
+    box-shadow: 0px 5px 8px #04327A;
+    justify-content: center;
+    margin: 0px 40px 0px 40px;
+    border-radius: 10px;
+    height: 60%;
+    align-items: center;
+    font-family: 'NATS';
+}
+
+.compartilo-header p {
+    font-size: 22px;
+    font-family: 'NATS';
+    margin-bottom: 0px;
+}
+
+.compartilo-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.compartilo-body i {
+    margin: 10px;
+    font-size: 20px;
+    color: white;
+}
+
+/*Sobre el juego*/
+.sobre-juego-header {
+    display: flex;
+    gap: 10px;
+    
+    background-color: #11142A;
+    box-shadow: 0px 5px 8px #04327A;
+    justify-content: center;
+    margin: 0px 40px 0px 40px;
+    border-radius: 10px;
+    height: 30%;
+    align-items: center;
+}
+
+.sobre-juego-header p {
+    font-size: 22px;
+    font-family: 'NATS';
+    margin-bottom: 0px;
+}
+
+.sobre-juego {
+    background-image: linear-gradient(to bottom, #11142a8f, #444fa32d);
+    width: 64.5%;
+    height: 270px;
+    gap: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px #feffff38;
+
+}
+
+.sobre-juego .reglas {
+    margin-top: 10px;
+}
+
+.sobre-juego .objetivo {
+    margin-top: 10px;
+}
+
+.sobre-juego-body {
+    margin: 10px 0px 0px 40px;
+    width: 90%;
+    line-height: 1.3;
+}
+
+.sobre-juego-body p {
+    font-family: 'NATS';
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.2;
+    margin-bottom: 0px;
+}
+
+.sobre-juego-body h2 {
+    font-size: 24px;
+    font-family: 'NATS';
+    margin: 6px 0;
+    line-height: 1.2;
+}
+
+/*header comentarios*/
+
+.comentarios-header {
+    display: flex;
+    align-items: center;gap: 10px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    align-items: flex-start;
+
+
+}
+
+.comentarios-header p {
+    font-size: 22px;
+    font-family: 'NATS';
+}
+
+.comentarios-header i {
+    font-size: 35px;
+    font-weight: lighter;
+}
+
+/*avatar*/
+.avatar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 5px;
+    align-items: flex-end;
+}
+
+/*input comentario*/
+.comentario-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 90%;
+    background-color: white;
+    border-radius: 15px;
+    padding: 5px;
+    background-color: #161a36be;
+    margin: 20px;
+}
+
+.comentario-input i {
+    font-size: 20px;
+    color: #4470C8;
+    transition: transform 0.2s ease, background-color 0.3s;
+
+}
+
+.comentario-input i:hover {
+    transform: rotate(45deg);
+    color: #1a52c4;
+}
+
+.comentario-input .btn-icon {
+    background: none;
+    border: none;
+    color: #4470C8;
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.comentario-input p {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-weight: bold;
+}
+
+.comentario-input input {
+    background-color: #21213B;
+    width: 80%;
+    height: 51px;
+    border-radius: 15px;
+    border: none;
+    padding-left: 20px;
+    font-size: 14px;
+    margin-left: 20px;
+    color: white;
+}
+
+.comentario-input img {
+    border-radius: 30px;
+}
+
+
+
+/*linea separadora*/
+.separador {
+    border-bottom: 1px solid #04327A;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.mas-recientes {
+    font-family: 'NATS';
+    font-size: 20px;
+    margin: 50px 0px 20px 0px;
+}
+
+
+/*comentarios */
+.comentarios {
+    margin: 40px 0px 40px 0px;
+}
+
+.avatar-comentarios {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    margin: 5px;
+}
+
+.avatar-comentarios img {
+    margin: 5px;
+    border-radius: 30px;
+}
+
+.comentarios .texto-comentario {
+    display: flex;
+    border-radius: 15px;
+    border: 1px solid #21213b71;
+    padding: 10px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    width: 80%;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.texto-comentario p {
+    margin: 5px;
+    width: 50%;
+    font-size: 14px;
+    font-family: 'RopaSans', sans-serif;
+}
+
+.seccion-comentarios{
+   padding: 20px;
+    box-shadow: 0px 0 4px #04327A;
+
+}
+section>div {
+    margin-top: 0 !important;}
+
+/* --- ESTILOS GENERALES DEL CONTENEDOR --- */
+
+/* 1. Imagen grande */
+
+.img-peg p {
+    color: white;
+    font-family: 'NATS', sans-serif;
+    font-size: 16px;
+    margin: 5px;
+    /* MEJORA: Posiciona el párrafo para que esté por encima de la imagen */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3; /* Asegura que el texto esté por encima de todo */
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo para que se lea mejor */
+    padding: 5px 10px;
+    border-top-left-radius: 12px;
+}
+
+
+.img-peg {
+  position: relative; /* Base para posicionar elementos internos */
+  display: inline-block; /* Se ajusta al contenido */
+  cursor: pointer;
+  overflow: hidden; /* Evita que los elementos se salgan */
+  border-radius: 12px; /* Bordes redondeados como en tu imagen */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra general */
+}
+
+.img-peg img {
+  display: block; /* Elimina espacio extra debajo de la imagen */
+  width: 100%;
+}
+
+
+/* --- CAPA OSCURA Y BOTÓN DE PLAY (EFECTO HOVER) --- */
+/* Capa oscura que aparece en hover */
+.img-peg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* HACEMOS QUE LA CAPA OCUPE TODO EL ANCHO */
+  height: 100%; /* HACEMOS QUE LA CAPA OCUPE TODA LA ALTURA */
+  background-color: rgba(0, 0, 0, 0.425); /* MÁS OPACO: 0.7 o 0.8 para un mayor oscurecimiento */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1; /* Estará debajo del botón de play */
+}
+
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 70px; /* AUMENTAMOS EL TAMAÑO PARA QUE RESALTE MÁS */
+  /* Puedes añadir una sombra al texto para que resalte aún más */
+  text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8);
+  opacity: 0; /* Oculto por defecto */
+  visibility: hidden;
+  z-index: 2; /* POR ENCIMA DE LA CAPA OSCURA Y LA IMAGEN */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Efectos al pasar el mouse sobre el contenedor */
+.img-peg:hover::after {
+  opacity: 1; /* La capa oscura se vuelve completamente visible */
+}
+
+.img-peg:hover .play-btn {
+  opacity: 1; /* El botón de play se vuelve completamente visible */
+  visibility: visible;
+}
+
+
+/* --- FOOTER DE LA IMAGEN (TU CÓDIGO + MEJORAS) --- */
+.footer-img {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  background-color: #21213B;
+  color: #FFFFFF; /* MEJORA: Asegura texto blanco */
+  font-family: 'NATS', sans-serif; /* Fallback font */
+  border-bottom-left-radius: 12px; /* MEJORA: Asegura bordes redondeados inferiores */
+  border-bottom-right-radius: 12px;
+}
+
+.footer-img h2 {
+  margin: 0; /* MEJORA: Quita el margen por defecto */
+
+  font-family: 'NATS', sans-serif; /* Fallback font */
+}
+
+.icons-juego i {
+  margin-left: 15px; /* Cambiado a margen izquierdo para mejor espaciado */
+  font-size: 1.1rem;
+  cursor: pointer; /* MEJORA: Indica que es clickeable */
+  transition: color 0.2s ease-in-out; /* Transición suave de color */
+}
+
+/* MEJORA: Efecto hover para los íconos */
+.icons-juego i:hover {
+  color: #959ead; /* Un color más claro para el feedback */
+}
+/* NOTA: Ya no necesitas .icons-juego i:last-child si usas margin-left */
