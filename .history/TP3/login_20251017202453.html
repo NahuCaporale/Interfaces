@@ -23,36 +23,35 @@
             </label>
 
             <form class="form login active" id="loguear">
-                <h3 class="text-up-input">Usuario</h3>
+                <h3 class="label-user">Usuario</h3>
                 <input type="text" name="email" placeholder="Usuario" id="nicknameLogin">
 
-                <h3 class="text-up-input">Contraseña</h3>
+                <h3 class="label-pass">Contraseña</h3>
                 <input type="password" name="password" placeholder="Contraseña" id="passwordLogin">
                 <input type="submit" value="Iniciar Sesion" class="form-btn ">
                 <div class="message"></div>
             </form>
 
             <form class="form register">
-                <h3 class="text-up-input">Nombre completo</h3>
-                <input type="text" name="fullname" placeholder="Juan martinez" id="fullnameRegister">
+                <input type="text" name="fullname" placeholder="Nombre y Apellido" id="fullnameRegister">
                 <div class="messageFullname"></div>
 
-                <h3 class="text-up-input">Usuario</h3>
+                <h3 class="label-registro-usuario">Usuario</h3>
                 <div class="input-container">
-                    <input type="text" name="nickname" placeholder="juanmartinez1" maxlength="10" id="nicknameRegister">
+                    <input type="text" name="nickname" placeholder="Usuario" maxlength="10" id="nicknameRegister">
                     <i class="fa-solid fa-question help-icon" id="userHelpIcon"></i>
                     <div class="help-text" id="userHelpText">
                         No uses espacios ni caracteres especiales.
                     </div>
                 </div>
 
-                <h3 class="text-up-input">Email</h3>
-                <input type="email" name="email" placeholder="juanmartinez@gmail.com" id="emailRegister">
+                <h3 class="label-registro-email">Email</h3>
+                <input type="email" name="email" placeholder="Email" id="emailRegister">
                 <div class="emailMessage"></div>
 
-                <h3 class="text-up-input">Contraseña</h3>
+                <h3 class="label-registro-pass">Contraseña</h3>
                 <div class="input-container">
-                    <input type="password" name="password" placeholder="*******" id="passwordRegister">
+                    <input type="password" name="password" placeholder="Contraseña" id="passwordRegister">
                     <i class="fa-solid fa-question help-icon" id="passHelpIcon"></i>
                     <div class="help-text" id="passHelpText">
                         Debe tener 8+ caracteres, una mayúscula y un número.
@@ -60,8 +59,8 @@
                 </div>
                 <div class="passMessage"></div>
 
-                <h3 class="text-up-input">Repetir contraseña</h3>
-                <input type="password" name="repassword" placeholder="*******" id="repPass">
+                <h3 class="label-registro-repPass">Repetir contraseña</h3>
+                <input type="password" name="repassword" placeholder="Repetir Contraseña" id="repPass">
                 <input type="submit" value="Completar registro" class="form-btn">
             </form>
 

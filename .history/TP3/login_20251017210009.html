@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login - comet</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <section class="container">
+        <section class="login-section">
+            <img src="assets/imgs/logocometweb-removebg-preview.png" alt="Logo Comet">
+
+            <input type="checkbox" id="toggle" class="toggle toggleCheckbox" />
+            <label for="toggle" class="toggleContainer">
+                <div>Iniciar</div>
+                <div>Registro</div>
+            </label>
+
+            <form class="form login active" id="loguear">
+                <h3 class="text-up-input">Usuario</h3>
+                <input type="text" name="email" placeholder="Usuario" id="nicknameLogin">
+
+                <h3 class="text-up-input">Contraseña</h3>
+                <input type="password" name="password" placeholder="Contraseña" id="passwordLogin">
+                <input type="submit" value="Iniciar Sesion" class="form-btn">
+                <div class="message"></div>
+            </form>
+
+            <form class="form register">
+                <h3 class="text-up-input">Nombre completo

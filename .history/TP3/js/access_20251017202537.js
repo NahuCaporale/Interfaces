@@ -3,20 +3,6 @@ const toggle = document.querySelector(".toggle");
 //botones
 let btnForm = document.querySelector(".form-btn");
 
-//login
-let labelUser = document.querySelector(".label-user");
-let labelPass = document.querySelector(".label-pass");
-
-const loginForm = document.querySelector("form.login");
-const logNick = document.getElementById("nicknameLogin");
-const logPass = document.getElementById("passwordLogin");
-const message = document.querySelector(".message");
-//registros
-let labelFullname = document.querySelector(".label-registro-nombre");
-let labelEmail = document.querySelector(".label-registro-email");
-let labelNick = document.querySelector(".label-registro-usuario");
-let labelContra = document.querySelector(".label-registro-pass");
-let labelRepetirContra = document.querySelector(".label-registro-repPass");
 
 const registerForm = document.querySelector("form.register");
 const regPass = document.getElementById("passwordRegister");
@@ -28,49 +14,7 @@ const regRepPass = document.getElementById("repPass");
 
 //label para accesbilidad de login
 
-logNick.addEventListener("focus", () => {
-  labelUser.classList.add("visible");
-});
-logNick.addEventListener("blur", () => {
-  labelUser.classList.remove("visible");
-});
-logPass.addEventListener("focus", () => {
-  labelPass.classList.add("visible");
-});
-logPass.addEventListener("blur", () => {
-  labelPass.classList.remove("visible");
-});
-//accesibilidad Registro
-regFullname.addEventListener("focus", () => {
-  labelFullname.classList.add("visible");
-});
-regFullname.addEventListener("blur", () => {
-  labelFullname.classList.remove("visible");
-});
-regEmail.addEventListener("focus", () => {
-  labelEmail.classList.add("visible");
-});
-regEmail.addEventListener("blur", () => {
-  labelEmail.classList.remove("visible");
-});
-regPass.addEventListener("focus", () => {
-  labelContra.classList.add("visible");
-});
-regPass.addEventListener("blur", () => {
-  labelContra.classList.remove("visible");
-});
-regRepPass.addEventListener("focus", () => {
-  labelRepetirContra.classList.add("visible");
-});
-regRepPass.addEventListener("blur", () => {
-  labelRepetirContra.classList.remove("visible");
-});
-regNickname.addEventListener("blur", () => {
-  labelNick.classList.remove("visible");
-});
-regNickname.addEventListener("focus", () => {
-  labelNick.classList.add("visible");
-});
+
 
 
 

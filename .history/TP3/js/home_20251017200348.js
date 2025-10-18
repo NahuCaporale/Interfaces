@@ -64,3 +64,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+
+
+
+// 1. Seleccionamos el ícono y el contenedor del texto de ayuda
+const helpIcon = document.querySelector('.help-icon');
+const helpText = document.getElementById('help-text');
+
+// 2. Agregamos un "escuchador de eventos" para el clic en el ícono
+helpIcon.addEventListener('click', () => {
+  // 3. Cada vez que se hace clic, alterna (agrega o quita) la clase 'visible'
+  helpText.classList.toggle('visible');
+});

@@ -152,7 +152,6 @@ body {
   width: 200px;
   text-align: center;
   margin-bottom: 20px;
-  margin-top: 10px;
 }
 
 .toggleContainer::before {
@@ -256,77 +255,80 @@ body {
 
 /*input usuario*/
 
+/* --- CÓDIGO PARA AÑADIR AL FINAL DE TU CSS --- */
 
+/* Contenedor del input (ya lo tenías, pero asegúrate que tenga 'position: relative') */
 .input-container {
-  position: relative;
+    position: relative;
+    /* width: 404px; Esto lo hereda del input, no es necesario aquí */
 }
 
+/* Ajuste para los inputs dentro del contenedor para que no se pisen con el ícono */
 .input-container input {
-  padding-right: 45px;
+    padding-right: 45px; /* Dejamos espacio para el ícono */
 }
 
 /* Estilo y posición del ícono de ayuda */
 .help-icon {
-  position: absolute;
-  right: 35px;
-  /* Posición desde la derecha */
-  top: 50%;
-  transform: translateY(-50%);
-  /* Centrado vertical perfecto */
-  color: #999;
-  cursor: pointer;
-  transition: color 0.2s ease;
+    position: absolute;
+    right: 35px; /* Posición desde la derecha */
+    top: 50%;
+    transform: translateY(-50%); /* Centrado vertical perfecto */
+    color: #999;
+    cursor: pointer;
+    transition: color 0.2s ease;
 }
 
 .help-icon:hover {
-  color: #04327A;
+    color: #04327A;
 }
-
-/* texto de ayuda */
+/* Estilo del texto de ayuda (tooltip) */
 .help-text {
-  /* Oculto por defecto */
-  border-radius: 5px;
-  display: none;
-  position: absolute;
-  bottom: 65%;
-  left: 50%;
-  transform: translateX(95%);
-  background-color: #04327A;
-  color: white;
-  padding: 8px 12px;
-  border-radius: 15px 15px 15px 5px;
-  font-size: 13px;
-  font-family: 'Roboto', sans-serif;
-  z-index: 10;
+    /* Oculto por defecto */
+    border-radius: 5px;
+    display: none;
+    position: absolute;
+    /* Lo posicionamos encima del input */
+    bottom: 65%; 
+    left: 50%;
+    transform: translateX(95%);
+    background-color: #04327A;
+    color: white;
+    padding: 8px 12px;
+    border-radius:15px 15px 15px 5px;
+    font-size: 13px;
+    font-family: 'Roboto', sans-serif;
+    z-index: 10;
 }
-
-/*estilos botones ayuda*/
 i#userHelpIcon {
-  border-radius: 15px;
-  box-shadow: 0px 0px 2px 2px #07275a;
-  font-size: 0.9rem;
+    border-radius: 15px;
+    box-shadow: 0px 2px 4px #0000ff;
+    padding: 2px 2px;}
+    
 
-  padding: 2px 2px;
-}
-
-i#passHelpIcon {
-  border-radius: 15px;
-  box-shadow: 0px 0px 2px 2px #07275a;
-
-  padding: 2px 2px;
-}
-
+/* Clase que se agregará con JavaScript para mostrar el texto */
 .help-text.visible {
-  display: block;
+    display: block;
 }
-/*h3 arriba del input*/
+
+
+
+
 .text-up-input {
-  width: 404px;
-  text-align: left;
-  font-size: 18px;
-  font-weight: lighter;
-  padding-left: 20px;
-  margin-bottom: -10px;
+  /* Le damos el mismo ancho que los inputs para que se alinee correctamente */
+  width: 404px; 
+  
+  /* Alineamos el texto a la izquierda dentro de su contenedor */
+  text-align: left; 
+    font-size: 15px;
+    font-weight: lighter;
+
+  /* Un pequeño padding para que no quede pegado al borde y se vea mejor */
+  padding-left: 20px; 
+  
+  /* Opcional: Reduce el espacio vertical entre el texto y el input de abajo */
+  margin-bottom: -10px; 
+  
   color: white;
   font-family: NATS;
 }

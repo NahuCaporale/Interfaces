@@ -304,7 +304,7 @@ body {
 i#userHelpIcon {
   border-radius: 15px;
   box-shadow: 0px 0px 2px 2px #07275a;
-  font-size: 0.9rem;
+    font-size: 0.9rem;
 
   padding: 2px 2px;
 }
@@ -319,7 +319,10 @@ i#passHelpIcon {
 .help-text.visible {
   display: block;
 }
-/*h3 arriba del input*/
+
+
+
+
 .text-up-input {
   width: 404px;
   text-align: left;
@@ -330,3 +333,5 @@ i#passHelpIcon {
   color: white;
   font-family: NATS;
 }
+
+

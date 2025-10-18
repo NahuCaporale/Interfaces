@@ -319,7 +319,10 @@ i#passHelpIcon {
 .help-text.visible {
   display: block;
 }
-/*h3 arriba del input*/
+
+
+
+
 .text-up-input {
   width: 404px;
   text-align: left;

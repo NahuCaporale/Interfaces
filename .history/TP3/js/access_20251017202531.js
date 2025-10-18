@@ -28,49 +28,7 @@ const regRepPass = document.getElementById("repPass");
 
 //label para accesbilidad de login
 
-logNick.addEventListener("focus", () => {
-  labelUser.classList.add("visible");
-});
-logNick.addEventListener("blur", () => {
-  labelUser.classList.remove("visible");
-});
-logPass.addEventListener("focus", () => {
-  labelPass.classList.add("visible");
-});
-logPass.addEventListener("blur", () => {
-  labelPass.classList.remove("visible");
-});
-//accesibilidad Registro
-regFullname.addEventListener("focus", () => {
-  labelFullname.classList.add("visible");
-});
-regFullname.addEventListener("blur", () => {
-  labelFullname.classList.remove("visible");
-});
-regEmail.addEventListener("focus", () => {
-  labelEmail.classList.add("visible");
-});
-regEmail.addEventListener("blur", () => {
-  labelEmail.classList.remove("visible");
-});
-regPass.addEventListener("focus", () => {
-  labelContra.classList.add("visible");
-});
-regPass.addEventListener("blur", () => {
-  labelContra.classList.remove("visible");
-});
-regRepPass.addEventListener("focus", () => {
-  labelRepetirContra.classList.add("visible");
-});
-regRepPass.addEventListener("blur", () => {
-  labelRepetirContra.classList.remove("visible");
-});
-regNickname.addEventListener("blur", () => {
-  labelNick.classList.remove("visible");
-});
-regNickname.addEventListener("focus", () => {
-  labelNick.classList.add("visible");
-});
+
 
 
 

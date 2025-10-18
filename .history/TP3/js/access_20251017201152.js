@@ -211,6 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Función para mostrar/ocultar el texto de ayuda del USUARIO
     if (userHelpIcon) {
         userHelpIcon.addEventListener('click', () => {
+          console.log("click");
           userHelpText.classList.toggle('visible');
         });
     }

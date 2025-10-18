@@ -154,33 +154,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-//errores registro
-regFullname.addEventListener("focusout", () => {
-  const mensaje = document.querySelector(".messageFullname");
-  if (regFullname.value === "") {
-    showErrorRegister(mensaje, "Por favor, complete el campo.");
-  } else {
-    mensaje.style.display = "none";
-  }
-});
-
-regEmail.addEventListener("focusout", () => {
-  const mensaje = document.querySelector(".emailMessage");
-  if (regEmail.value === "") {
-    showErrorRegister(mensaje, "Por favor, complete el campo.");
-  } else {
-    mensaje.style.display = "none";
-  }
-});
-
-regPass.addEventListener("focusout", () => {
-  const mensaje = document.querySelector(".passMessage");
-  if (regPass.value === "") {
-    showErrorRegister(mensaje, "Por favor, complete el campo.");
-  } else {
-    mensaje.style.display = "none";
-  }
-});
 
 function showErrorRegister(div, text) {
   let error = div.querySelector("p");
@@ -196,7 +169,25 @@ function showErrorRegister(div, text) {
   div.style.display = "block";
 }
 
+function showErrorIcon(inputElement) {
+  // Añade el borde rojo al input
+  inputElement.classList.add('input-error');
+  // Busca el ícono de error que está DENTRO del mismo .input-container
+  const errorIcon = inputElement.parentElement.querySelector('.error-icon');
+  if (errorIcon) {
+    errorIcon.classList.add('visible');
+  }
+}
 
+function hideErrorIcon(inputElement) {
+  // Quita el borde rojo del input
+  inputElement.classList.remove('input-error');
+  // Busca y oculta el ícono de error
+  const errorIcon = inputElement.parentElement.querySelector('.error-icon');
+  if (errorIcon) {
+    errorIcon.classList.remove('visible');
+  }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
 

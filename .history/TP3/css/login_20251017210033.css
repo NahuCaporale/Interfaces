@@ -1,0 +1,250 @@
+/* Fuentes usadas */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'NATS';
+    src: url("../assets/natsFont/NATS-Regular.woff") format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    background-image: url(../assets/Fondo.svg);
+    background-position: center;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.login-section {
+    width: 404px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-section img {
+    width: 232px;
+    height: 119px;
+    margin-bottom: 20px;
+}
+
+.form {
+    display: none;
+}
+
+.form.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form input {
+    width: 404px;
+    height: 49px;
+    margin: 10px;
+    padding: 0 20px;
+    border-radius: 35px;
+    border: 2px solid transparent; /* Borde inicial */
+    text-indent: 10px;
+    transition: border-color 0.3s ease;
+}
+
+.form input::placeholder {
+    font-family: 'NATS';
+}
+
+/* Contenedor para inputs con íconos */
+.input-container {
+    position: relative;
+    width: 404px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.input-container input {
+    width: 100%;
+    margin: 0;
+    padding-right: 45px; /* Espacio para íconos */
+}
+
+/* Títulos H3 sobre los inputs */
+.text-up-input {
+    width: 404px;
+    text-align: left;
+    font-size: 15px;
+    font-weight: lighter;
+    padding-left: 20px;
+    margin-bottom: 5px;
+    color: white;
+    font-family: 'NATS', sans-serif;
+}
+
+/* Toggle Switch */
+.toggleContainer {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 20px;
+    background: white;
+    font-weight: bold;
+    color: #04327A;
+    cursor: pointer;
+    width: 200px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.toggleContainer::before {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 0%;
+    border-radius: 20px;
+    background: #04327A;
+    transition: all 0.3s;
+    z-index: 0;
+}
+
+.toggleCheckbox {
+    display: none;
+}
+
+.toggleContainer div {
+    padding: 10px;
+    z-index: 1;
+    position: relative;
+}
+
+.toggleCheckbox:checked+.toggleContainer::before {
+    left: 50%;
+}
+
+.toggleCheckbox+.toggleContainer div:first-child {
+    color: white;
+}
+
+.toggleCheckbox+.toggleContainer div:last-child {
+    color: #04327A;
+}
+
+.toggleCheckbox:checked+.toggleContainer div:first-child {
+    color: #04327A;
+}
+
+.toggleCheckbox:checked+.toggleContainer div:last-child {
+    color: white;
+}
+
+/* Botón del formulario */
+.form-btn {
+    font-family: 'NATS', sans-serif;
+    width: 214px;
+    height: 49px;
+    border-radius: 35px;
+    border: 0;
+    background: #04327A;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 15px;
+}
+
+.form-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: #D37F85;
+}
+
+/* Icono de AYUDA (?) */
+.help-icon {
+    width: 22px;
+    height: 22px;
+    background-color: #04327A;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 2;
+}
+
+.help-icon:hover {
+    transform: translateY(-50%) scale(1.1);
+    background-color: #D37F85;
+}
+
+/* Texto de ayuda (Tooltip) */
+.help-text {
+    display: none;
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    z-index: 10;
+    white-space: nowrap;
+}
+
+.help-text.visible {
+    display: block;
+}
+
+/* Icono de ERROR (!) */
+.error-icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: #e74c3c;
+    font-size: 18px;
+    display: none;
+    z-index: 2;
+}
+
+.error-icon.visible {
+    display: block;
+}
+
+/* Borde de error para el input */
+.input-error {
+    border: 2px solid #e74c3c !important;
+}
+
+/* Ajuste para el campo Contraseña que tiene DOS íconos */
+#passwordRegister+.help-icon {
+    right: 45px;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Login - comet</title>
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+		integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+	<section class="container">
+		<section class="login-section">
+			<img src="assets/imgs/logocometweb-removebg-preview.png">
+
+			<!-- Toggle -->
+			<input type="checkbox" id="toggle" class="toggle toggleCheckbox" />
+			<label for="toggle" class="toggleContainer">
+				<div>Iniciar</div>
+				<div>Registro</div>
+			</label>
+
+			<!-- Formulario Login -->
+
+			<form class="form login active" id="loguear">
+				<h3 class="label-user">Usuario</h3>
+
+				<input type="text" name="email" placeholder="Usuario" id="nicknameLogin">
+
+
+				<h3 class="label-pass">Contraseña</h3>
+				<input type="password" name="password" placeholder="Contraseña" id="passwordLogin">
+				<input type="submit" value="Iniciar Sesion" class="form-btn ">
+				<div class="message">
+				</div>
+			</form>
+
+			<!-- Formulario Register -->
+			<form class="form register">
+				<h3 class="label-registro-nombre">Nombre completo</h3>
+
+				<input type="text" name="fullname" placeholder="Nombre y Apellido" id="fullnameRegister">
+				<div class="messageFullname">
+				</div>
+				<h3 class="label-registro-usuario">Usuario</h3>
+
+				<div class="input-container">
+					<input type="text" name="nickname" placeholder="Usuario" maxlength="10" id="nicknameRegister">
+					<button id="helpBtn" type="button" popovertarget="popoverNickname">
+						<i class="fa-solid fa-question" style="color: #ffffff;"></i>
+					</button>
+
+			
+					<!--
+					<div id="popoverNickname" popover="auto">
+						<p>10 caracteres máximo</p>
+					</div>-->
+				</div>
+				<h3 class="label-registro-email">Email</h3>
+
+				<input type="email" name="email" placeholder="Email" id="emailRegister">
+				<div class="emailMessage">
+				</div>
+				<h3 class="label-registro-pass">Contraseña</h3>
+
+				<div class="input-container">
+
+					<input type="password" name="password" placeholder="Contraseña" id="passwordRegister">
+					<button type="button" id="helpBtn" popovertarget="popoverContraseña">
+						<i class=" fa-solid fa-question" style="color: #ffffff;"></i>
+					</button>
+				</div>
+				<div class="passMessage">
+				</div>
+				<h3 class="label-registro-repPass">Repetir contraseña</h3>
+
+				<input type="password" name="repassword" placeholder="Repetir Contraseña" id="repPass">
+				<input type="submit" value="Completar registro" class="form-btn">
+			</form>
+
+		</section>
+	</section>
+
+	<script type="text/javascript" src="js/access.js"></script>
+</body>
+
+</html>

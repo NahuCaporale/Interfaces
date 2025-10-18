@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login - comet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        /* Fuentes usadas */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: 'NATS';
+            src: url("../assets/natsFont/NATS-Regular.woff") format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        body {
+            background-image: url(../assets/Fondo.svg);
+            background-position: center;
+            font-family: Roboto;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .login-section {
+            width: 404px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-section img {
+            width: 232px;
+            height: 119px;
+        }
+
+        .form {
+            display: none;
+        }
+
+        .form.active {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form input {
+            width: 404px;
+            height: 49px;
+            margin: 10px;
+            border-radius: 35px;
+            text-indent: 10px;
+            border: 1px solid transparent;
+        }
+
+        .form input::placeholder {
+            font-family: 'NATS';
+        }
+
+        /* Contenedor para inputs con íconos */
+        .input-container {
+            position: relative;
+            width: 404px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .input-container input {
+            width: 100%;
+            padding-right: 45px; /* Espacio para los íconos */
+        }
+        
+        /* Títulos H3 sobre los inputs */
+        .text-up-input {
+            width: 404px;
+            text-align: left;
+            font-size: 15px;
+            font-weight: lighter;
+            padding-left: 20px;
+            margin-bottom: -10px;
+            color: white;
+            font-family: NATS;
+        }
+        
+        /* Toggle
