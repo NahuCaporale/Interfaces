@@ -1,0 +1,12 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+canvas {
+    border: 2px solid black;
+    margin-top: 20px;
+}
+#MyCanvas {
+    margin: 20px;   /* separa el canvas de los demás bloques */
+    display: block; /* elimina espacios raros si el canvas es inline */
+}

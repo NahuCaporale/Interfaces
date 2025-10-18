@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOCKA - Juego</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="game-page">
+    <div class="game-container">
+        <header class="game-header">
+            <a href="index.html" class="back-button">← Volver</a>
+            <h1>BLOCKA</h1>
+            <div class="timer">
+                <span class="timer-label">Tiempo:</span>
+                <span id="timer">00:00</span>
+            </div>
+        </header>
+
+        <!-- Selección de Nivel -->
+        <div id="level-selector" class="level-selector">
+            <h2>Selecciona un Nivel</h2>
+            <div class="level-buttons">
+                <button class="level-btn" data-level="1">
+                    <span class="level-number">1</span>
+                    <span class="level-name">Escala de Grises</span>
+                </button>
+                <button class="level-btn" data-level="2">
+                    <span class="level-number">2</span>
+                    <span class="level-name">Brillo Aumentado</span>
+                </button>
+                <button class="level-btn" data-level="3">
+                    <span class="level-number">3</span>
+                    <span class="level-name">Negativo</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Selección de Imagen -->
+        <div id="image-selector" class="image-selector hidden">
+            <h2>Selecciona una Imagen</h2>
+            <div id="image-thumbnails" class="image-thumbnails"></div>
+        </div>
+
+        <!-- Tablero de Juego -->
+        <div id="game-board" class="game-board-container hidden">
+            <div class="game-info-bar">
+                <div class="current-level">
+                    <span>Nivel: <strong id="current-level-name"></strong></span>
+                </div>
+                <div class="record">
+                    <span>Récord: <strong id="record-time">--:--</strong></span>
+                </div>
+            </div>
+
+            <div id="puzzle-grid" class="puzzle-grid"></div>
+
+            <div class="game-controls">
+                <button id="help-button" class="help-button">
+                    💡 Ayudita (+5 seg)
+                </button>
+                <button id="restart-button" class="restart-button">
+                    🔄 Reiniciar
+                </button>
+            </div>
+        </div>
+
+        <!-- Modal de Victoria -->
+        <div id="victory-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2>¡Felicidades! 🎉</h2>
+                <p class="victory-message">Has completado el puzzle</p>
+                <p class="victory-time">Tiempo: <strong id="final-time"></strong></p>
+                <p id="new-record" class="new-record hidden">¡Nuevo Récord! 🏆</p>
+                <div class="modal-buttons">
+                    <button id="play-again" class="modal-btn primary">Jugar de Nuevo</button>
+                    <button id="change-level" class="modal-btn">Cambiar Nivel</button>
+                    <a href="index.html" class="modal-btn">Menú Principal</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

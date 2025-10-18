@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="./css/juego.css">
+    <link rel="stylesheet" href="./css/blocka.css">
+
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>Peg solitarie</title>
+</head>
+
+<body>
+
+
+    <nav class="navbar fixed-top">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="nav-center">
+                <a href="index.html">comet</a>
+                <a class="navbar-brand mx-auto" href="#">
+                    <img src="assets/imgs/cometlogoFinal.png" alt="Logo" style="height: 50px;">
+                </a>
+            </div>
+            <div class="donacionBoton">
+                <a class="" href="donaciones.html" id="">Donaciones</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-3">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Destacados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Todos los juegos</a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Accion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Arcade</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Aventura</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Creatividad</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Deportes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Estrategia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Multijugador</a>
+                    </li>
+                </ul>
+                <div class="inicio">
+                    <a href="login.html">Iniciar sesion</a>
+                </div>
+                <!--                <div class="perfil">
+                    <img src="assets/imgs/full_Turnstile__Never_Enough-Clean-16x9-02-rev.png" alt="">
+                    <div>
+                        <p>@geromoroniii</p>
+                        <p>geromoroni@gmail.com</p>
+                        
+                    </div>
+-->
+
+            </div>
+        </div>
+        </div>
+    </nav>
+
+
+
+
+
+    <main class="home">
+        <div class="layout">
+
+            <div>
+                <button id="start-btn">Jugar</button>
+                <p id="timer">Tiempo: 00:00</p>
+                <canvas id="MyCanvas" width="600" height="600"></canvas>
+                <id="galeriaSeleccion" class="galeria">
+                <div class="footer-canvas">
+                    
+                <h1>BLOCKA</h1>
+
+                </div>    
+                    <!-- imágenes del banco -->
+                    <img src="./assets/imgs/avatar.jpg" alt="" class="galeria-img">
+                    <img src="./assets/imgs/avatar1.png" alt="" class="galeria-img">
+                    <img src="./assets/imgs/avatar2.jpg" alt="" class="galeria-img">
+                    <img src="./assets/imgs/avatar3.png" alt="" class="galeria-img">
+                    <img src="./assets/imgs/avatar.jpg" alt="" class="galeria-img">
+                    <img src="./assets/imgs/logo_perfil.png" alt="" class="galeria-img">
+                </div>
+                <div id="victoryModal" class="modal">
+                    <div class="modal-content">
+                        <h2>¡Nivel completado!</h2>
+                        <p id="tiempoFinal">Tiempo: 00:00</p>
+                        <button id="restartBtn">Reiniciar</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+            <div class="controles-compartir">
+                <div class="controles">
+                    <div class="controles-header">
+                        <p>Controles</p>
+                    </div>
+                    <div class="controles-body">
+                        <i class="fa-solid fa-computer-mouse"></i>
+                        <p>Clickear</p>
+                        <span class="tecla-space">SPACE</span>
+                        <p>Mover</p>
+                    </div>
+
+                </div>
+
+                <div class="compartir">
+                    <div class="compartilo-header">
+                        <p>Compartilo</p>
+
+                    </div>
+                    <div class="compartilo-body">
+                        <i class="fa-regular fa-message"></i>
+                        <i class="fa-regular fa-comment"></i>
+                        <i class="fa-brands fa-x-twitter"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-facebook"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rectángulo inferior -->
+            <div class="sobre-juego">
+                <div class="sobre-juego-header">
+                    <p>Sobre el juego</p>
+                </div>
+                <div class="sobre-juego-body">
+
+                    <p>Aprende a jugar aqui</p>
+                    <div class="objetivo">
+                        <h2>Objetivo</h2>
+                        <p>Arma la imagen completa girando cada pieza hasta que todas queden en la orientación correcta.
+                        </p>
+
+                    </div>
+
+                    <div class="reglas">
+                        <h2>Niveles</h2>
+                        <p>El juego tiene 3 niveles. Cada nivel elige una imagen distinta y aumenta la complejidad:
+                            - Nivel 1: piezas simples, sin filtros.
+                            - Nivel 2: piezas con filtros de brillo o escala de grises.
+                            - Nivel 3: piezas con filtros combinados y mayor dificultad.</p>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="seccion-comentarios">
+                <div class="comentarios-header">
+                    <i class="fa-regular fa-comment"></i>
+                    <p>Comentarios</p>
+                </div>
+
+
+                <div class="comentario-input">
+                    <div class="avatar">
+                        <img src="./assets/imgs/avatar.jpg" alt="Avatar" class="avatar" width="54px" height="50px">
+                        <p>Jhon doe</p>
+                    </div>
+                    <input type="text" placeholder="Tu opinion nos interesa!" class="input-comentario">
+                    <a href="./juego.html" class="btn-icon">
+                        <i class="fa-regular fa-paper-plane"></i>
+                    </a>
+                </div>
+
+
+                <div class="separador"></div>
+
+                <p class="mas-recientes">Mas recientes</p>
+
+
+                <div class="comentarios">
+                    <div class="avatar-comentarios">
+                        <img src="./assets/imgs/avatar1.png" alt="Avatar" width="54px" height="50px">
+                        <p>Nahuel caporale</p>
+                    </div>
+                    <div class="texto-comentario">
+                        <p>El juego esta chidisimo la verdad, estoy todo el dia jugandole !
+                            me esta encantando y ya voy por el primer nivel</p>
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                </div>
+                <div class="comentarios">
+                    <div class="avatar-comentarios">
+                        <img src="./assets/imgs/avatar2.jpg" alt="Avatar" width="54px" height="50px">
+                        <p>KeyzKiller</p>
+                    </div>
+                    <div class="texto-comentario">
+                        <p>Me encanto el juego! y tiene una gran comunidad, espero poder
+                            seguir accediento a el gratuitamente en comet!</p>
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <div class="comentarios">
+                        <div class="avatar-comentarios">
+                            <img src="./assets/imgs/avatar3.png" alt="Avatar" width="54px" height="50px">
+                            <p>Lil j</p>
+                        </div>
+                        <div class="texto-comentario">
+                            <p>Comet es increible, cada juego que probe estuvo increible, ojala
+                                sigan mejorando y agregando mas juegos.</p>
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+    </main>
+
+
+
+
+
+
+
+
+
+    <footer class="footer">
+        <div class="footer-column">
+            <div class="footer-logo">
+                <img src="./assets/imgs/logofooter.png" alt="logo de cometa" class="logo-footer">
+            </div>
+            <p>Tu destino retro para los mejores juegos online.
+                Descubre, juega y conecta con millones
+                de jugadores en el universo Comet.
+            </p>
+            <div class="social-icons">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-x-twitter"></i>
+                <i class="fa-regular fa-comment"></i>
+                <i class="fa-brands fa-facebook"></i>
+            </div>
+
+        </div>
+        <div class="footer-column">
+            <h3>Categorías</h3>
+            <ul>
+                <li><a href="#">Deportes</a></li>
+                <li><a href="#">Estrategia</a></li>
+                <li><a href="#">Arcade</a></li>
+                <li><a href="#">Aventura</a></li>
+                <li><a href="#">Accion</a></li>
+                <li><a href="#">Deportes</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Enlaces Rápidos</h3>
+            <ul>
+                <li><a href="#">Acerca de</a></li>
+                <li><a href="#">Ayuda</a></li>
+                <li><a href="#">Privacidad</a></li>
+                <li><a href="#">Términos</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Blog</a></li>
+
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Mantente Conectado</h3>
+            <p>Suscríbete para recibir las ultimas
+                novedades y lanzamientos.</p>
+            <form class="subscribe-form">
+                <input type="email" placeholder="Ingresa tu email" required>
+                <button type="submit">Suscribirte</button>
+            </form>
+            <div class="form-icons">
+                <div class="icon-row">
+                    <i class="fa-regular fa-envelope"></i>
+                    <span>geromoroniii@hotmail.com</span>
+                </div>
+                <div class="icon-row">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>23144633386</span>
+                </div>
+                <div class="icon-row">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Tandil, Buenos Aires</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
+    <script src="./js/blocka.js"></script>
+
+</body>
+
+</html>

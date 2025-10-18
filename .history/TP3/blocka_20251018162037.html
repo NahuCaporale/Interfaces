@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOCKA - Juego de Puzzle</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        .game-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .timer {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .level-selector {
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #667eea;
+            color: white;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+        }
+
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .image-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .image-thumb {
+            width: 100%;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .image-thumb:hover {
+            border-color: #667eea;
+            transform: scale(1.05);
+        }
+
+        .game-board {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin: 20px auto;
+            max-width: 500px;
+        }
+
+        .piece {
+            aspect-ratio: 1;
+            cursor: pointer;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .piece img {
+            width: 200%;
+            height: 200%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .piece:hover {
+            transform: scale(1.02);
+        }
+
+        /* Filtros de nivel */
+        .filter-grayscale img {
+            filter: grayscale(100%);
+        }
+
+        .filter-brightness img {
+            filter: brightness(1.3);
+        }
+
+        .filter-invert img {
+            filter: invert(100%);
+        }
+
+        .controls {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .help-btn {
+            background: #f59e0b;
+        }
+
+        .help-btn:hover {
+            background: #d97706;
+        }
+
+        .instructions {
+            background: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .instructions h3 {
+            margin-bottom: 10px;
+            color: #667eea;
+        }
+
+        .instructions ul {
+            margin-left: 20px;
+        }
+
+        .instructions li {
+            margin: 5px 0;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 400px;
+        }
+
+        .modal-content h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .record {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 BLOCKA</h1>
+        
+        <div class="instructions">
+            <h3>¿Cómo jugar?</h3>
+            <ul>
+                <li><strong>Click izquierdo:</strong> Rota la pieza hacia la izquierda</li>
+                <li><strong>Click derecho:</strong> Rota la pieza hacia la derecha</li>
+                <li>Completa la imagen rotando todas las piezas correctamente</li>
+                <li>Cada nivel tiene un filtro diferente que desaparece al ganar</li>
+            </ul>
+        </div>
+
+        <div class="game-info">
+            <div class="timer">⏱️ <span id="timer">00:00</span></div>
+            <div class="record">🏆 Récord: <span id="record">--:--</span></div>
+            <div class="level-selector">
+                <button onclick="selectLevel(1)">Nivel 1</button>
+                <button onclick="selectLevel(2)">Nivel 2</button>
+                <button onclick="selectLevel(3)">Nivel 3</button>
+            </div>
+        </div>
+
+        <div id="imageSelector" class="image-selector"></div>
+        
+        <div id="gameBoard" class="game-board hidden"></div>
+
+        <div class="controls">
+            <button class="help-btn" onclick="useHelp()" id="helpBtn">💡 Ayudita (+5 seg)</button>
+            <button onclick="resetGame()">🔄 Reiniciar</button>
+        </div>
+    </div>
+
+    <div id="victoryModal" class="modal">
+        <div class="modal-content">
+            <h2>🎉 ¡Felicidades!</h2>
+            <p>Completaste el nivel en <span id="finalTime"></span></p>
+            <p class="record">Nuevo récord: <span id="newRecord"></span></p>
+            <button onclick="closeModal()">Continuar</button>
+        </div>
+    </div>
+
+    <script>
+        // Banco de imágenes
+        const images = [
+            '/assets/imgsblocka/aurora?height=400&width=400',
+            '/placeholder.svg?height=400&width=400',
+            '/placeholder.svg?height=400&width=400',
+            '/placeholder.svg?height=400&width=400',
+            '/placeholder.svg?height=400&width=400',
+            '/placeholder.svg?height=400&width=400',
+            '/placeholder.svg?height=400&width=400'
+        ];
+
+        let currentLevel = 1;
+        let currentImage = '';
+        let pieces = [];
+        let startTime = null;
+        let timerInterval = null;
+        let helpUsed = false;
+
+        // Inicializar selector de imágenes
+        function initImageSelector() {
+            const selector = document.getElementById('imageSelector');
+            selector.innerHTML = '';
+            
+            images.forEach((img, index) => {
+                const thumb = document.createElement('img');
+                thumb.src = img;
+                thumb.className = 'image-thumb';
+                thumb.onclick = () => startGame(img);
+                selector.appendChild(thumb);
+            });
+        }
+
+        // Seleccionar nivel
+        function selectLevel(level) {
+            currentLevel = level;
+            document.getElementById('record').textContent = getRecord(level);
+        }
+
+        // Iniciar juego
+        function startGame(imageSrc) {
+            currentImage = imageSrc;
+            helpUsed = false;
+            document.getElementById('imageSelector').classList.add('hidden');
+            document.getElementById('gameBoard').classList.remove('hidden');
+            
+            createPuzzle();
+            startTimer();
+        }
+
+        // Crear puzzle
+        function createPuzzle() {
+            const board = document.getElementById('gameBoard');
+            board.innerHTML = '';
+            board.className = 'game-board';
+            
+            // Aplicar filtro según nivel
+            if (currentLevel === 1) board.classList.add('filter-grayscale');
+            if (currentLevel === 2) board.classList.add('filter-brightness');
+            if (currentLevel === 3) board.classList.add('filter-invert');
+            
+            pieces = [];
+            
+            // Crear 4 piezas
+            for (let i = 0; i < 4; i++) {
+                const piece = document.createElement('div');
+                piece.className = 'piece';
+                
+                const img = document.createElement('img');
+                img.src = currentImage;
+                
+                // Posicionar la imagen según la pieza
+                const row = Math.floor(i / 2);
+                const col = i % 2;
+                img.style.objectPosition = `${col * -100}% ${row * -100}%`;
+                
+                // Rotación aleatoria
+                const randomRotation = [0, 90, 180, 270][Math.floor(Math.random() * 4)];
+                img.style.transform = `rotate(${randomRotation}deg)`;
+                
+                piece.appendChild(img);
+                board.appendChild(piece);
+                
+                // Eventos de click
+                piece.addEventListener('click', (e) => rotatePiece(img, -90));
+                piece.addEventListener('contextmenu', (e) => {
+                    e.preventDefault();
+                    rotatePiece(img, 90);
+                });
+                
+                pieces.push({ img, correctRotation: 0, currentRotation: randomRotation });
+            }
+        }
+
+        // Rotar pieza
+        function rotatePiece(img, degrees) {
+            const pieceData = pieces.find(p => p.img === img);
+            pieceData.currentRotation = (pieceData.currentRotation + degrees) % 360;
+            if (pieceData.currentRotation < 0) pieceData.currentRotation += 360;
+            
+            img.style.transform = `rotate(${pieceData.currentRotation}deg)`;
+            
+            setTimeout(checkVictory, 600);
+        }
+
+        // Verificar victoria
+        function checkVictory() {
+            const allCorrect = pieces.every(p => p.currentRotation === p.correctRotation);
+            
+            if (allCorrect) {
+                stopTimer();
+                
+                // Quitar filtro
+                const board = document.getElementById('gameBoard');
+                board.className = 'game-board';
+                
+                setTimeout(() => {
+                    const time = document.getElementById('timer').textContent;
+                    document.getElementById('finalTime').textContent = time;
+                    
+                    const record = getRecord(currentLevel);
+                    if (record === '--:--' || timeToSeconds(time) < timeToSeconds(record)) {
+                        saveRecord(currentLevel, time);
+                        document.getElementById('newRecord').textContent = time;
+                    } else {
+                        document.getElementById('newRecord').textContent = record;
+                    }
+                    
+                    document.getElementById('victoryModal').classList.add('active');
+                }, 1000);
+            }
+        }
+
+        // Temporizador
+        function startTimer() {
+            startTime = Date.now();
+            timerInterval = setInterval(() => {
+                const elapsed = Math.floor((Date.now() - startTime) / 1000);
+                const minutes = Math.floor(elapsed / 60).toString().padStart(2, '0');
+                const seconds = (elapsed % 60).toString().padStart(2, '0');
+                document.getElementById('timer').textContent = `${minutes}:${seconds}`;
+            }, 1000);
+        }
+
+        function stopTimer() {
+            clearInterval(timerInterval);
+        }
+
+        // Ayuda
+        function useHelp() {
+            if (helpUsed || pieces.length === 0) return;
+            
+            helpUsed = true;
+            document.getElementById('helpBtn').disabled = true;
+            
+            // Encontrar primera pieza incorrecta
+            const incorrectPiece = pieces.find(p => p.currentRotation !== p.correctRotation);
+            if (incorrectPiece) {
+                incorrectPiece.currentRotation = 0;
+                incorrectPiece.img.style.transform = 'rotate(0deg)';
+                
+                // Añadir 5 segundos
+                startTime -= 5000;
+            }
+            
+            setTimeout(checkVictory, 600);
+        }
+
+        // Reiniciar
+        function resetGame() {
+            stopTimer();
+            document.getElementById('timer').textContent = '00:00';
+            document.getElementById('imageSelector').classList.remove('hidden');
+            document.getElementById('gameBoard').classList.add('hidden');
+            document.getElementById('helpBtn').disabled = false;
+        }
+
+        // Cerrar modal
+        function closeModal() {
+            document.getElementById('victoryModal').classList.remove('active');
+            resetGame();
+        }
+
+        // Récords (localStorage)
+        function getRecord(level) {
+            return localStorage.getItem(`blocka_record_${level}`) || '--:--';
+        }
+
+        function saveRecord(level, time) {
+            localStorage.setItem(`blocka_record_${level}`, time);
+            document.getElementById('record').textContent = time;
+        }
+
+        function timeToSeconds(timeStr) {
+            const [min, sec] = timeStr.split(':').map(Number);
+            return min * 60 + sec;
+        }
+
+        // Inicializar
+        initImageSelector();
+        document.getElementById('record').textContent = getRecord(1);
+    </script>
+</body>
+</html>
