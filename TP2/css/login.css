@@ -65,6 +65,19 @@ body {
 .form input::placeholder {
   font-family: 'NATS';
 }
+ #repContraseña{
+        padding-left: 2rem; /* En vez de margin-right */
+}
+.form label {
+    font-family: 'Roboto';
+    color: white;
+    text-shadow: #0A0C19 2px 2px 4px;
+    margin-bottom: 0rem;
+    display: block;
+    text-align: left;
+    width: 100%;
+        padding-left: 2rem; /* En vez de margin-right */
+}
 
 /* Estilos base del botón */
 .form-btn {
