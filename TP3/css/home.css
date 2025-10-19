@@ -335,10 +335,8 @@
     .navbar-collapse {
         max-width: 332px;
         width: 80vw;
-        /* O usa porcentaje */
         left: 0;
         top: 56px;
-        /* Altura de la navbar */
         position: fixed;
         height: 100vh;
         background: rgba(10, 12, 25, 0.95);
@@ -354,7 +352,28 @@
     }
 
     .navbar-toggler-icon {
+        width: 25px !important;
+        height: 25px !important;
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    .navbar-toggler-icon:hover {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(211, 127, 133, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        animation: pulso 1s ease-in-out infinite;
+    }
+
+    @keyframes pulso {
+        0% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-2px);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
     }
 
     .inicio {
@@ -477,10 +496,6 @@
         background: transparent;
     }
 
-    .navbar-toggler-icon {
-        width: 25px;
-        height: 25px;
-    }
 
     /*
     .perfil {
@@ -827,10 +842,6 @@
 
             &:nth-of-type(4) {
                 background: url("../assets/imgs/thumbnails/Deportes/table-tennis-ultra-mega-tournament.jpg") no-repeat 50% / cover;
-            }
-
-            &:nth-of-type(5) {
-                background: url("../assets/imgs/thumbnails/puzzle.jpg") no-repeat 50% / cover;
             }
 
             .content {

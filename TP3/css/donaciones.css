@@ -180,7 +180,6 @@ main.home {
     font-weight: bold;
 }
 
-/* Opcional: bordes suaves al hacer hover */
 .frecuencia-buttons button:hover {
     filter: brightness(1.2);
 }
