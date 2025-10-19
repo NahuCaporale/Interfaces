@@ -62,7 +62,7 @@
         margin: auto
     }
 
-    .loader-container h2{
+    .loader-container h2 {
         color: white;
         position: absolute;
         left: 49%;
@@ -80,29 +80,17 @@
 
     @keyframes giro {
         0% {
-            counter-increment: 20%;
-            transform: rotate(0deg);
-        }
-
-        25% {
-            counter-increment: 40%;
-
+            transform: rotate(0deg) scale(1);
         }
 
         50% {
-            counter-increment: 60%;
-        }
-
-        65% {
-            counter-increment: 80%;
+            transform: rotate(180deg) scale(1.2);
         }
 
         100% {
-            transform: rotate(360deg);
-            counter-increment: 100%;
+            transform: rotate(360deg) scale(1);
         }
     }
-
 
     @keyframes contador {
         0% {
@@ -233,8 +221,10 @@
         color: #D37F85;
     }
 
-
+    /*animacion donacion*/
     .donacionBoton {
+        position: relative;
+        overflow: visible;
         margin-right: 20px;
         justify-content: flex-end;
         border-radius: 20px;
@@ -244,7 +234,73 @@
 
     .donacionBoton:hover {
         background-color: #D37F85;
-        transition: ease-in-out.4s;
+        transform: translateY(-2px) scale(1.03);
+        transition: ease-in;
+        box-shadow: 0 12px 30px rgba(255, 20, 120, 0.25);
+
+    }
+
+    .donacionBoton::before,
+    .donacionBoton::after {
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: #D37F85;
+        border-radius: 50%;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    /* posicion de las particulas*/
+    .donacionBoton::before {
+        top: -10px;
+        left: 20px;
+    }
+
+    .donacionBoton::after {
+        bottom: -10px;
+        right: 20px;
+    }
+
+    .donacionBoton:hover::before,
+    .donacionBoton:hover::after {
+        opacity: 1;
+        animation: particleFloat 0.8s ease-out forwards;
+    }
+
+    @keyframes particleFloat {
+        0% {
+            opacity: 0;
+            transform: translate(0, 0) scale(0);
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+            transform: translate(var(--tx), var(--ty)) scale(1.5);
+        }
+    }
+
+    .donacionBoton::before {
+        top: -10px;
+        left: 0px;
+        --tx: -15px;
+        /* mueve izquierda*/
+        --ty: -5px;
+        /* mueve top */
+    }
+
+    .donacionBoton::after {
+        bottom: -10px;
+        right: 30px;
+        --tx: 20px;
+        /* mueve derecha*/
+        --ty: 5px;
+        /* mueve abajo*/
     }
 
     .donacionBoton a {
@@ -317,12 +373,55 @@
         border: none;
         text-decoration: none;
         list-style-type: none;
+        position: relative;
+        overflow: visible;
+        display: inline-block;
+        transition: background-color 0.4s ease;
     }
 
     .inicio a:hover {
-        color: white;
+        color: transparent;
         background-color: #D37F85;
-        transition: ease-in-out.4s;
+        box-shadow: 2px 12px 30px rgba(255, 20, 120, 0.25);
+        transition: ease-in-out 0.4s;
+    }
+
+    /* cabeza */
+    .inicio a::before {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: black;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        margin-left: -5px;
+        margin-top: -10px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    /* hombros*/
+    .inicio a::after {
+        content: '';
+        position: absolute;
+        width: 18px;
+        height: 10px;
+        background: black;
+        border-radius: 50% 50% 0 0;
+        top: 50%;
+        left: 50%;
+        margin-left: -9px;
+        margin-top: -2px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    /* mostrar icono*/
+    .inicio a:hover::before,
+    .inicio a:hover::after {
+        opacity: 1;
     }
 
     .navbar-collapse {
@@ -519,9 +618,7 @@
         }
     }
 
-    .carousel-wrapper:hover .carousel-slides {
-        animation-play-state: paused;
-    }
+
 
     .carousel-slide {
         width: 25%;
@@ -539,77 +636,78 @@
 
     @keyframes slideTransition {
 
+        /*1 img */
         0%,
-        21% {
+        20% {
             opacity: 1;
             transform: scale(1) translateY(0) rotate(0deg);
             filter: brightness(1);
         }
 
-        22%,
+        21%,
+        25% {
+            opacity: 0.3;
+            transform: scale(0.85) translateY(-30px) rotate(-3deg);
+            filter: brightness(0.6);
+        }
+
         26% {
-            opacity: 0.3;
-            transform: scale(0.85) translateY(-30px) rotate(-3deg);
-            filter: brightness(0.6);
-        }
-
-        27% {
             opacity: 0.8;
             transform: scale(1.08) translateY(-5px) rotate(1deg);
             filter: brightness(0.85);
         }
 
-        28%,
-        46% {
+        27%,
+        45% {
             opacity: 1;
             transform: scale(1) translateY(0) rotate(0deg);
             filter: brightness(1);
         }
 
-        /* Segundo slide */
-        47%,
+        /* 2 img */
+        46%,
+        50% {
+            opacity: 0.3;
+            transform: scale(0.85) translateY(-30px) rotate(-3deg);
+            filter: brightness(0.6);
+        }
+
         51% {
-            opacity: 0.3;
-            transform: scale(0.85) translateY(-30px) rotate(-3deg);
-            filter: brightness(0.6);
-        }
-
-        52% {
             opacity: 0.8;
             transform: scale(1.08) translateY(-5px) rotate(1deg);
             filter: brightness(0.85);
         }
 
-        53%,
-        71% {
+        52%,
+        70% {
             opacity: 1;
             transform: scale(1) translateY(0) rotate(0deg);
             filter: brightness(1);
         }
 
-        /* Tercer slide */
-        72%,
+        /* 3 img */
+        71%,
+        75% {
+            opacity: 0.3;
+            transform: scale(0.85) translateY(-30px) rotate(-3deg);
+            filter: brightness(0.6);
+        }
+
         76% {
-            opacity: 0.3;
-            transform: scale(0.85) translateY(-30px) rotate(-3deg);
-            filter: brightness(0.6);
-        }
-
-        77% {
             opacity: 0.8;
             transform: scale(1.08) translateY(-5px) rotate(1deg);
             filter: brightness(0.85);
         }
 
-        78%,
-        96% {
+        77%,
+        95% {
             opacity: 1;
             transform: scale(1) translateY(0) rotate(0deg);
             filter: brightness(1);
         }
 
-        /* Cuarto slide */
-        97%,
+        /* cuarta img */
+        96%,
         100% {
             opacity: 0.3;
             transform: scale(0.85) translateY(-30px) rotate(-3deg);
@@ -1123,6 +1221,7 @@
             height: 83px;
             scroll-snap-align: start;
         }
+
         .container>div {
             flex: 0 0 calc(25% - 15px);
         }
@@ -1244,26 +1343,6 @@
 
 
 
-        /*boton cerrar menu*/
-        .close-menu {
-
-            display: block;
-            position: absolute;
-            top: 20px;
-            right: 25px;
-            background: none;
-            border: none;
-            font-size: 40px;
-            color: white;
-            cursor: pointer;
-            z-index: 2000;
-            transition: color 0.3s ease;
-
-        }
-
-        .close-menu:hover {
-            color: #D37F85;
-        }
 
         /*saco clase ms-3 de boostrap*/
         .navbar .navbar-nav.ms-3 {
@@ -1374,7 +1453,7 @@
             padding: 0;
         }
 
-       
+
 
         .slide-info p {
             font-size: 10px;

@@ -22,7 +22,7 @@ const registerForm = document.querySelector("form.register");
 const regPass = document.getElementById("passwordRegister");
 const regEmail = document.getElementById("emailRegister");
 const regFullname = document.getElementById("fullnameRegister");
-const regNickname= document.getElementById("nicknameRegister");
+const regNickname = document.getElementById("nicknameRegister");
 
 const regRepPass = document.getElementById("repPass");
 
@@ -72,8 +72,6 @@ regNickname.addEventListener("focus", () => {
   labelNick.classList.add("visible");
 });
 
-
-
 //cambio a registro y viceversa
 toggle.addEventListener("change", () => {
   if (toggle.checked) {
@@ -84,34 +82,60 @@ toggle.addEventListener("change", () => {
     loginForm.classList.add("active");
   }
 });
-
 //simular login
 document.addEventListener("DOMContentLoaded", () => {
+  let original = btnForm.value;
+
   loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
     clearError();
-    if (logNick.value === "" && logPass.value === "") {
-      showError("Por favor, complete los campos.");
-    } else if (logNick != "" && logNick.value != "Nico") {
-      showError("Usuario incorrecto");
-    } else if (logPass.value != "1234") {
-      showError("Contraseña incorrecta");
-    } else {
-      btnForm.classList.add("loading");
-      btnForm.value = "⏳";
 
-      setTimeout(() => {
+    if (logNick.value === "" || logPass.value === "") {
+      showError("Por favor, complete los campos.");
+      return; 
+    }
+
+    btnForm.classList.add("loading");
+    btnForm.value = "⏳";
+
+    setTimeout(() => {
+      // Validar usuario
+      if (logNick.value !== "Nico") {
+        btnForm.classList.remove("loading");
+        btnForm.classList.add("failed");
+        btnForm.value = "✗";
+        showError("Usuario incorrecto");
+
+        setTimeout(() => {
+          btnForm.classList.remove("failed");
+          btnForm.value = original;
+        }, 1200);
+      }
+      else if (logPass.value !== "1234") {
+        btnForm.classList.remove("loading");
+        btnForm.classList.add("failed");
+        btnForm.value = "✗";
+        showError("Contraseña incorrecta");
+
+        setTimeout(() => {
+          btnForm.classList.remove("failed");
+          btnForm.value = original;
+        }, 1200);
+      }
+      // Login exitoso
+      else {
         btnForm.classList.remove("loading");
         btnForm.classList.add("success");
         btnForm.value = "✓";
+
         setTimeout(() => {
-          btnForm.classList.add("form-btn-check");
           window.location.replace("index.html");
         }, 1200);
-      }, 1200);
-    }
+      }
+    }, 1200);
   });
 });
+
 //errores de login
 function showError(text) {
   const error = document.createElement("p");
@@ -143,13 +167,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(() => {
       // inicio correcto
-      btnRegistro.classList.remove("loading");
-      btnRegistro.classList.add("success");
-      btnRegistro.value = "✓";
+      if (
+        regEmail.value === "" ||
+        regFullname.value === "" ||
+        regNickname.value === "" ||
+        regPass.value === "" ||
+        regRepPass.value === ""
+      ) {
+        // Error - campos vacíos
+        btnRegistro.classList.remove("loading");
+        btnRegistro.classList.add("failed");
+        btnRegistro.value = "✗";
 
-      setTimeout(() => {
-        window.location.replace("index.html");
-      }, 1200);
+        setTimeout(() => {
+          btnRegistro.classList.remove("failed");
+          btnRegistro.value = originalValue; // Vuelve al texto original
+        }, 1200);
+      } else {
+        btnRegistro.classList.remove("loading");
+        btnRegistro.classList.add("success");
+        btnRegistro.value = "✓";
+        setTimeout(() => {
+          window.location.replace("index.html");
+        }, 1200);
+      }
     }, 1200);
   });
 });
@@ -196,4 +237,26 @@ function showErrorRegister(div, text) {
   div.style.display = "block";
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  // Seleccionamos los elementos de ayuda para el campo USUARIO
+  const userHelpIcon = document.getElementById("userHelpIcon");
+  const userHelpText = document.getElementById("userHelpText");
 
+  // Seleccionamos los elementos de ayuda para el campo CONTRASEÑA
+  const passHelpIcon = document.getElementById("passHelpIcon");
+  const passHelpText = document.getElementById("passHelpText");
+
+  // Función para mostrar/ocultar el texto de ayuda del USUARIO
+  if (userHelpIcon) {
+    userHelpIcon.addEventListener("click", () => {
+      userHelpText.classList.toggle("visible");
+    });
+  }
+
+  // Función para mostrar/ocultar el texto de ayuda de la CONTRASEÑA
+  if (passHelpIcon) {
+    passHelpIcon.addEventListener("click", () => {
+      passHelpText.classList.toggle("visible");
+    });
+  }
+});

@@ -22,7 +22,7 @@ window.addEventListener("load", () => {
         contenido.style.opacity = 1;
       }, 5);
     }, 10);
-  }, 10);
+  }, 5000);
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -60,7 +60,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-
-
-
-
