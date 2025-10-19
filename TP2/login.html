@@ -12,77 +12,63 @@
 </head>
 
 <body>
-	<section class="container">
-		<section class="login-section">
-			<img src="assets/imgs/logocometweb-removebg-preview.png">
+    <section class="container">
+        <section class="login-section">
+            <img src="assets/imgs/logocometweb-removebg-preview.png">
 
-			<!-- Toggle -->
-			<input type="checkbox" id="toggle" class="toggle toggleCheckbox" />
-			<label for="toggle" class="toggleContainer">
-				<div>Iniciar</div>
-				<div>Registro</div>
-			</label>
+            <input type="checkbox" id="toggle" class="toggle toggleCheckbox" />
+            <label for="toggle" class="toggleContainer">
+                <div>Iniciar</div>
+                <div>Registro</div>
+            </label>
 
-			<!-- Formulario Login -->
+            <form class="form login active" id="loguear">
+                <h3 class="text-up-input">Usuario</h3>
+                <input type="text" name="email" placeholder="Usuario" id="nicknameLogin">
 
-			<form class="form login active" id="loguear">
-				<label for="usuario">Usuario</label>
-				<input type="text" name="email" placeholder="Ej: Nick123" id="nicknameLogin">
+                <h3 class="text-up-input">Contraseña</h3>
+                <input type="password" name="password" placeholder="Contraseña" id="passwordLogin">
+                <input type="submit" value="Iniciar Sesion" class="form-btn ">
+                <div class="message"></div>
+            </form>
 
+            <form class="form register">
+                <h3 class="text-up-input">Nombre completo</h3>
+                <input type="text" name="fullname" placeholder="Juan martinez" id="fullnameRegister">
+                <div class="messageFullname"></div>
 
-				<label for="contraseña">Contraseña</label>
-				<input type="password" name="password" placeholder="Contraseña" id="passwordLogin">
-				<input type="submit" value="Iniciar Sesion" class="form-btn ">
-				<div class="message">
-				</div>
-			</form>
+                <h3 class="text-up-input">Usuario</h3>
+                <div class="input-container">
+                    <input type="text" name="nickname" placeholder="juanmartinez1" maxlength="10" id="nicknameRegister">
+                    <i class="fa-solid fa-question help-icon" id="userHelpIcon"></i>
+                    <div class="help-text" id="userHelpText">
+                        No uses espacios ni caracteres especiales.
+                    </div>
+                </div>
 
-			<!-- Formulario Register -->
-			<form class="form register">
-				<label for="nombre">Nombre</label>
+                <h3 class="text-up-input">Email</h3>
+                <input type="email" name="email" placeholder="juanmartinez@gmail.com" id="emailRegister">
+                <div class="emailMessage"></div>
 
-				<input type="text" name="fullname" placeholder="EJ: Tomas Montoya" id="fullnameRegister">
-				<div class="messageFullname">
-				</div>
-				<label for="usuario">Usuario</label>
+                <h3 class="text-up-input">Contraseña</h3>
+                <div class="input-container">
+                    <input type="password" name="password" placeholder="*******" id="passwordRegister">
+                    <i class="fa-solid fa-question help-icon" id="passHelpIcon"></i>
+                    <div class="help-text" id="passHelpText">
+                        Debe tener 8+ caracteres, una mayúscula y un número.
+                    </div>
+                </div>
+                <div class="passMessage"></div>
 
-				<div class="input-container">
-					<input type="text" name="nickname" placeholder="Ej: Tomi123" maxlength="10" id="nicknameRegister">
-					<button id="helpBtn" type="button" popovertarget="popoverNickname">
-						<i class="fa-solid fa-question" style="color: #ffffff;"></i>
-					</button>
+                <h3 class="text-up-input">Repetir contraseña</h3>
+                <input type="password" name="repassword" placeholder="*******" id="repPass">
+                <input type="submit" value="Completar registro" class="form-btn">
+            </form>
 
-					<!--
-					<div id="popoverNickname" popover="auto">
-						<p>10 caracteres máximo</p>
-					</div>-->
-				</div>
-				<label for="email">Email</label>
+        </section>
+    </section>
 
-				<input type="email" name="email" placeholder="Enter email" id="emailRegister">
-				<div class="emailMessage">
-				</div>
-				<label for="usuario">Contraseña</label>
-
-				<div class="input-container">
-
-					<input type="password" name="password" placeholder="Contraseña" id="passwordRegister">
-					<button type="button" id="helpBtn" popovertarget="popoverContraseña">
-						<i class=" fa-solid fa-question" style="color: #ffffff;"></i>
-					</button>
-				</div>
-				<div class="passMessage">
-				</div>
-				<label for="repContraseña" id="repContraseña">Repetir contraseña</label>
-
-				<input type="password" name="repassword" placeholder="Repetir Contraseña" id="repPass">
-				<input type="submit" value="Completar registro" class="form-btn">
-			</form>
-
-		</section>
-	</section>
-
-	<script type="text/javascript" src="js/access.js"></script>
+    <script type="text/javascript" src="js/access.js"></script>
 </body>
 
 </html>

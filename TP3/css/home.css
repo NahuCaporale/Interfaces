@@ -829,6 +829,10 @@
                 background: url("../assets/imgs/thumbnails/Deportes/table-tennis-ultra-mega-tournament.jpg") no-repeat 50% / cover;
             }
 
+            &:nth-of-type(5) {
+                background: url("../assets/imgs/thumbnails/puzzle.jpg") no-repeat 50% / cover;
+            }
+
             .content {
                 font-size: 0.5rem;
                 color: #fff;
