@@ -1,0 +1,197 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+canvas {
+    border: 2px solid black;
+    margin-top: 20px;
+}
+
+#start-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    font-size: 70px;
+    text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 2;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    border-style: none;
+}
+#start-btn i{
+    color: 1a2785;
+}
+
+.canvas-wrapper-container:hover::after,
+.canvas-wrapper:hover #start-btn {
+    opacity: 1;
+    visibility: visible;
+}
+
+/*POPUP cuando ganas nivel*/
+.modal {
+    display: none;
+    /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    background-color: none;
+}
+.modal-content {
+    background-image: linear-gradient(to bottom, #181c3b, #444fa3e5);
+    padding: 20px 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 40% !important;
+ 
+}
+
+.modal-content h2 {
+    color: white;
+}
+.modal-content p{
+    color: white;
+}
+
+.modal-content button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+
+.galeria {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.galeria-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.galeria-img.active {
+    opacity: 1;
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px #1a2785;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+/* Footer debajo del canvas */
+.footer-canvas {
+    width: 100%; /* mismo ancho que el canvas */
+    margin: 0 auto; /* centrar */
+    padding: 10px 0;
+    background-color: #0a3a75; /* color de fondo, adaptalo a tu diseño */
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/* Título del juego en footer */
+.footer-canvas h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+/* Iconos del footer */
+.footer-canvas .icons-juego i {
+    margin-left: 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s, color 0.2s;
+    margin-right: 10px;
+}
+
+.footer-canvas .icons-juego i:hover {
+    transform: scale(1.1);
+}
+
+/* Galería debajo del footer */
+#galeriaSeleccion {
+    width: 60%; 
+    margin: 10px auto 0; 
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    border-radius: 8px;
+    padding: 5px 0;
+}
+
+/* Imágenes de la galería */
+#galeriaSeleccion .galeria-img {
+    width: 80px; 
+    height: 80px;
+    object-fit: cover;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
+}
+
+/* Hover para la animación de selección */
+#galeriaSeleccion .galeria-img.hovered {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.7);
+    filter: brightness(1.2);
+}
+
+
+#MyCanvas {
+    display: block; /* elimina el espacio inferior */
+    margin: 0 auto; /* centra */
+    border-radius: 8px 8px 0 0; /* opcional, para redondear solo arriba */
+}
+
+
+
+
+
+
+.canvas-wrapper {
+    width: 1300px;          /* el ancho total del contenedor */
+    margin: 0 auto;         /* centrar */
+    background-color: #000; /* color negro a los costados */
+    display: flex;
+    justify-content: center; /* centra el canvas dentro */
+    padding: 0; /* sin padding extra */
+    
+}
+
+#MyCanvas {
+    display: block;
+    width: 600px;  /* mantiene el tamaño actual */
+    height: 700px;
+}
