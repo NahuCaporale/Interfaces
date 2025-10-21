@@ -1,0 +1,185 @@
+class PuzzleGame {
+    constructor(canvasId, timerId, nivelDisplayId) {
+        this.canvas = document.getElementById(canvasId);
+        this.ctx = this.canvas.getContext("2d");
+        this.timerDisplay = document.getElementById(timerId);
+        this.nivelDisplay = document.getElementById(nivelDisplayId);
+        this.partes = [];
+        this.img = new Image();
+        this.nivelActual = 1;
+        this.totalNiveles = 4;
+        this.segundos = 0;
+        this.timerInterval = null;
+        this.juegoIniciado = false;
+        this.imagenActualIndex = 0;
+
+        this.startBtn = document.getElementById("start-btn");
+        this.nextLevelBtn = document.getElementById("nextLevelBtn");
+        this.victoryModal = document.getElementById("victoryModal");
+
+        this.initEvents();
+        this.loadImage(this.imagenActualIndex);
+    }
+
+    initEvents() {
+        this.startBtn.addEventListener("click", () => {
+            this.startBtn.disabled = true;
+            this.iniciarJuego();
+        });
+
+        this.nextLevelBtn.addEventListener("click", () => {
+            this.victoryModal.style.display = "none";
+            this.siguienteNivel();
+        });
+
+        this.canvas.addEventListener("mousedown", (e) => this.rotarParte(e));
+        this.canvas.addEventListener("contextmenu", (e) => e.preventDefault());
+    }
+
+    loadImage(index) {
+        this.img.src = IMAGE_BANK[index];
+        this.img.onload = () => {
+            this.inicializarPartes();
+            this.desordenarPartes();
+            this.dibujarPartes();
+        };
+    }
+
+    inicializarPartes() {
+        const w = this.canvas.width / 2;
+        const h = this.canvas.height / 2;
+        this.partes = [
+            { x: 0, y: 0, w, h, angle: 0 },
+            { x: w, y: 0, w, h, angle: 0 },
+            { x: 0, y: h, w, h, angle: 0 },
+            { x: w, y: h, w, h, angle: 0 }
+        ];
+    }
+
+    desordenarPartes() {
+        const opciones = [0, 90, 180, 270];
+        this.partes.forEach(p => p.angle = opciones[Math.floor(Math.random() * opciones.length)]);
+    }
+
+    aplicarFiltro() {
+        switch (this.nivelActual) {
+            case 1:
+                this.ctx.filter = "grayscale(100%)";
+                break;
+            case 2:
+                this.ctx.filter = "sepia(100%)";
+                break;
+            case 3:
+                this.ctx.filter = "invert(100%)";
+                break;
+            case 4:
+                this.ctx.filter = "brightness(120%) contrast(110%)";
+                break;
+            default:
+                this.ctx.filter = "none";
+        }
+    }
+
+    dibujarPartes() {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        this.aplicarFiltro();
+
+        const imgW = this.img.width / 2;
+        const imgH = this.img.height / 2;
+
+        this.partes.forEach((parte, i) => {
+            this.ctx.save();
+            const cx = parte.x + parte.w / 2;
+            const cy = parte.y + parte.h / 2;
+            this.ctx.translate(cx, cy);
+            this.ctx.rotate(parte.angle * Math.PI / 180);
+            this.ctx.drawImage(
+                this.img,
+                (i % 2) * imgW,
+                Math.floor(i / 2) * imgH,
+                imgW,
+                imgH,
+                -parte.w / 2,
+                -parte.h / 2,
+                parte.w,
+                parte.h
+            );
+            this.ctx.restore();
+        });
+        // Reset filter para evitar acumular efectos
+        this.ctx.filter = "none";
+    }
+
+    rotarParte(e) {
+        if (!this.juegoIniciado) return;
+
+        const rect = this.canvas.getBoundingClientRect();
+        const mouseX = e.clientX - rect.left;
+        const mouseY = e.clientY - rect.top;
+
+        this.partes.forEach(parte => {
+            if (
+                mouseX > parte.x && mouseX < parte.x + parte.w &&
+                mouseY > parte.y && mouseY < parte.y + parte.h
+            ) {
+                parte.angle += (e.button === 0 ? -90 : 90);
+                this.dibujarPartes();
+                if (this.esVictoria()) this.mostrarModal();
+            }
+        });
+    }
+
+    esVictoria() {
+        return this.partes.every(parte => parte.angle % 360 === 0);
+    }
+
+    mostrarModal() {
+        this.juegoIniciado = false;
+        clearInterval(this.timerInterval);
+        this.victoryModal.style.display = "flex";
+        document.getElementById("tiempoFinal").textContent = `Tiempo: ${this.formatearTiempo(this.segundos)}`;
+    }
+
+    iniciarJuego() {
+        this.juegoIniciado = true;
+        this.segundos = 0;
+        this.timerDisplay.textContent = this.formatearTiempo(this.segundos);
+        this.timerInterval = setInterval(() => {
+            this.segundos++;
+            this.timerDisplay.textContent = this.formatearTiempo(this.segundos);
+        }, 1000);
+        this.desordenarPartes();
+        this.dibujarPartes();
+        this.actualizarNivelDisplay();
+    }
+
+    siguienteNivel() {
+        if (this.nivelActual < this.totalNiveles) {
+            this.nivelActual++;
+            this.imagenActualIndex = (this.imagenActualIndex + 1) % IMAGE_BANK.length;
+            this.loadImage(this.imagenActualIndex);
+            this.iniciarJuego();
+        } else {
+            alert("¡Completaste todos los niveles!");
+        }
+    }
+
+    actualizarNivelDisplay() {
+        this.nivelDisplay.textContent = `Nivel: ${this.nivelActual}`;
+    }
+
+    formatearTiempo(seg) {
+        const min = Math.floor(seg / 60).toString().padStart(2, "0");
+        const sec = (seg % 60).toString().padStart(2, "0");
+        return `${min}:${sec}`;
+    }
+}
+
+// Inicializar juego
+const puzzle = new PuzzleGame("MyCanvas", "timer", "nivelDisplay");
+img.onload = () => {
+    const canvas = document.getElementById('MyCanvas');
+    const ctx = canvas.getContext('2d');
+    ctx.filter = 'grayscale(100%)'; // prueba con un filtro simple
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+};
