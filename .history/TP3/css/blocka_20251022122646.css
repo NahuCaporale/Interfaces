@@ -506,7 +506,7 @@ button#boton-empezar:hover {
 }
 
 .stat-value {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
     color: #ffff;
 }
@@ -528,7 +528,6 @@ button#boton-empezar:hover {
     display: flex;
     gap: 15px;
     justify-content: center;
-    margin-bottom: 10px;
 }
 
 /* Responsive */

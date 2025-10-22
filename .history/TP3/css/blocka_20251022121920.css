@@ -427,12 +427,12 @@ i.fa-solid.fa-play {
     justify-content: center;
 }
 
-.footer-icons i:hover {
+.footer-icon:hover {
+    background: rgba(255, 255, 255, 0.1);
     transform: scale(1.1);
-    color: #959ead;
 }
 
-.footer-icons svg {
+.footer-icon svg {
     width: 20px;
     height: 20px;
 }
@@ -448,10 +448,8 @@ i.fa-solid.fa-play {
     text-align: center;
 }
 
-button#boton-siguiente-nivel {
+.button#boton-siguiente-nivel {
     background-color: #2246a269;
-    font-size: 16px !important;
-    font-family: 'NATS', sans-serif ;
 }
 
 button#boton-empezar {
@@ -506,7 +504,7 @@ button#boton-empezar:hover {
 }
 
 .stat-value {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
     color: #ffff;
 }
@@ -528,7 +526,6 @@ button#boton-empezar:hover {
     display: flex;
     gap: 15px;
     justify-content: center;
-    margin-bottom: 10px;
 }
 
 /* Responsive */

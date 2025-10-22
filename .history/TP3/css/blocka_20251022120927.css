@@ -139,7 +139,7 @@ h1.game-title {
 }
 .btn-primary:hover {
     transform: translateY(-1px);
-    box-shadow: 0px 5px 20px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
 }
 
 .btn-secondary {
@@ -150,27 +150,16 @@ h1.game-title {
 
 }
 
-button.btn.btn-secondary:hover{
- background-color: #ffffff70 !important;
-    color: black ;
-    font-size: 1rem;
+.btn-secondary:hover {
+    background: #d0d0d0;
+    color: #ffffff9a !important;
 }
-
 
 .btn-small {
-    color: #fff !important;
-    border-color: #6c757d !important;
     padding: 10px 20px;
     font-family: 'NATS', sans-serif;
+
     font-size: 0.9rem;
-    margin-right: 10px;
-}
-
-.btn-small:hover {
-    background-color: #ffffff70;
-    color: black !important;
-    font-size: 1rem;
-
 }
 
 /* Level Select */
@@ -353,6 +342,21 @@ i.fa-solid.fa-play {
     font-size: 19px;
 }
 
+.btn-small {
+    color: #fff !important;
+    border-color: #6c757d !important;
+    padding: 10px 20px;
+    font-family: 'NATS', sans-serif;
+    font-size: 0.9rem;
+    margin-right: 10px;
+}
+
+.btn-small:hover {
+    background-color: #ffffff70;
+    color: black !important;
+    font-size: 1rem;
+
+}
 
 .canvas-container {
     display: flex;
@@ -414,7 +418,7 @@ i.fa-solid.fa-play {
     gap: 15px;
 }
 
-.footer-icons {
+.footer-icon {
     background: transparent;
     border: none;
     color: white;
@@ -427,12 +431,12 @@ i.fa-solid.fa-play {
     justify-content: center;
 }
 
-.footer-icons i:hover {
+.footer-icon:hover {
+    background: rgba(255, 255, 255, 0.1);
     transform: scale(1.1);
-    color: #959ead;
 }
 
-.footer-icons svg {
+.footer-icon svg {
     width: 20px;
     height: 20px;
 }
@@ -448,10 +452,8 @@ i.fa-solid.fa-play {
     text-align: center;
 }
 
-button#boton-siguiente-nivel {
+.button#boton-siguiente-nivel {
     background-color: #2246a269;
-    font-size: 16px !important;
-    font-family: 'NATS', sans-serif ;
 }
 
 button#boton-empezar {
@@ -499,14 +501,14 @@ button#boton-empezar:hover {
 }
 
 .stat-label {
-    font-size: 20px;
+    font-size: 0.9rem;
     color: #666;
     font-family: 'Mouse Memoirs';
 
 }
 
 .stat-value {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
     color: #ffff;
 }
@@ -528,7 +530,6 @@ button#boton-empezar:hover {
     display: flex;
     gap: 15px;
     justify-content: center;
-    margin-bottom: 10px;
 }
 
 /* Responsive */

@@ -424,14 +424,12 @@ function verificarVictoria() {
 
     // Mostrar pantalla de victoria
     document.getElementById("tiempo-final").textContent = formatearTiempo(tiempoActual)
-    document.getElementById("nivel-completado").textContent = nivel
 
-    // Cambiar el título según el nivel
-    const tituloVictoria = document.querySelector(".victory-title")
+    const mensajeNivel = document.getElementById("nivel-completado")
     if (nivel < 3) {
-      tituloVictoria.textContent = "¡Nivel Completado!"
+      mensajeNivel.textContent = ``
     } else {
-      tituloVictoria.textContent = "¡Completaste todos los niveles!"
+      mensajeNivel.textContent = "¡Completaste todos los niveles!"
     }
 
     // Mostrar/ocultar botón de siguiente nivel
@@ -448,7 +446,6 @@ function verificarVictoria() {
     mostrarPantallaVictoria()
   }
 }
-
 
 function dibujarImagenVictoria() {
   if (!ctxVictoria || !estadoJuego.imagenActual) return

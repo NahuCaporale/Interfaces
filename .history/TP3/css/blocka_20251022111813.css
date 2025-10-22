@@ -88,7 +88,9 @@ h1.game-title {
     color: #ff0921;
 }
 
-
+.btn-primary {
+    background-color: #11142a !important;
+}
 
 .game-title {
     font-weight: bold;
@@ -105,7 +107,6 @@ h1.game-title {
     font-size: 1.2rem;
     color: #666;
     margin-bottom: 40px;
-    font-family: 'NATS', sans-serif;
 }
 
 .menu-buttons {
@@ -128,6 +129,9 @@ h1.game-title {
     letter-spacing: 1px;
 }
 
+button#boton-empezar {
+ 
+    margin-left: 140px;
 
 .btn-primary {
     color: white;
@@ -137,40 +141,28 @@ h1.game-title {
     background-color: #2246a269 !important;
 
 }
+
 .btn-primary:hover {
     transform: translateY(-1px);
-    box-shadow: 0px 5px 20px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 15px 25px rgba(102, 126, 234, 0.4);
 }
 
 .btn-secondary {
     color: #333;
     background-color: transparent !important;
     border-color: #ffff;
-    font-family: 'NATS', sans-serif;
-
 }
 
-button.btn.btn-secondary:hover{
- background-color: #ffffff70 !important;
-    color: black ;
-    font-size: 1rem;
-}
+.btn-secondary:hover {
+    background: #d0d0d0;
+    transform: translateY(-1px);
+    color: #ffffff9a !important;
 
+}
 
 .btn-small {
-    color: #fff !important;
-    border-color: #6c757d !important;
     padding: 10px 20px;
-    font-family: 'NATS', sans-serif;
     font-size: 0.9rem;
-    margin-right: 10px;
-}
-
-.btn-small:hover {
-    background-color: #ffffff70;
-    color: black !important;
-    font-size: 1rem;
-
 }
 
 /* Level Select */
@@ -184,13 +176,11 @@ button.btn.btn-secondary:hover{
 }
 
 .level-select-container h2 {
-    font-family: 'NATS', sans-serif;
     font-size: 2.5rem;
     margin-bottom: 30px;
     text-align: center;
-    color: #ffff;
+    color: #667eea;
 }
-
 
 .levels-grid {
     display: grid;
@@ -247,12 +237,9 @@ button.btn.btn-secondary:hover{
     font-size: 2.5rem;
     margin-bottom: 10px;
     color: #ffff;
-    font-family: 'NATS', sans-serif;
-
 }
 
 .galeria-subtitle {
-    font-family: 'NATS', sans-serif;
     font-size: 1.2rem;
     color: #666;
     margin-bottom: 30px;
@@ -322,7 +309,6 @@ button.btn.btn-secondary:hover{
 
 .game-info {
     display: flex;
-    margin-left: 10px;
     gap: 30px;
 }
 
@@ -353,6 +339,10 @@ i.fa-solid.fa-play {
     font-size: 19px;
 }
 
+.btn-small {
+    color: #fff !important;
+    border-color: #6c757d !important;
+}
 
 .canvas-container {
     display: flex;
@@ -414,7 +404,7 @@ i.fa-solid.fa-play {
     gap: 15px;
 }
 
-.footer-icons {
+.footer-icon {
     background: transparent;
     border: none;
     color: white;
@@ -427,12 +417,12 @@ i.fa-solid.fa-play {
     justify-content: center;
 }
 
-.footer-icons i:hover {
+.footer-icon:hover {
+    background: rgba(255, 255, 255, 0.1);
     transform: scale(1.1);
-    color: #959ead;
 }
 
-.footer-icons svg {
+.footer-icon svg {
     width: 20px;
     height: 20px;
 }
@@ -441,57 +431,28 @@ i.fa-solid.fa-play {
 .victory-container {
     background: url(../assets/Fondo.svg);
     border-radius: 20px;
-    padding: 10px;
+    padding: 40px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     width: 100%;
     max-width: 600px;
     text-align: center;
 }
 
-button#boton-siguiente-nivel {
+.button#boton-siguiente-nivel {
     background-color: #2246a269;
-    font-size: 16px !important;
-    font-family: 'NATS', sans-serif ;
-}
-
-button#boton-empezar {
-    border-radius: 25px;
-    margin-left: 20px;
-}
-button#boton-empezar:hover {
-    box-shadow: 0px 1px 10px #0d6efd;
-}
-.icon-latido{
-    /* ✨ Animación de “latido” del ícono */
-  display: inline-block;
-  animation: latido 1s ease-in-out infinite;
-}
-
-@keyframes latido {
-  0%, 100% {
-    transform: scale(1);
-  }
-  30% {
-    transform: scale(1.12);
-  }
-  60% {
-    transform: scale(1);
-  }
-  
 }
 
 .victory-title {
     font-size: 2.5rem;
     color: #ffff;
-    margin-bottom: 10px;
-    font-family: 'NATS';
+    margin-bottom: 30px;
 }
 
 .victory-stats {
     display: flex;
     justify-content: center;
     gap: 40px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 .stat-item {
@@ -499,14 +460,13 @@ button#boton-empezar:hover {
 }
 
 .stat-label {
-    font-size: 20px;
+    font-size: 0.9rem;
     color: #666;
-    font-family: 'Mouse Memoirs';
-
+    margin-bottom: 5px;
 }
 
 .stat-value {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
     color: #ffff;
 }
@@ -528,7 +488,6 @@ button#boton-empezar:hover {
     display: flex;
     gap: 15px;
     justify-content: center;
-    margin-bottom: 10px;
 }
 
 /* Responsive */
@@ -567,4 +526,3 @@ button#boton-empezar:hover {
         flex-direction: column;
         gap: 15px;
     }
-}

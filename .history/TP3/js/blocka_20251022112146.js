@@ -408,6 +408,7 @@ function rotarPieza(indice, sentidoHorario) {
   dibujarJuego()
   verificarVictoria()
 }
+
 function verificarVictoria() {
   const todasCorrectas = estadoJuego.piezas.every((pieza) => pieza.rotacion === pieza.rotacionCorrecta)
 
@@ -426,14 +427,6 @@ function verificarVictoria() {
     document.getElementById("tiempo-final").textContent = formatearTiempo(tiempoActual)
     document.getElementById("nivel-completado").textContent = nivel
 
-    // Cambiar el título según el nivel
-    const tituloVictoria = document.querySelector(".victory-title")
-    if (nivel < 3) {
-      tituloVictoria.textContent = "¡Nivel Completado!"
-    } else {
-      tituloVictoria.textContent = "¡Completaste todos los niveles!"
-    }
-
     // Mostrar/ocultar botón de siguiente nivel
     const botonSiguiente = document.getElementById("boton-siguiente-nivel")
     if (nivel < 3) {
@@ -448,7 +441,6 @@ function verificarVictoria() {
     mostrarPantallaVictoria()
   }
 }
-
 
 function dibujarImagenVictoria() {
   if (!ctxVictoria || !estadoJuego.imagenActual) return

@@ -448,11 +448,13 @@ i.fa-solid.fa-play {
     text-align: center;
 }
 
-button#boton-siguiente-nivel {
+.button#boton-siguiente-nivel {
     background-color: #2246a269;
-    font-size: 16px !important;
-    font-family: 'NATS', sans-serif ;
+    border-radius: 'NATS';
+    font-family: 'NATS', 'sans-serif';
+    font-size: 16px ! Important;
 }
+
 
 button#boton-empezar {
     border-radius: 25px;
@@ -506,7 +508,7 @@ button#boton-empezar:hover {
 }
 
 .stat-value {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
     color: #ffff;
 }
@@ -528,7 +530,6 @@ button#boton-empezar:hover {
     display: flex;
     gap: 15px;
     justify-content: center;
-    margin-bottom: 10px;
 }
 
 /* Responsive */
