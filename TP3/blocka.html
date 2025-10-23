@@ -98,139 +98,142 @@
 
 
     <main class="home">
-        <!-- Menú Principal -->
-         <!-- Contenedor principal con altura fija -->
-    <div class="contenedor-principal">
-        <div id="menu-principal" class="screen active">
-            <div class="menu-container">
-                <h1 class="game-title">BLOCKA</h1>
-                <p class="game-subtitle">Rompecabezas de Imágenes</p>
+        <div class="container-bread">
+            <p class="breadcrumb">Juegos->Estrategia->Blocka</p>
 
-                <div class="menu-buttons">
-                    <button class="btn btn-primary" onclick="mostrarSeleccionNivel()">Jugar</button>
-                </div>
-            </div>
         </div>
+        <div class="contenedor-principal">
 
-        <!-- Pantalla de Selección de Nivel -->
-        <div id="seleccion-nivel" class="screen">
-            <div class="level-select-container">
-                <h2>Elegí un Nivel</h2>
+            <div id="menu-principal" class="screen active">
+                <div class="menu-container">
+                    <h1 class="game-title">BLOCKA</h1>
+                    <p class="game-subtitle">Rompecabezas de Imágenes</p>
 
-                <div class="levels-grid">
-                    <div class="level-card" onclick="iniciarNivel(1)">
-                        <div class="level-number">1</div>
-                        <div class="level-name">Escala de Grises</div>
-                        <div class="level-record" id="record-1">Mejor tiempo: --</div>
-                    </div>
-
-                    <div class="level-card" onclick="iniciarNivel(2)">
-                        <div class="level-number">2</div>
-                        <div class="level-name">Brillo Reducido</div>
-                        <div class="level-record" id="record-2">Mejor tiempo: --</div>
-                    </div>
-
-                    <div class="level-card" onclick="iniciarNivel(3)">
-                        <div class="level-number">3</div>
-                        <div class="level-name">Negativo</div>
-                        <div class="level-record" id="record-3">Mejor tiempo: --</div>
+                    <div class="menu-buttons">
+                        <button class="btn btn-primary" onclick="mostrarSeleccionNivel()">Jugar</button>
                     </div>
                 </div>
-
-                <button class="btn btn-secondary" onclick="mostrarMenuPrincipal()">Volver al Menú</button>
             </div>
-        </div>
 
-        <!-- Nueva pantalla de galería animada -->
-        <div id="preview-imagenes" class="screen">
-            <div class="galeria-container">
-                <h2>Preparando Nivel <span id="nivel-preview">1</span></h2>
-                <p class="galeria-subtitle">Seleccionando imagen...</p>
+            <!-- seleccionar nivel -->
+            <div id="seleccion-nivel" class="screen">
+                <div class="level-select-container">
+                    <h2>Elegí un Nivel</h2>
 
-                <div class="galeria-imagenes" id="galeria-imagenes">
-                    <!-- Las imágenes se generan dinámicamente -->
-                </div>
-            </div>
-        </div>
-
-        <!-- Pantalla de juego con contenedor negro y footer -->
-        <div id="pantalla-juego" class="screen">
-            <div class="juego-wrapper">
-                <div class="game-container">
-                    <div class="game-header">
-                        <div class="game-info">
-                            <div class="level-info">
-                                <span class="label">Nivel:</span>
-                                <span id="nivel-actual">1</span>
-                            </div>
-                            <div class="timer-info">
-                                <span class="label">Tiempo:</span>
-                                <span id="cronometro">00:00</span>
-                                <button id="boton-empezar" class="btn btn-primary" onclick="empezarJuego()">Jugar 
-                                                            <i class="fa-solid fa-play icon-latido"></i>
-
-                                </button>
-
-                            </div>
+                    <div class="levels-grid">
+                        <div class="level-card" onclick="iniciarNivel(1)">
+                            <div class="level-number">1</div>
+                            <div class="level-name">Escala de Grises</div>
+                            <div class="level-record" id="record-1">Mejor tiempo: --</div>
                         </div>
-                        <button class="btn btn-small" onclick="mostrarSeleccionNivel()">Salir</button>
-                    </div>
 
-                    <div class="canvas-container">
-                        <canvas id="canvas-juego"></canvas>
-                    </div>
+                        <div class="level-card" onclick="iniciarNivel(2)">
+                            <div class="level-number">2</div>
+                            <div class="level-name">Brillo Reducido</div>
+                            <div class="level-record" id="record-2">Mejor tiempo: --</div>
+                        </div>
 
-                    <div class="game-controls">
-                        <div id="texto-ayuda" class="hint-text">Click izquierdo: ↺ | Click derecho: ↻</div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        
-
-        <!-- Pantalla de Victoria -->
-        <div id="pantalla-victoria" class="screen">
-            <div class="victory-container">
-                <h2 class="victory-title">¡Nivel Completado!</h2>
-
-                <div class="victory-stats">
-                    <div class="stat-item">
-                        <div class="stat-label">Tiempo</div>
-                        <div class="stat-value" id="tiempo-final">00:00</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-label">Nivel</div>
-                        <div class="stat-value" id="nivel-completado">1</div>
-                    </div>
-                </div>
-
-                <div class="victory-image">
-                    <canvas id="canvas-victoria"></canvas>
-                </div>
-
-                <div class="victory-buttons">
-                    <button class="btn btn-secondary" onclick="mostrarSeleccionNivel()">Menú de Niveles</button>
-                    <button id="boton-siguiente-nivel" class="btn btn-primary" onclick="siguienteNivel()">¡Siguiente
-                        Nivel!</button>
-                </div>
-            </div>
-        </div>
-
-           </div>
-          <!-- Footer estilo imagen de referencia -->
-                <div class="game-footer">
-                    <div class="footer-content">
-                        <div class="footer-title">Blocka</div>
-                        <div class="footer-icons">
-                           <i class="fa-solid fa-share-nodes"></i>
-                        <i class="fa-regular fa-heart"></i>
-                        <i class="fa-solid fa-expand"></i>
+                        <div class="level-card" onclick="iniciarNivel(3)">
+                            <div class="level-number">3</div>
+                            <div class="level-name">Negativo</div>
+                            <div class="level-record" id="record-3">Mejor tiempo: --</div>
                         </div>
                     </div>
-                </div>
 
- 
+                    <button class="btn btn-secondary" onclick="mostrarMenuPrincipal()">Volver al Menú</button>
+                </div>
+            </div>
+
+            <!-- galeria de imagenes-->
+            <div id="preview-imagenes" class="screen">
+                <div class="galeria-container">
+                    <h2>Preparando Nivel <span id="nivel-preview">1</span></h2>
+                    <p class="galeria-subtitle">Seleccionando imagen...</p>
+
+                    <div class="galeria-imagenes" id="galeria-imagenes">
+                        <!-- imagenes generqadas en js-->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pantalla de juego -->
+            <div id="pantalla-juego" class="screen">
+                <div class="juego-wrapper">
+                    <div class="game-container">
+                        <div class="game-header">
+                            <div class="game-info">
+                                <div class="level-info">
+                                    <span class="label">Nivel:</span>
+                                    <span id="nivel-actual">1</span>
+                                </div>
+                                <div class="timer-info">
+                                    <span class="label">Tiempo:</span>
+                                    <span id="cronometro">00:00</span>
+                                    <button id="boton-empezar" class="btn btn-primary" onclick="empezarJuego()">Jugar
+                                        <i class="fa-solid fa-play icon-latido"></i>
+
+                                    </button>
+
+                                </div>
+                            </div>
+                            <button class="btn btn-small" onclick="mostrarSeleccionNivel()">Salir</button>
+                        </div>
+
+                        <div class="canvas-container">
+                            <canvas id="canvas-juego"></canvas>
+                        </div>
+
+                        <div class="game-controls">
+                            <div id="texto-ayuda" class="hint-text">Click izquierdo: ↺ | Click derecho: ↻</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Win -->
+            <div id="pantalla-victoria" class="screen">
+                <div class="victory-container">
+                    <h2 class="victory-title">¡Nivel Completado!</h2>
+
+                    <div class="victory-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">Tiempo</div>
+                            <div class="stat-value" id="tiempo-final">00:00</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Nivel</div>
+                            <div class="stat-value" id="nivel-completado">1</div>
+                        </div>
+                    </div>
+
+                    <div class="victory-image">
+                        <canvas id="canvas-victoria"></canvas>
+                    </div>
+
+                    <div class="victory-buttons">
+                        <button class="btn btn-secondary" onclick="mostrarSeleccionNivel()">Menú de Niveles</button>
+                        <button id="boton-siguiente-nivel" class="btn btn-primary" onclick="siguienteNivel()">¡Siguiente
+                            Nivel!</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Footer del juego -->
+        <div class="game-footer">
+            <div class="footer-content">
+                <div class="footer-title">Blocka</div>
+                <div class="footer-icons">
+                    <i class="fa-solid fa-share-nodes"></i>
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-solid fa-expand"></i>
+                </div>
+            </div>
+        </div>
+
+
 
 
 
@@ -267,7 +270,7 @@
                 </div>
             </div>
 
-            <!-- Rectángulo inferior -->
+            <!-- Sobre el juego -->
             <div class="sobre-juego">
                 <div class="sobre-juego-header">
                     <p>Sobre el juego</p>
@@ -275,9 +278,9 @@
                 <div class="sobre-juego-body">
                     <div class="objetivo">
                         <h2>Objetivo</h2>
-                        <p>Blocka es un rompecabezas visual donde cada nivel presenta una imagen dividida en cuatro
-                            partes y desordenada. El objetivo es reorganizar las piezas hasta reconstruir la imagen
-                            original.</p>
+                        <p>Blocka es un rompecabezas temático de bandas de rock y estética visual. En cada nivel se
+                            muestra una imagen dividida en cuatro partes y desordenada. El objetivo es reorganizar las
+                            piezas hasta reconstruir la imagen original..</p>
                         </p>
 
 
@@ -433,7 +436,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="./js/blocka.js"></script>
 
 </body>

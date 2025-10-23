@@ -1,20 +1,5 @@
-@font-face {
-    font-family: 'Roboto';
-    src: url('assets/fonts/Roboto-Regular.woff2') format('woff2'),
-        url('assets/fonts/Roboto-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-@font-face {
-    font-family: 'RopaSans';
-    src: url('assets/fonts/RopaSans-Regular.woff2') format('woff2'),
-        url('assets/fonts/RopaSans-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
 
 @font-face {
     font-family: 'NATS';
@@ -373,7 +358,6 @@ body {
     margin: 5px;
     width: 50%;
     font-size: 14px;
-    font-family: 'RopaSans', sans-serif;
 }
 
 .seccion-comentarios{

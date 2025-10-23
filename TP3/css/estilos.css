@@ -1,23 +1,32 @@
 /*Fuentes usadas*/
 @import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=NATS&display=swap');
+
+@font-face {
+    font-family: 'NATS';
+    src: url("../assets/natsFont/NATS-Regular.woff") format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  /*  overflow: auto;
+    /*  overflow: auto;
     /* permite scroll 
     scrollbar-width: none;
    
     -ms-overflow-style: none;*/
-   
+
 }
+
 /*body::-webkit-scrollbar {
   display: none;
 }*/
 
-body {  margin: 0;
+body {
+    margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
 }
