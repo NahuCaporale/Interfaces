@@ -1,0 +1,3 @@
+class ficha extends Figure {    
+
+   }
