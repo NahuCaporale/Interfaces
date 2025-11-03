@@ -465,3 +465,105 @@ section>div {
 .icons-juego i:hover {
   color: #959ead;
 }
+
+.img-peg {
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% 30%, #0a0e27, #050616 80%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 100px;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  color: #bbb;
+  margin-bottom: 20px;
+}
+
+.game-stats {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  background: rgba(20, 25, 50, 0.8);
+  border: 2px solid #00ffff66;
+  border-radius: 12px;
+  padding: 15px 25px;
+  text-align: center;
+  box-shadow: 0 0 10px #00ffff33;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stat-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px #00ffff77;
+}
+
+.stat-box h3 {
+  font-family: 'Mouse Memoirs', sans-serif;
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #00ffff;
+  letter-spacing: 1px;
+}
+
+.stat-box .value {
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+#gameCanvas {
+  border: 3px solid #00ffff44;
+  border-radius: 12px;
+  background-color: #060a1f;
+  box-shadow: 0 0 40px #00ffff33;
+  transition: transform 0.2s ease;
+}
+
+#gameCanvas:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 50px #00ffff66;
+}
+
+.footer-img {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+  color: #fff;
+}
+
+.footer-img h2 {
+  font-family: 'Mouse Memoirs', sans-serif;
+  font-size: 24px;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffffaa;
+}
+
+.icons-juego i {
+  font-size: 22px;
+  color: #00ffffaa;
+  margin: 0 10px;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.icons-juego i:hover {
+  transform: scale(1.2);
+  color: #ffffff;
