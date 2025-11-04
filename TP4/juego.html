@@ -128,13 +128,13 @@
             <div class="sobre-juego-body">
                 <div class="objetivo">
                     <h2>🎯 Objetivo</h2>
-                    <p>El objetivo es eliminar todos los fichas del tablero excepto uno. ¡El planeta final debe quedar en el centro del tablero para una victoria perfecta!</p>
+                    <p>El objetivo es eliminar todos los fichas del tablero excepto uno. ¡El ficha final debe quedar en el centro del tablero para una victoria perfecta!</p>
                 </div>
 
                 <div class="reglas">
                     <h2>📋 Reglas</h2>
-                    <p>Inicialmente, todos los agujeros del tablero están llenos de fichas excepto el centro. El juego se juega saltando un planeta sobre otro contiguo (horizontal o verticalmente) y haciendo que caiga en un agujero vacío. El planeta saltado se retira del tablero.</p>
-                    <p>La partida se gana cuando solo queda un planeta en el tablero, idealmente en el agujero central. Sin embargo, si la partida termina con más de un planeta sin movimientos válidos, el jugador pierde.</p>
+                    <p>Inicialmente, todos los agujeros del tablero están llenos de fichas excepto el centro. El juego se juega saltando un ficha sobre otro contiguo (horizontal o verticalmente) y haciendo que caiga en un agujero vacío. El ficha saltado se retira del tablero.</p>
+                    <p>La partida se gana cuando solo queda un ficha en el tablero, idealmente en el agujero central. Sin embargo, si la partida termina con más de un ficha sin movimientos válidos, el jugador pierde.</p>
                     <p><strong>Características espaciales:</strong> Los fichas tienen diferentes colores (Neptuno azul, Marte rojo, Venus dorado, Júpiter morado) y cuando seleccionas uno, verás flechas brillantes animadas mostrando los movimientos válidos.</p>
                 </div>
             </div>
@@ -659,9 +659,9 @@
                 const pegsLeft = countPegs();
                 if (pegsLeft === 1) {
                     if (toRow === 3 && toCol === 3) {
-                        setTimeout(() => alert('🏆 ¡VICTORIA PERFECTA! 🏆\n¡Increíble! ¡Solo queda 1 planeta en el centro!'), 100);
+                        setTimeout(() => alert('🏆 ¡VICTORIA PERFECTA! 🏆\n¡Increíble! ¡Solo queda 1 ficha en el centro!'), 100);
                     } else {
-                        setTimeout(() => alert('🎉 ¡VICTORIA! 🎉\n¡Excelente! ¡Solo queda 1 planeta!'), 100);
+                        setTimeout(() => alert('🎉 ¡VICTORIA! 🎉\n¡Excelente! ¡Solo queda 1 ficha!'), 100);
                     }
                     endGame('win');
                 } else if (!hasAnyValidMoves()) {
