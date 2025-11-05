@@ -3,6 +3,13 @@
     @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
 
+    @font-face {
+        font-family: 'NATS';
+        src: url("../assets/natsFont/NATS-Regular.woff") format('opentype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
 
     * {
         margin: 0;
@@ -11,11 +18,6 @@
         scroll-behavior: smooth;
 
     }
-
-
-
-    @import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
-
 
     .hide-content {
         display: none !important;
@@ -37,13 +39,6 @@
         background-color: #0A0C19;
     }
 
-    @font-face {
-        font-family: 'NATS';
-        src: url("../assets/natsFont/NATS-Regular.woff") format('opentype');
-        font-weight: normal;
-        font-style: normal;
-        font-display: swap;
-    }
 
     /*LOADER*/
     #loader {
@@ -837,11 +832,15 @@
             }
 
             &:nth-of-type(3) {
-                background: url("../assets/imgs/thumbnails/pegarg.png") no-repeat 50% / cover;
+                background: url("../assets/imgs/peg/portada.jpg") no-repeat 50% / cover;
             }
 
             &:nth-of-type(4) {
                 background: url("../assets/imgs/thumbnails/Deportes/table-tennis-ultra-mega-tournament.jpg") no-repeat 50% / cover;
+            }
+
+            &:nth-of-type(5) {
+                background: url("../assets/imgs/thumbnails/puzzle.jpg") no-repeat 50% / cover;
             }
 
             .content {

@@ -1,25 +1,31 @@
-
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="./css/estilos.css">
     <link rel="stylesheet" href="./css/juego.css">
     <link rel="stylesheet" href="./css/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <title>Peg Solitaire - Comet</title>
-    
+
+    <title>Peg solitarie</title>
 </head>
+
 <body>
+
+
     <nav class="navbar fixed-top">
         <div class="container-fluid d-flex justify-content-between align-items-center">
-            <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="nav-center">
@@ -29,184 +35,253 @@
                 </a>
             </div>
             <div class="donacionBoton">
-                <a href="donaciones.html">Donaciones</a>
+                <a class="" href="donaciones.html" id="">Donaciones</a>
             </div>
+
             <div class="collapse navbar-collapse" id="navbarNav">
-                <button type="button" class="close-menu" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <button type="button" class="close-menu" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-label="Close">
                     &times;
                 </button>
                 <ul class="navbar-nav ms-3">
-                    <li class="nav-item"><a class="nav-link" href="#">Destacados</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Todos los juegos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Accion</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Arcade</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Aventura</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Creatividad</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Deportes</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Estrategia</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Multijugador</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Destacados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Todos los juegos</a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Accion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Arcade</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Aventura</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Creatividad</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Deportes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Estrategia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Multijugador</a>
+                    </li>
                 </ul>
+                <div class="inicio">
+                    <a href="login.html">Iniciar sesion</a>
+                </div>
+                <!--                <div class="perfil">
+                    <img src="assets/imgs/full_Turnstile__Never_Enough-Clean-16x9-02-rev.png" alt="">
+                    <div>
+                        <p>@geromoroniii</p>
+                        <p>geromoroni@gmail.com</p>
+                        
+                    </div>
+-->
+
             </div>
+        </div>
         </div>
     </nav>
 
+
+
+
+
     <main class="home">
-        <section class="img-peg">
-            <p class="breadcrumb">Juegos → Estrategia → Peg Solitaire</p>
-            
-            <div class="game-stats">
-                <div class="stat-box">
-                    <h3>⏱️ Tiempo Restante</h3>
-                    <div class="value" id="timer">10:00</div>
+        <div class="layout">
+
+            <section class="img-peg">
+                <p class="breadcrumb">Juegos->Estrategia->Peg Solitarie</p>
+                <div class="img-container">
+                    <div class="tiempos hidden">
+                        <span id="timer"></span>
+                        <span id="best"></span>
+                        <button onclick="iniciarJuego()">Reiniciar</button>
+                    </div>
+                    <div class="start-menu" id="start-menu">
+                        <h2>Peg Solitaire</h2>
+                        <p>Edición Argentina</p>
+                        <button id="jugar">Jugar</button>
+                        <div class="high-scores">
+                            <h3>Mejor Tiempo</h3>
+                            <ul>
+                                <li id="score-1">1. --:--</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="menuJuego hidden" id="end-menu">
+                        <h2>¡Juego Terminado!</h2>
+                        <p>Tu tiempo: <span id="timer-display-final">0</span>s</p>
+                        <button id="jugarAgain"><i class="fa-solid fa-play"></i></button>
+                    </div>
+
+                    <canvas width="860" height="640" id="canvas"></canvas>
+
                 </div>
-                <div class="stat-box">
-                    <h3>🪐 fichas</h3>
-                    <div class="value" id="pegsRemaining">32</div>
+                <div class="footer-img">
+                    <h2>Peg solitarie</h2>
+                    <div class="icons-juego">
+                        <i class="fa-solid fa-share-nodes"></i>
+                        <i class="fa-regular fa-heart"></i>
+                        <i class="fa-solid fa-expand"></i>
+                    </div>
                 </div>
-                <div class="stat-box">
-                    <h3>🎮 Movimientos</h3>
-                    <div class="value" id="moves">0</div>
+            </section>
+
+
+
+            <div class="controles-compartir">
+                <div class="controles">
+                    <div class="controles-header">
+                        <p>Controles</p>
+                    </div>
+                    <div class="controles-body">
+                        <i class="fa-solid fa-computer-mouse"></i>
+                        <p>Click para seleccionar</p>
+                        <i class="fa-solid fa-hand-pointer"></i>
+                        <p>Arrastrar y soltar</p>
+                    </div>
+
                 </div>
-                <div class="stat-box">
-                    <h3>🏆 Mejor Score</h3>
-                    <div class="value" id="bestScore">32</div>
+
+                <div class="compartir">
+                    <div class="compartilo-header">
+                        <p>Compartilo</p>
+
+                    </div>
+                    <div class="compartilo-body">
+                        <i class="fa-brands fa-x-twitter"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-facebook"></i>
+                    </div>
                 </div>
             </div>
 
-            <div class="img-container">
-                <canvas id="gameCanvas" width="800" height="800"></canvas>
-            </div>
-
-            <div class="footer-img">
-                <h2>🚀 Peg Solitaire Espacial</h2>
-                <div class="icons-juego">
-                    <i class="fa-solid fa-share-nodes"></i>
-                    <i class="fa-regular fa-heart"></i>
-                    <i class="fa-solid fa-expand"></i>
+            <!-- Rectángulo inferior -->
+            <div class="sobre-juego">
+                <div class="sobre-juego-header">
+                    <p>Sobre el juego</p>
                 </div>
-            </div>
-        </section>
+                <div class="sobre-juego-body">
 
-        <section class="carousel">
-            <img src="./assets/imgs/peg11.png" alt="" width="200" height="111">
-            <img src="./assets/imgs/peg11.png" alt="" width="200" height="111">
-            <img src="./assets/imgs/peg11.png" alt="" width="200" height="111">
-            <img src="./assets/imgs/peg11.png" alt="" width="200" height="111">
-            <img src="./assets/imgs/peg11.png" alt="" width="200" height="111">
-            <img src="./assets/imgs/peg11.png" alt="" width="200" height="111">
-        </section>
+                    <p>Aprende a jugar aqui</p>
+                    <div class="objetivo">
+                        <h2>🌠Objetivo</h2>
+                        <p>Tu misión es consolidar el cuadrante: debes hacer que un cuerpo celeste "consuma" a todos los
+                            demás, saltando entre ellos hasta que solo una anomalía cósmica domine el tablero.</p>
 
-        <div class="controles-compartir">
-            <div class="controles">
-                <div class="controles-header">
-                    <p>Controles</p>
-                </div>
-                <div class="controles-body">
-                    <i class="fa-solid fa-computer-mouse"></i>
-                    <p>Click para seleccionar</p>
-                    <i class="fa-solid fa-hand-pointer"></i>
-                    <p>Arrastrar y soltar</p>
+                    </div>
+
+                    <div class="reglas">
+                        <h2> 🌌 Reglas
+                        </h2>
+                        <p>IConsolida el cosmos: deja solo un cuerpo celeste en el tablero. Llena todos los pozos con
+                            fichas, excepto un vacío.
+                            Salta una ficha sobre otra adyacente (horizontal o vertical) hacia un vacío.La ficha que fue
+                            saltada se retira del tablero.
+                            <br>
+                            Victoria: Queda 1 sola ficha.
+
+                            Derrota: Queda más de 1 ficha y no puedes hacer más saltos.</p>
+
+                    </div>
+
                 </div>
             </div>
 
-            <div class="compartir">
-                <div class="compartilo-header">
-                    <p>Compartilo</p>
-                </div>
-                <div class="compartilo-body">
-                    <i class="fa-brands fa-x-twitter"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-facebook"></i>
-                </div>
-            </div>
-        </div>
 
-        <div class="sobre-juego">
-            <div class="sobre-juego-header">
-                <p>Sobre el juego</p>
-            </div>
-            <div class="sobre-juego-body">
-                <div class="objetivo">
-                    <h2>🎯 Objetivo</h2>
-                    <p>El objetivo es eliminar todos los fichas del tablero excepto uno. ¡El ficha final debe quedar en el centro del tablero para una victoria perfecta!</p>
+            <div class="seccion-comentarios">
+                <div class="comentarios-header">
+                    <i class="fa-regular fa-comment"></i>
+                    <p>Comentarios</p>
                 </div>
 
-                <div class="reglas">
-                    <h2>📋 Reglas</h2>
-                    <p>Inicialmente, todos los agujeros del tablero están llenos de fichas excepto el centro. El juego se juega saltando un ficha sobre otro contiguo (horizontal o verticalmente) y haciendo que caiga en un agujero vacío. El ficha saltado se retira del tablero.</p>
-                    <p>La partida se gana cuando solo queda un ficha en el tablero, idealmente en el agujero central. Sin embargo, si la partida termina con más de un ficha sin movimientos válidos, el jugador pierde.</p>
-                    <p><strong>Características espaciales:</strong> Los fichas tienen diferentes colores (Neptuno azul, Marte rojo, Venus dorado, Júpiter morado) y cuando seleccionas uno, verás flechas brillantes animadas mostrando los movimientos válidos.</p>
-                </div>
-            </div>
-        </div>
 
-        <div class="seccion-comentarios">
-            <div class="comentarios-header">
-                <i class="fa-regular fa-comment"></i>
-                <p>Comentarios</p>
-            </div>
+                <div class="comentario-input">
+                    <div class="avatar">
+                        <img src="./assets/imgs/avatar.jpg" alt="Avatar" class="avatar" width="54px" height="50px">
 
-            <div class="comentario-input">
-                <div class="avatar">
-                    <img src="./assets/imgs/avatar.jpg" alt="Avatar" width="54" height="50">
-                    <p>John Doe</p>
+                        <p>Jhon doe</p>
+                    </div>
+                    <input type="text" placeholder="Tu opinion nos interesa!" class="input-comentario">
+                    <a href="./juego.html" class="btn-icon">
+                        <i class="fa-regular fa-paper-plane"></i>
+                    </a>
                 </div>
-                <input type="text" placeholder="Tu opinión nos interesa!" class="input-comentario">
-                <a href="#" class="btn-icon">
-                    <i class="fa-regular fa-paper-plane"></i>
-                </a>
-            </div>
 
-            <div class="separador"></div>
-            <p class="mas-recientes">Más recientes</p>
 
-            <div class="comentarios">
-                <div class="avatar-comentarios">
-                    <img src="./assets/imgs/avatar1.png" alt="Avatar" width="54" height="50">
-                    <p>Nahuel Caporale</p>
-                </div>
-                <div class="texto-comentario">
-                    <p>El juego está chidísimo la verdad, estoy todo el día jugándole! Me está encantando y las animaciones espaciales son increíbles</p>
-                    <i class="fa-solid fa-heart"></i>
-                </div>
-            </div>
+                <div class="separador"></div>
 
-            <div class="comentarios">
-                <div class="avatar-comentarios">
-                    <img src="./assets/imgs/avatar2.jpg" alt="Avatar" width="54" height="50">
-                    <p>KeyzKiller</p>
-                </div>
-                <div class="texto-comentario">
-                    <p>Me encantó el juego! Y tiene una gran comunidad. Las flechas que muestran los movimientos válidos son geniales!</p>
-                    <i class="fa-solid fa-heart"></i>
-                </div>
-            </div>
+                <p class="mas-recientes">Mas recientes</p>
 
-            <div class="comentarios">
-                <div class="avatar-comentarios">
-                    <img src="./assets/imgs/avatar3.png" alt="Avatar" width="54" height="50">
-                    <p>Lil J</p>
+
+                <div class="comentarios">
+                    <div class="avatar-comentarios">
+                        <img src="./assets/imgs/avatar1.png" alt="Avatar" width="54px" height="50px">
+                        <p>Nahuel caporale</p>
+                    </div>
+                    <div class="texto-comentario">
+                        <p>El juego esta chidisimo la verdad, estoy todo el dia jugandole !
+                            me esta encantando y ya voy por el primer nivel</p>
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
                 </div>
-                <div class="texto-comentario">
-                    <p>Comet es increíble, cada juego que probé estuvo increíble. El tema espacial del Peg Solitaire es hermoso!</p>
-                    <i class="fa-regular fa-heart"></i>
-                </div>
-            </div>
-        </div>
+                <div class="comentarios">
+                    <div class="avatar-comentarios">
+                        <img src="./assets/imgs/avatar2.jpg" alt="Avatar" width="54px" height="50px">
+                        <p>KeyzKiller</p>
+                    </div>
+                    <div class="texto-comentario">
+                        <p>Me encanto el juego! y tiene una gran comunidad, espero poder
+                            seguir accediento a el gratuitamente en comet!</p>
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <div class="comentarios">
+                        <div class="avatar-comentarios">
+                            <img src="./assets/imgs/avatar3.png" alt="Avatar" width="54px" height="50px">
+                            <p>Lil j</p>
+                        </div>
+                        <div class="texto-comentario">
+                            <p>Comet es increible, cada juego que probe estuvo increible, ojala
+                                sigan mejorando y agregando mas juegos.</p>
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
     </main>
+
+
+
+
+
+
+
+
 
     <footer class="footer">
         <div class="footer-column">
             <div class="footer-logo">
-                <img src="./assets/imgs/logofooter.png" alt="logo de cometa" class="logo-footer" style="max-width: 150px;">
+                <img src="./assets/imgs/logofooter.png" alt="logo de cometa" class="logo-footer">
             </div>
-            <p>Tu destino retro para los mejores juegos online. Descubre, juega y conecta con millones de jugadores en el universo Comet.</p>
+            <p>Tu destino retro para los mejores juegos online.
+                Descubre, juega y conecta con millones
+                de jugadores en el universo Comet.
+            </p>
             <div class="social-icons">
                 <i class="fa-brands fa-instagram"></i>
                 <i class="fa-brands fa-x-twitter"></i>
                 <i class="fa-regular fa-comment"></i>
                 <i class="fa-brands fa-facebook"></i>
             </div>
+
         </div>
         <div class="footer-column">
             <h3>Categorías</h3>
@@ -215,7 +290,8 @@
                 <li><a href="#">Estrategia</a></li>
                 <li><a href="#">Arcade</a></li>
                 <li><a href="#">Aventura</a></li>
-                <li><a href="#">Acción</a></li>
+                <li><a href="#">Accion</a></li>
+                <li><a href="#">Deportes</a></li>
             </ul>
         </div>
         <div class="footer-column">
@@ -227,11 +303,13 @@
                 <li><a href="#">Términos</a></li>
                 <li><a href="#">Contacto</a></li>
                 <li><a href="#">Blog</a></li>
+
             </ul>
         </div>
         <div class="footer-column">
             <h3>Mantente Conectado</h3>
-            <p>Suscríbete para recibir las últimas novedades y lanzamientos.</p>
+            <p>Suscríbete para recibir las ultimas
+                novedades y lanzamientos.</p>
             <form class="subscribe-form">
                 <input type="email" placeholder="Ingresa tu email" required>
                 <button type="submit">Suscribirte</button>
@@ -252,471 +330,18 @@
             </div>
         </div>
     </footer>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const canvas = document.getElementById('gameCanvas');
-        const ctx = canvas.getContext('2d');
-
-        const BOARD_SIZE = 7;
-        const CELL_SIZE = 80;
-        const PADDING = 120;
-        const PEG_RADIUS = 30;
-        const GAME_TIME = 600;
-
-        const INITIAL_BOARD = [
-            [-1, -1,  1,  1,  1, -1, -1],
-            [-1, -1,  1,  1,  1, -1, -1],
-            [ 1,  1,  1,  1,  1,  1,  1],
-            [ 1,  1,  1,  0,  1,  1,  1],
-            [ 1,  1,  1,  1,  1,  1,  1],
-            [-1, -1,  1,  1,  1, -1, -1],
-            [-1, -1,  1,  1,  1, -1, -1]
-        ];
-
-        let board = [];
-        let selectedPeg = null;
-        let draggingPeg = null;
-        let mouseX = 0;
-        let mouseY = 0;
-        let moveCount = 0;
-        let timeRemaining = GAME_TIME;
-        let timerInterval = null;
-        let gameOver = false;
-        let bestScore = 32;
-        let validMoves = [];
-
-        const pegTypes = ['blue', 'red', 'gold', 'purple'];
-        let pegColors = [];
-
-        const images = {
-            background: null,
-            blue: null,
-            red: null,
-            gold: null,
-            purple: null
-        };
-
-        let imagesLoaded = 0;
-        const totalImages = 1;
-
-        function loadImages() {
-            images.background = new Image();
-            images.background.onload = imageLoaded;
-            images.background.src = 'assets/pantera.jpg';
-
-          
-
-            
-        }
-
-        function imageLoaded() {
-            imagesLoaded++;
-            if (imagesLoaded === totalImages) {
-                initGame();
-            }
-        }
-
-        function initGame() {
-            board = INITIAL_BOARD.map(row => [...row]);
-            selectedPeg = null;
-            draggingPeg = null;
-            moveCount = 0;
-            timeRemaining = GAME_TIME;
-            gameOver = false;
-            validMoves = [];
-
-            pegColors = [];
-            for (let row = 0; row < BOARD_SIZE; row++) {
-                pegColors[row] = [];
-                for (let col = 0; col < BOARD_SIZE; col++) {
-                    if (board[row][col] === 1) {
-                        pegColors[row][col] = pegTypes[Math.floor(Math.random() * pegTypes.length)];
-                    } else {
-                        pegColors[row][col] = null;
-                    }
-                }
-            }
-
-            updateUI();
-            startTimer();
-            draw();
-            animate();
-        }
-
-        function startTimer() {
-            if (timerInterval) clearInterval(timerInterval);
-
-            timerInterval = setInterval(() => {
-                if (!gameOver) {
-                    timeRemaining--;
-                    updateTimer();
-
-                    if (timeRemaining <= 0) {
-                        endGame('timeout');
-                    }
-                }
-            }, 1000);
-        }
-
-        function updateTimer() {
-            const minutes = Math.floor(timeRemaining / 60);
-            const seconds = timeRemaining % 60;
-            const timerEl = document.getElementById('timer');
-            timerEl.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
-
-            if (timeRemaining <= 60) {
-                timerEl.style.color = '#ff0000';
-            } else if (timeRemaining <= 180) {
-                timerEl.style.color = '#ffaa00';
-            } else {
-                timerEl.style.color = '#00ff00';
-            }
-        }
-
-        function draw() {
-            if (images.background) {
-                ctx.drawImage(images.background, 0, 0, canvas.width, canvas.height);
-            } else {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-            }
-
-            for (let row = 0; row < BOARD_SIZE; row++) {
-                for (let col = 0; col < BOARD_SIZE; col++) {
-                    if (board[row][col] !== -1) {
-                        const x = PADDING + col * CELL_SIZE;
-                        const y = PADDING + row * CELL_SIZE;
-
-                        ctx.beginPath();
-                        ctx.arc(x, y, PEG_RADIUS + 5, 0, Math.PI * 2);
-                        ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
-                        ctx.fill();
-                        ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
-                        ctx.lineWidth = 2;
-                        ctx.stroke();
-
-                        if (board[row][col] === 1) {
-                            drawPeg(x, y, pegColors[row][col], false);
-
-                            if (selectedPeg && selectedPeg.row === row && selectedPeg.col === col && !draggingPeg) {
-                                ctx.beginPath();
-                                ctx.arc(x, y, PEG_RADIUS + 10, 0, Math.PI * 2);
-                                ctx.strokeStyle = '#00ffff';
-                                ctx.lineWidth = 3;
-                                ctx.setLineDash([5, 5]);
-                                ctx.stroke();
-                                ctx.setLineDash([]);
-                            }
-                        }
-                    }
-                }
-            }
-
-            if (selectedPeg && !draggingPeg && validMoves.length > 0) {
-                drawAnimatedHints();
-            }
-
-            if (draggingPeg) {
-                drawPeg(mouseX, mouseY, pegColors[draggingPeg.row][draggingPeg.col], true);
-                drawDropPreview();
-            }
-        }
-
-        function drawPeg(x, y, color, dragging) {
-            const img = images[color];
-            if (img) {
-                ctx.save();
-                if (dragging) {
-                    ctx.shadowColor = getColorFromType(color);
-                    ctx.shadowBlur = 20;
-                }
-                ctx.drawImage(img, x - PEG_RADIUS, y - PEG_RADIUS, PEG_RADIUS * 2, PEG_RADIUS * 2);
-                ctx.restore();
-            } else {
-                ctx.save();
-                if (dragging) {
-                    ctx.shadowColor = getColorFromType(color);
-                    ctx.shadowBlur = 20;
-                }
-                ctx.beginPath();
-                ctx.arc(x, y, PEG_RADIUS, 0, Math.PI * 2);
-                ctx.fillStyle = getColorFromType(color);
-                ctx.fill();
-                ctx.restore();
-            }
-        }
-
-        function getColorFromType(type) {
-            const colors = {
-                blue: '#4a90e2',
-                red: '#e74c3c',
-                gold: '#f39c12',
-                purple: '#9b59b6'
-            };
-            return '#4a90e2';
-        }
-
-        function drawAnimatedHints() {
-            const time = Date.now() / 1000;
-
-            validMoves.forEach((move, index) => {
-                const targetX = PADDING + move.toCol * CELL_SIZE;
-                const targetY = PADDING + move.toRow * CELL_SIZE;
-                const fromX = PADDING + selectedPeg.col * CELL_SIZE;
-                const fromY = PADDING + selectedPeg.row * CELL_SIZE;
-
-                const dx = targetX - fromX;
-                const dy = targetY - fromY;
-                const angle = Math.atan2(dy, dx);
-
-                const midX = (fromX + targetX) / 2;
-                const midY = (fromY + targetY) / 2;
-
-                const bounce = Math.sin(time * 3 + index * 0.3) * 10;
-                const arrowX = midX + Math.cos(angle) * bounce;
-                const arrowY = midY + Math.sin(angle) * bounce;
-
-                ctx.save();
-                ctx.translate(arrowX, arrowY);
-                ctx.rotate(angle);
-
-                ctx.shadowColor = getColorFromType(pegColors[selectedPeg.row][selectedPeg.col]);
-                ctx.shadowBlur = 20;
-
-                ctx.beginPath();
-                ctx.moveTo(20, 0);
-                ctx.lineTo(-10, -15);
-                ctx.lineTo(-10, -7);
-                ctx.lineTo(-20, -7);
-                ctx.lineTo(-20, 7);
-                ctx.lineTo(-10, 7);
-                ctx.lineTo(-10, 15);
-                ctx.closePath();
-
-                const gradient = ctx.createLinearGradient(-20, 0, 20, 0);
-                gradient.addColorStop(0, getColorFromType(pegColors[selectedPeg.row][selectedPeg.col]));
-                gradient.addColorStop(1, '#ffffff');
-                ctx.fillStyle = gradient;
-                ctx.fill();
-
-                ctx.strokeStyle = '#fff';
-                ctx.lineWidth = 2;
-                ctx.stroke();
-
-                ctx.restore();
-
-                const pulseScale = 1 + Math.sin(time * 4 + index * 0.5) * 0.2;
-                ctx.save();
-                ctx.beginPath();
-                ctx.arc(targetX, targetY, (PEG_RADIUS + 10) * pulseScale, 0, Math.PI * 2);
-                ctx.strokeStyle = getColorFromType(pegColors[selectedPeg.row][selectedPeg.col]);
-                ctx.lineWidth = 3;
-                ctx.globalAlpha = 0.6;
-                ctx.stroke();
-                ctx.restore();
-            });
-        }
-
-        function drawDropPreview() {
-            const pos = getCellFromCoords(mouseX, mouseY);
-            if (pos && isValidMoveTarget(selectedPeg.row, selectedPeg.col, pos.row, pos.col)) {
-                const x = PADDING + pos.col * CELL_SIZE;
-                const y = PADDING + pos.row * CELL_SIZE;
-
-                ctx.beginPath();
-                ctx.arc(x, y, PEG_RADIUS + 8, 0, Math.PI * 2);
-                ctx.strokeStyle = '#00ff00';
-                ctx.lineWidth = 4;
-                ctx.setLineDash([5, 5]);
-                ctx.stroke();
-                ctx.setLineDash([]);
-            }
-        }
-
-        function animate() {
-            draw();
-            if (!gameOver) {
-                requestAnimationFrame(animate);
-            }
-        }
-
-        canvas.addEventListener('mousedown', (e) => {
-            if (gameOver) return;
-
-            const rect = canvas.getBoundingClientRect();
-            mouseX = e.clientX - rect.left;
-            mouseY = e.clientY - rect.top;
-
-            const pos = getCellFromCoords(mouseX, mouseY);
-            if (pos && board[pos.row][pos.col] === 1) {
-                selectedPeg = { row: pos.row, col: pos.col };
-                draggingPeg = { row: pos.row, col: pos.col };
-                validMoves = getValidMoves(pos.row, pos.col);
-            }
-        });
-
-        canvas.addEventListener('mousemove', (e) => {
-            const rect = canvas.getBoundingClientRect();
-            mouseX = e.clientX - rect.left;
-            mouseY = e.clientY - rect.top;
-
-            if (draggingPeg) {
-                canvas.style.cursor = 'grabbing';
-            } else {
-                const pos = getCellFromCoords(mouseX, mouseY);
-                if (pos && board[pos.row][pos.col] === 1) {
-                    canvas.style.cursor = 'pointer';
-                } else {
-                    canvas.style.cursor = 'default';
-                }
-            }
-        });
-
-        canvas.addEventListener('mouseup', (e) => {
-            if (!draggingPeg || gameOver) {
-                draggingPeg = null;
-                selectedPeg = null;
-                return;
-            }
-
-            const rect = canvas.getBoundingClientRect();
-            mouseX = e.clientX - rect.left;
-            mouseY = e.clientY - rect.top;
-
-            const pos = getCellFromCoords(mouseX, mouseY);
-
-            if (pos && isValidMoveTarget(selectedPeg.row, selectedPeg.col, pos.row, pos.col)) {
-                makeMove(selectedPeg.row, selectedPeg.col, pos.row, pos.col);
-            }
-
-            draggingPeg = null;
-            selectedPeg = null;
-            validMoves = [];
-            canvas.style.cursor = 'default';
-        });
-
-        function getCellFromCoords(x, y) {
-            const col = Math.round((x - PADDING) / CELL_SIZE);
-            const row = Math.round((y - PADDING) / CELL_SIZE);
-
-            if (row >= 0 && row < BOARD_SIZE && col >= 0 && col < BOARD_SIZE && board[row][col] !== -1) {
-                const cellX = PADDING + col * CELL_SIZE;
-                const cellY = PADDING + row * CELL_SIZE;
-                const distance = Math.sqrt((x - cellX) ** 2 + (y - cellY) ** 2);
-
-                if (distance <= PEG_RADIUS + 10) {
-                    return { row, col };
-                }
-            }
-            return null;
-        }
-
-        function getValidMoves(row, col) {
-            const results = [];
-            const directions = [
-                { dr: -2, dc: 0, jr: -1, jc: 0 },
-                { dr: 2, dc: 0, jr: 1, jc: 0 },
-                { dr: 0, dc: -2, jr: 0, jc: -1 },
-                { dr: 0, dc: 2, jr: 0, jc: 1 }
-            ];
-
-            directions.forEach(dir => {
-                const newRow = row + dir.dr;
-                const newCol = col + dir.dc;
-                const jumpRow = row + dir.jr;
-                const jumpCol = col + dir.jc;
-
-                if (newRow >= 0 && newRow < BOARD_SIZE && newCol >= 0 && newCol < BOARD_SIZE &&
-                    board[newRow][newCol] === 0 && board[jumpRow][jumpCol] === 1) {
-                    results.push({ toRow: newRow, toCol: newCol, jumpRow, jumpCol });
-                }
-            });
-
-            return results;
-        }
-
-        function isValidMoveTarget(fromRow, fromCol, toRow, toCol) {
-            const possible = getValidMoves(fromRow, fromCol);
-            return possible.some(move => move.toRow === toRow && move.toCol === toCol);
-        }
-
-        function makeMove(fromRow, fromCol, toRow, toCol) {
-            const possibleMoves = getValidMoves(fromRow, fromCol);
-            const move = possibleMoves.find(m => m.toRow === toRow && m.toCol === toCol);
-
-            if (move) {
-                board[toRow][toCol] = 1;
-                board[fromRow][fromCol] = 0;
-                pegColors[toRow][toCol] = pegColors[fromRow][fromCol];
-                pegColors[fromRow][fromCol] = null;
-
-                board[move.jumpRow][move.jumpCol] = 0;
-                pegColors[move.jumpRow][move.jumpCol] = null;
-
-                moveCount++;
-                updateUI();
-
-                const pegsLeft = countPegs();
-                if (pegsLeft === 1) {
-                    if (toRow === 3 && toCol === 3) {
-                        setTimeout(() => alert('🏆 ¡VICTORIA PERFECTA! 🏆\n¡Increíble! ¡Solo queda 1 ficha en el centro!'), 100);
-                    } else {
-                        setTimeout(() => alert('🎉 ¡VICTORIA! 🎉\n¡Excelente! ¡Solo queda 1 ficha!'), 100);
-                    }
-                    endGame('win');
-                } else if (!hasAnyValidMoves()) {
-                    if (pegsLeft <= 3) {
-                        setTimeout(() => alert('👍 ¡BUEN TRABAJO! 👍\n¡Bien! Quedan ' + pegsLeft + ' fichas.'), 100);
-                    } else {
-                        setTimeout(() => alert('❌ JUEGO TERMINADO ❌\nSin movimientos válidos. Quedan ' + pegsLeft + ' fichas.'), 100);
-                    }
-                    endGame('lose');
-                }
-            }
-        }
-
-        function countPegs() {
-            let count = 0;
-            for (let row = 0; row < BOARD_SIZE; row++) {
-                for (let col = 0; col < BOARD_SIZE; col++) {
-                    if (board[row][col] === 1) count++;
-                }
-            }
-            return count;
-        }
-
-        function hasAnyValidMoves() {
-            for (let row = 0; row < BOARD_SIZE; row++) {
-                for (let col = 0; col < BOARD_SIZE; col++) {
-                    if (board[row][col] === 1) {
-                        if (getValidMoves(row, col).length > 0) {
-                            return true;
-                        }
-                    }
-                }
-            }
-            return false;
-        }
-
-        function endGame(reason) {
-            gameOver = true;
-            clearInterval(timerInterval);
-
-            const pegsLeft = countPegs();
-            if (pegsLeft < bestScore) {
-                bestScore = pegsLeft;
-            }
-            updateUI();
-        }
-
-        function updateUI() {
-            const pegsLeft = countPegs();
-            document.getElementById('moves').textContent = moveCount;
-            document.getElementById('pegsRemaining').textContent = pegsLeft;
-            document.getElementById('bestScore').textContent = bestScore;
-        }
-
-        loadImages();
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
+
+    <script src="js/clases/piece.js"></script>
+    <script src="js/clases/tablero.js"></script>
+    <script src="js/clases/vista.js"></script>
+    <script src="js/clases/GameController.js"></script>
+    <script src="js/clases/peg.js" defer></script>
+
 </body>
+
 </html>

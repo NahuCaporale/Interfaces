@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+.breadcrumb {
+    font-family: 'NATS', sans-serif;
+    font-size: 16px;
+    color: #959ead;
+    padding-left: 6rem !important;
+}
+
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -13,6 +20,11 @@ body {
     flex-direction: column;
 
     color: #333;
+}
+
+.container-bread {
+    display: flex;
+    flex-direction: column;
 }
 
 .contenedor-principal {
@@ -49,7 +61,6 @@ body {
 
     display: none;
     width: 100%;
-    /* Altura fija para todas las pantallas */
 
     min-height: 705px;
     padding: 20px;
@@ -78,7 +89,7 @@ body {
     border-radius: 20px;
     padding: 60px 40px;
     text-align: center;
-    box-shadow: 0px 0px 15px 1px #444fa3;
+    box-shadow: 0px 0px 15px 1px #04327A;
     width: 100%;
     max-width: 500px;
 }
@@ -137,6 +148,7 @@ h1.game-title {
     background-color: #2246a269 !important;
 
 }
+
 .btn-primary:hover {
     transform: translateY(-1px);
     box-shadow: 0px 5px 20px rgba(102, 126, 234, 0.4);
@@ -150,9 +162,9 @@ h1.game-title {
 
 }
 
-button.btn.btn-secondary:hover{
- background-color: #ffffff70 !important;
-    color: black ;
+button.btn.btn-secondary:hover {
+    background-color: #ffffff70 !important;
+    color: black;
     font-size: 1rem;
 }
 
@@ -232,7 +244,7 @@ button.btn.btn-secondary:hover{
     opacity: 0.9;
 }
 
-/* Estilos para la galería animada */
+/* eleccion de imagen*/
 .galeria-container {
     background: url(../assets/Fondo.svg);
     border-radius: 20px;
@@ -283,18 +295,18 @@ button.btn.btn-secondary:hover{
 .galeria-imagen.hover {
     opacity: 1;
     transform: scale(1.05);
-    border: 3px solid #667eea;
-    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+    border: 3px solid #2246A2;
+    box-shadow: 0 5px 20px rgba(4, 50, 122, 0.6);
 }
 
 .galeria-imagen.seleccionada {
     opacity: 1;
     transform: scale(1.1);
-    border: 4px solid #764ba2;
-    box-shadow: 0 10px 30px rgba(118, 75, 162, 0.6);
+    border: 4px solid #D37F85;
+    box-shadow: 0 10px 30px rgba(211, 127, 133, 0.6);
 }
 
-/* Wrapper del juego con fondo negro */
+/* wrapper del juego */
 .juego-wrapper {
     background: #000;
     width: 100%;
@@ -304,7 +316,7 @@ button.btn.btn-secondary:hover{
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
-/* Game Screen */
+/* pantalla juego */
 .game-container {
     background: url(../assets/Fondo.svg);
     padding: 10px;
@@ -363,7 +375,7 @@ i.fa-solid.fa-play {
 }
 
 #canvas-juego {
-    border: 3px solid rgba(102, 126, 234, 0.589);
+    border: 4px solid rgba(4, 50, 122, 0.6);
     border-radius: 10px;
     cursor: pointer;
     max-width: 100%;
@@ -381,10 +393,11 @@ i.fa-solid.fa-play {
     font-weight: 500;
 }
 
-/* Footer estilo imagen de referencia */
+/* footer del juego */
 .game-footer {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
     padding: 15px 30px;
-
     background-color: #0a3a75;
     /* color de fondo, adaptalo a tu diseño */
     color: #fff;
@@ -437,7 +450,7 @@ i.fa-solid.fa-play {
     height: 20px;
 }
 
-/* Victory Screen */
+/* win Screen */
 .victory-container {
     background: url(../assets/Fondo.svg);
     border-radius: 20px;
@@ -451,33 +464,39 @@ i.fa-solid.fa-play {
 button#boton-siguiente-nivel {
     background-color: #2246a269;
     font-size: 16px !important;
-    font-family: 'NATS', sans-serif ;
+    font-family: 'NATS', sans-serif;
 }
 
 button#boton-empezar {
     border-radius: 25px;
     margin-left: 20px;
 }
+
 button#boton-empezar:hover {
     box-shadow: 0px 1px 10px #0d6efd;
 }
-.icon-latido{
+
+.icon-latido {
     /* ✨ Animación de “latido” del ícono */
-  display: inline-block;
-  animation: latido 1s ease-in-out infinite;
+    display: inline-block;
+    animation: latido 1s ease-in-out infinite;
 }
 
 @keyframes latido {
-  0%, 100% {
-    transform: scale(1);
-  }
-  30% {
-    transform: scale(1.12);
-  }
-  60% {
-    transform: scale(1);
-  }
-  
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    30% {
+        transform: scale(1.12);
+    }
+
+    60% {
+        transform: scale(1);
+    }
+
 }
 
 .victory-title {
