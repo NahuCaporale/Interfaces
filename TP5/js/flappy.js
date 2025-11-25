@@ -14,7 +14,7 @@ const ANCHO_JUEGO = 1300;
 const ALTO_JUEGO = 640;
 
 const ANCHO_NAVE = 100;
-const ALTO_NAVE = 47; // calculado antes
+const ALTO_NAVE = 47;
 
 nave.style.width = ANCHO_NAVE + "px";
 nave.style.height = ALTO_NAVE + "px";
@@ -101,7 +101,7 @@ function moverTubos() {
 }
 
 /* ============================================================
-   Colisiones optimizadas
+   Colisiones
 ============================================================ */
 function hayColision() {
     const naveX = 150;
@@ -155,6 +155,33 @@ function terminar() {
 }
 
 /* ============================================================
+   Reiniciar sin recargar
+============================================================ */
+function reiniciar() {
+    jugando = true;
+    fin = false;
+    puntos = 0;
+    velocidad = 3;
+
+    vel = 0;
+    naveY = (ALTO_JUEGO - ALTO_NAVE) / 2;
+    nave.style.top = naveY + "px";
+    nave.style.filter = "none";
+    nave.style.transform = "none";
+
+    tubos.forEach(t => {
+        t.arriba.remove();
+        t.abajo.remove();
+    });
+    tubos = [];
+
+    document.getElementById("score").innerText = 0;
+    document.getElementById("gameover-screen").style.display = "none";
+
+    loop();
+}
+
+/* ============================================================
    Loop
 ============================================================ */
 function loop() {
@@ -187,7 +214,7 @@ function loop() {
 }
 
 /* ============================================================
-   Controles: solo SPACE o CLICK
+   Controles
 ============================================================ */
 function saltar() {
     if (!jugando || fin) return;
@@ -217,6 +244,7 @@ document.getElementById("start-btn").addEventListener("click", () => {
     loop();
 });
 
-document.getElementById("restart-btn").addEventListener("click", () => location.reload());
+// Reinicio sin recargar s
+document.getElementById("restart-btn").addEventListener("click", reiniciar);
 
 cargarRecord();
