@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-rows: 80px 1fr 150px; /* Fila para nav, contenido y footer */
+    grid-template-columns: 1fr 1fr 1fr; /* Tres columnas iguales */
+    height: 100vh; /* Altura completa de la ventana */
+}
+.logo-text{
+    font-size: ;
+}
+
+.nav {
+    grid-column: 1 / 4; /* Ocupa las 3 columnas */
+    background-color: #21213B;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: white 1px solid;
+}
+.logo-container {
+    display: flex;
+    align-items: center; /* Alinea el logo y el texto verticalmente */
+    gap: 10px; /* Espaciado entre el logo y el texto */
+}
+
+
+.home {
+    grid-column: 1 / 4; /* Ocupa las 3 columnas */
+    background-color: #21213B;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer {
+    grid-column: 1 / 4; /* Ocupa las 3 columnas */
+    background-color: #111429;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,26 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.menu-container,
+.logo-container,
+.nav-link {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.menu-container {
+    justify-content: flex-start;   /* Menú a la izquierda */
+}
+
+.logo-container {
+    justify-content: center;       /* Logo centrado */
+}
+
+.nav-link {
+    justify-content: flex-end;     /* Donaciones a la derecha */
+}

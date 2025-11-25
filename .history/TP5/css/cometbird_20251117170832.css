@@ -1,0 +1,78 @@
+.img-container {
+    position: relative;
+    width: 1000px;
+    height: 400px;
+    overflow: hidden;
+}
+
+/* ANIMACIÓN DE PARALLAX */
+@keyframes scroll {
+    0% {
+        background-position-x: 0px;
+    }
+    100% {
+        background-position-x: -1000px; /* igual al ancho de la imagen */
+    }
+}
+
+.layer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1000px;
+    height: 400px;
+
+    background-repeat: repeat-x;
+    background-size: auto 100%;   /* IMPORTANTE */
+}
+
+/* entre más lejos → más lento */
+.layer10{
+    background-image: url("../assets/flappybird-layers/capa1.png");
+    animation: scroll 20s linear infinite;
+}
+
+.layer9{
+    background-image: url("../assets/flappybird-layers/capa2.png");
+    animation: scroll 15s linear infinite;
+}
+
+.layer8{
+    background-image: url("../assets/flappybird-layers/capa3.png");
+    animation: scroll 10s linear infinite;
+}
+
+.layer7{
+    background-image: url("../assets/flappybird-layers/capa4.png");
+    animation: scroll 14s linear infinite;
+}
+/*
+.layer6{
+    background-image: url("../assets/flappybird-layers/capa5.png");
+    animation: scroll 10s linear infinite;
+}
+
+.layer5{
+    background-image: url("../assets/flappybird-layers/capa6.png");
+    animation: scroll 8s linear infinite;
+}*/
+
+.layer4{
+    background-image: url("../assets/flappybird-layers/capa7.png");
+    animation: scroll 1s linear infinite;
+}
+
+.layer3{
+    background-image: url("../assets/flappybird-layers/capa8.png");
+    animation: scroll1s linear infinite;
+}
+
+.layer2{
+    background-image: url("../assets/flappybird-layers/capa9.png");
+    animation: scroll 1s linear infinite;
+}
+
+.layer1{
+    background-image: url("../assets/flappybird-layers/capa10.png");
+    animation: scroll 15s linear infinite;
+}

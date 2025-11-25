@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="./css/juego.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Peg Solitaire - Comet</title>
+    
+</head>
+<body>
+    <nav class="navbar fixed-top">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="nav-center">
+                <a href="index.html">comet</a>
+                <a class="navbar-brand mx-auto" href="#">
+                    <img src="assets/imgs/cometlogoFinal.png" alt="Logo" style="height: 50px;">
+                </a>
+            </div>
+            <div class="donacionBoton">
+                <a href="donaciones.html">Donaciones</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <button type="button" class="close-menu" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    &times;
+                </button>
+                <ul class="navbar-nav ms-3">
+                    <li class="nav-item"><a class="nav-link" href="#">Destacados</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Todos los juegos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Accion</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Arcade</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Aventura</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Creatividad</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Deportes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Estrategia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Multijugador</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="home">
+        <section class="img-peg">
+            <p class="breadcrumb">Juegos → Estrategia → Peg Solitaire</p>
+            
+            <div class="game-stats">
+                <div class="stat-box">
+                    <h3>⏱️ Tiempo Restante</h3>
+                    <div class="value" id="timer">10:00</div>
+                </div>
+                <div class="stat-box">
+                    <h3>🪐 fichas</h3>
+                    <div class="value" id="pegsRemaining">32</div>
+                </div>
+                <div class="stat-box">
+                    <h3>🎮 Movimientos</h3>
+                    <div class="value" id="moves">0</div>
+                </div>
+                <div class="stat-box">
+                    <h3>🏆 Mejor Score</h3>
+                    <div class="value" id="bestScore">32</div>
+                </div>
+            </div>
+
+            <div class="img-container">
+                <img
+            </div>
+
+            <div class="footer-img">
+                <h2>🚀 Peg Solitaire Espacial</h2>
+                <div class="icons-juego">
+                    <i class="fa-solid fa-share-nodes"></i>
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-solid fa-expand"></i>
+                </div>
+            </div>
+        </section>
+
+        <section class="carousel">
+            <img src="./assets/imgs/peg11.png" alt="" width="200" height="111">
+            <img src="./assets/imgs/peg11.png" alt="" width="200" height="111">
+            <img src="./assets/imgs/peg11.png" alt="" width="200" height="111">
+            <img src="./assets/imgs/peg11.png" alt="" width="200" height="111">
+            <img src="./assets/imgs/peg11.png" alt="" width="200" height="111">
+            <img src="./assets/imgs/peg11.png" alt="" width="200" height="111">
+        </section>
+
+        <div class="controles-compartir">
+            <div class="controles">
+                <div class="controles-header">
+                    <p>Controles</p>
+                </div>
+                <div class="controles-body">
+                    <i class="fa-solid fa-computer-mouse"></i>
+                    <p>Click para seleccionar</p>
+                    <i class="fa-solid fa-hand-pointer"></i>
+                    <p>Arrastrar y soltar</p>
+                </div>
+            </div>
+
+            <div class="compartir">
+                <div class="compartilo-header">
+                    <p>Compartilo</p>
+                </div>
+                <div class="compartilo-body">
+                    <i class="fa-brands fa-x-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="sobre-juego">
+            <div class="sobre-juego-header">
+                <p>Sobre el juego</p>
+            </div>
+            <div class="sobre-juego-body">
+                <div class="objetivo">
+                    <h2>🎯 Objetivo</h2>
+                    <p>El objetivo es eliminar todos los fichas del tablero excepto uno. ¡El ficha final debe quedar en el centro del tablero para una victoria perfecta!</p>
+                </div>
+
+                <div class="reglas">
+                    <h2>📋 Reglas</h2>
+                    <p>Inicialmente, todos los agujeros del tablero están llenos de fichas excepto el centro. El juego se juega saltando un ficha sobre otro contiguo (horizontal o verticalmente) y haciendo que caiga en un agujero vacío. El ficha saltado se retira del tablero.</p>
+                    <p>La partida se gana cuando solo queda un ficha en el tablero, idealmente en el agujero central. Sin embargo, si la partida termina con más de un ficha sin movimientos válidos, el jugador pierde.</p>
+                    <p><strong>Características espaciales:</strong> Los fichas tienen diferentes colores (Neptuno azul, Marte rojo, Venus dorado, Júpiter morado) y cuando seleccionas uno, verás flechas brillantes animadas mostrando los movimientos válidos.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="seccion-comentarios">
+            <div class="comentarios-header">
+                <i class="fa-regular fa-comment"></i>
+                <p>Comentarios</p>
+            </div>
+
+            <div class="comentario-input">
+                <div class="avatar">
+                    <img src="./assets/imgs/avatar.jpg" alt="Avatar" width="54" height="50">
+                    <p>John Doe</p>
+                </div>
+                <input type="text" placeholder="Tu opinión nos interesa!" class="input-comentario">
+                <a href="#" class="btn-icon">
+                    <i class="fa-regular fa-paper-plane"></i>
+                </a>
+            </div>
+
+            <div class="separador"></div>
+            <p class="mas-recientes">Más recientes</p>
+
+            <div class="comentarios">
+                <div class="avatar-comentarios">
+                    <img src="./assets/imgs/avatar1.png" alt="Avatar" width="54" height="50">
+                    <p>Nahuel Caporale</p>
+                </div>
+                <div class="texto-comentario">
+                    <p>El juego está chidísimo la verdad, estoy todo el día jugándole! Me está encantando y las animaciones espaciales son increíbles</p>
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+            </div>
+
+            <div class="comentarios">
+                <div class="avatar-comentarios">
+                    <img src="./assets/imgs/avatar2.jpg" alt="Avatar" width="54" height="50">
+                    <p>KeyzKiller</p>
+                </div>
+                <div class="texto-comentario">
+                    <p>Me encantó el juego! Y tiene una gran comunidad. Las flechas que muestran los movimientos válidos son geniales!</p>
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+            </div>
+
+            <div class="comentarios">
+                <div class="avatar-comentarios">
+                    <img src="./assets/imgs/avatar3.png" alt="Avatar" width="54" height="50">
+                    <p>Lil J</p>
+                </div>
+                <div class="texto-comentario">
+                    <p>Comet es increíble, cada juego que probé estuvo increíble. El tema espacial del Peg Solitaire es hermoso!</p>
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-column">
+            <div class="footer-logo">
+                <img src="./assets/imgs/logofooter.png" alt="logo de cometa" class="logo-footer" style="max-width: 150px;">
+            </div>
+            <p>Tu destino retro para los mejores juegos online. Descubre, juega y conecta con millones de jugadores en el universo Comet.</p>
+            <div class="social-icons">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-x-twitter"></i>
+                <i class="fa-regular fa-comment"></i>
+                <i class="fa-brands fa-facebook"></i>
+            </div>
+        </div>
+        <div class="footer-column">
+            <h3>Categorías</h3>
+            <ul>
+                <li><a href="#">Deportes</a></li>
+                <li><a href="#">Estrategia</a></li>
+                <li><a href="#">Arcade</a></li>
+                <li><a href="#">Aventura</a></li>
+                <li><a href="#">Acción</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Enlaces Rápidos</h3>
+            <ul>
+                <li><a href="#">Acerca de</a></li>
+                <li><a href="#">Ayuda</a></li>
+                <li><a href="#">Privacidad</a></li>
+                <li><a href="#">Términos</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Mantente Conectado</h3>
+            <p>Suscríbete para recibir las últimas novedades y lanzamientos.</p>
+            <form class="subscribe-form">
+                <input type="email" placeholder="Ingresa tu email" required>
+                <button type="submit">Suscribirte</button>
+            </form>
+            <div class="form-icons">
+                <div class="icon-row">
+                    <i class="fa-regular fa-envelope"></i>
+                    <span>geromoroniii@hotmail.com</span>
+                </div>
+                <div class="icon-row">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>23144633386</span>
+                </div>
+                <div class="icon-row">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Tandil, Buenos Aires</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

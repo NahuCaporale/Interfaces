@@ -1,0 +1,29 @@
+@keyframes scroll {
+    0% {
+        background-position-x: 0px;
+    }
+    100% {
+        background-position-x: -912px;
+    }
+    
+}
+.layer{
+    min-height: 640px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: repeat-x;
+    background-size: cover;
+    
+}
+.layer10{
+    background-image: url("../assets/flappybird-layers/capa1.png");
+    animation: scroll 20s linear infinite;
+}
+.layer9{
+    background-image: url("../assets/flappybird-layers/capa2.png");
+    animation: scroll 18s linear infinite;
+}
+
