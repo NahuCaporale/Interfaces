@@ -9,7 +9,7 @@ let holdingMouse = false;
 let gameStarted = false;
 let gameSpeed = 3; // Velocidad inicial
 const SPEED_INCREMENT = 0.0005;
-const PIPE_SPACING = 500;
+const PIPE_SPACING = 450;
 const GAME_WIDTH = 1300;
 const GAME_HEIGHT = 640;
 const PIPE_WIDTH = 90;
@@ -72,8 +72,7 @@ function createPipe() {
     game.appendChild(topPipe);
     game.appendChild(bottomPipe);
 
-    // Math.random() da un número entre 0 y 1. 
-    // Si ponemos < 0.3, significa que hay un 30% de probabilidad de que salga un planeta.
+    // < 0.3 significa que hay un 30% de probabilidad de que salga un planeta.
     if (Math.random() < 0.3) {
 
         const planet = document.createElement('div');
