@@ -1,365 +1,326 @@
+// =========================
+// VARIABLES PRINCIPALES
+// =========================
+const juego = document.querySelector('.game-area');
+const nave = document.getElementById('nave');
 
-const game = document.querySelector('.game-area');
-let pipes = [];
-let planets = [];
-let score = 0;
-let highScore = 0; // Variable para guardar el mejor puntaje
-let gameOver = false;
-let holdingMouse = false;
-let gameStarted = false;
-let gameSpeed = 3; // Velocidad inicial
-const SPEED_INCREMENT = 0.0005;
-const PIPE_SPACING = 450;
-const GAME_WIDTH = 1300;
-const GAME_HEIGHT = 640;
-const PIPE_WIDTH = 90;
-const MAX_SPEED = 6.5;
-/* Tamaño de la nave */
-const SPRITE_FRAMES = 6;
-const DISPLAY_WIDTH = 100;
-const SPRITE_FRAME_W = 320;
-const SPRITE_FRAME_H = 150;
-const SCALE = DISPLAY_WIDTH / SPRITE_FRAME_W;
-const DISPLAY_HEIGHT = Math.round(SPRITE_FRAME_H * SCALE);
+let tubos = [];
+let puntaje = 0;
+let mejorPuntaje = 0;
 
-/* Físicas */
-const HOLD_FORCE = -0.25;
-const GRAVITY = 0.12;
-let velocity = 0;
+let juegoIniciado = false;
+let juegoTerminado = false;
 
-/* ============================================================
-   CARGAR Y MOSTRAR MEJOR PUNTAJE
-============================================================ */
-function loadHighScore() {
-    const storedHighScore = localStorage.getItem('flappyShipHighScore');
-    if (storedHighScore) {
-        highScore = parseInt(storedHighScore, 10);
-    } else {
-        highScore = 0; // Si no existe, iniciamos en 0
-    }
-    
-    // AHORA ESTO SÍ FUNCIONARÁ PORQUE LOS IDs YA EXISTEN EN EL HTML
-    const startDisplay = document.getElementById('best-score-start');
-    const endDisplay = document.getElementById('best-score-gameover');
+let velocidad = 0;
+let posNaveY = 0;
 
-    if (startDisplay) startDisplay.innerText = `Mejor: ${highScore}`;
-    if (endDisplay) endDisplay.innerText = `Mejor: ${highScore}`;
+// Dimensiones
+const ANCHO_JUEGO = 1300;
+const ALTO_JUEGO = 640;
+
+const ANCHO_TUBO = 90;
+const DISTANCIA_TUBO = 450;
+
+// Velocidad general
+let velocidadJuego = 3;
+const ACELERACION = 0.004;
+const VELOCIDAD_MAX = 6.5;
+
+// Tamaño sprite nave
+const SPRITE_W = 320;
+const SPRITE_H = 150;
+const DISPLAY_W = 100;
+const ESCALA = DISPLAY_W / SPRITE_W;
+const DISPLAY_H = Math.round(SPRITE_H * ESCALA);
+
+// Física
+const GRAVEDAD = 0.08;
+
+// =========================
+// CARGAR MEJOR PUNTAJE
+// =========================
+function cargarMejorPuntaje() {
+    const guardado = localStorage.getItem('mejorPuntajeNave');
+    mejorPuntaje = guardado ? parseInt(guardado, 10) : 0;
+
+    const inicio = document.getElementById('best-score-start');
+    const fin = document.getElementById('best-score-gameover');
+
+    if (inicio) inicio.innerText = `Mejor: ${mejorPuntaje}`;
+    if (fin) fin.innerText = `Mejor: ${mejorPuntaje}`;
 }
-/* ============================================================
-   CREAR PIPES + PLANETA
-============================================================ */
-function createPipe() {
-    if (!gameStarted || gameOver) return;
 
-    const gap = 170;
-    const minHeight = 50;
-    const maxHeight = GAME_HEIGHT - gap - 80;
+// =========================
+// CREAR TUBOS Y PLANETAS
+// =========================
+function crearTubo() {
+    if (!juegoIniciado || juegoTerminado) return;
 
-    const topHeight = Math.floor(Math.random() * (maxHeight - minHeight) + minHeight);
-    const bottomHeight = GAME_HEIGHT - topHeight - gap;
-    const pipeX = GAME_WIDTH;
+    const HUECO = 170;
+    const MARGEN_SUP = 50;
+    const maxAltoSup = ALTO_JUEGO - HUECO - 80;
 
-    const topPipe = document.createElement('div');
-    topPipe.className = 'pipe top';
-    topPipe.style.height = topHeight + 'px';
-    topPipe.style.left = pipeX + 'px';
-    
-    const bottomPipe = document.createElement('div');
-    bottomPipe.className = 'pipe bottom';
-    bottomPipe.style.height = bottomHeight + 'px';
-    bottomPipe.style.left = pipeX + 'px';
-    
-    game.appendChild(topPipe);
-    game.appendChild(bottomPipe);
+    const altoSup = Math.floor(Math.random() * (maxAltoSup - MARGEN_SUP) + MARGEN_SUP);
+    const altoInf = ALTO_JUEGO - altoSup - HUECO;
 
-    // < 0.3 significa que hay un 30% de probabilidad de que salga un planeta.
+    const xInicial = ANCHO_JUEGO;
+
+    const tuboSup = document.createElement('div');
+    tuboSup.className = 'pipe top';
+    tuboSup.style.height = altoSup + 'px';
+    tuboSup.style.left = xInicial + 'px';
+
+    const tuboInf = document.createElement('div');
+    tuboInf.className = 'pipe bottom';
+    tuboInf.style.height = altoInf + 'px';
+    tuboInf.style.left = xInicial + 'px';
+
+    juego.appendChild(tuboSup);
+    juego.appendChild(tuboInf);
+
+    let planeta = null;
+
     if (Math.random() < 0.3) {
+        planeta = document.createElement('div');
+        planeta.className = 'planet';
 
-        const planet = document.createElement('div');
-        planet.className = 'planet';
+        const size = 70;
+        const posY = altoSup + HUECO / 2 - size / 2;
 
-        const planetSize = 70;
-        const gapCenter = topHeight + gap / 2 - planetSize / 2;
-        const planetLeft = pipeX + PIPE_WIDTH / 2 - planetSize / 2;
+        planeta.style.left = (xInicial + ANCHO_TUBO / 2 - size / 2) + "px";
+        planeta.style.top = posY + "px";
+        planeta.style.width = size + "px";
+        planeta.style.height = size + "px";
 
-        planet.style.left = planetLeft + "px";
-        planet.style.top = gapCenter + "px";
-        planet.style.width = planetSize + "px";
-        planet.style.height = planetSize + "px";
-
-        game.appendChild(planet);
-
-        pipes.push({
-            topPipe,
-            bottomPipe,
-            x: pipeX,
-            scored: false,
-            planet
-        });
-
-    } else {
-        pipes.push({
-            topPipe,
-            bottomPipe,
-            x: pipeX,
-            scored: false,
-            planet: null
-        });
+        juego.appendChild(planeta);
     }
+
+    tubos.push({
+        x: xInicial,
+        sup: tuboSup,
+        inf: tuboInf,
+        planeta,
+        sumado: false
+    });
 }
 
-/* ============================================================
-   START / GAME OVER
-============================================================ */
-const startScreen = document.getElementById('start-screen');
-const gameoverScreen = document.getElementById('gameover-screen');
-const finalScore = document.getElementById('final-score');
+// =========================
+// INICIO DEL JUEGO
+// =========================
+const pantallaInicio = document.getElementById('start-screen');
+const pantallaFinal = document.getElementById('gameover-screen');
+const puntajeFinalTxt = document.getElementById('final-score');
 
 document.getElementById('start-btn').addEventListener('click', () => {
-  startScreen.style.display = 'none';
-  score = 0;
-  
-  gameSpeed = 3;
-  
-  document.getElementById('score').innerText = score;
-  gameOver = false;
-  gameStarted = true;
-  loop();
+    pantallaInicio.style.display = 'none';
+    puntaje = 0;
+    velocidadJuego = 3;
+    document.getElementById('score').innerText = puntaje;
+
+    juegoTerminado = false;
+    juegoIniciado = true;
+
+    loop();
 });
 
-document.addEventListener('mousedown', () => {
-    if (!gameStarted || gameOver) return;
-    holdingMouse = true;
+// =========================
+// CONTROLES: SALTO
+// =========================
+document.addEventListener('mousedown', salto);
+document.addEventListener('touchstart', e => { e.preventDefault(); salto(); }, { passive: false });
+
+document.addEventListener('keydown', e => {
+    if (e.code === 'Space') salto();
 });
-document.addEventListener('mouseup', () => holdingMouse = false);
 
-document.addEventListener('touchstart', (e) => {
-    if (!gameStarted || gameOver) return;
-    e.preventDefault();
-    holdingMouse = true;
-}, { passive: false });
-document.addEventListener('touchend', () => holdingMouse = false);
-
-/* ============================================================
-   UPDATE PIPES + PLANETAS
-============================================================ */
-function updatePipes() {
-    pipes.forEach(pipe => {
-        pipe.x -= gameSpeed; 
-        pipe.topPipe.style.left = pipe.x + "px";
-        pipe.bottomPipe.style.left = pipe.x + "px";
-
-        if (pipe.planet) {
-            pipe.planet.style.left = (pipe.x + PIPE_WIDTH / 2 - 35) + "px";
-        }
-    });
-
-    pipes = pipes.filter(pipe => {
-        if (pipe.x < -PIPE_WIDTH - 200) {
-            pipe.topPipe.remove();
-            pipe.bottomPipe.remove();
-            if (pipe.planet) pipe.planet.remove();
-            return false; 
-        }
-        return true; 
-    });
+function salto() {
+    if (!juegoIniciado || juegoTerminado) return;
+    velocidad = -4.5; // IMPULSO FUERTE
 }
-/* ============================================================
-   SCORE
-============================================================ */
-function updateScore(naveRect) {
-    pipes.forEach(pipe => {
-        if (!pipe.scored && pipe.x + PIPE_WIDTH < naveRect.left) {
-            score++;
-            pipe.scored = true;
-            document.getElementById('score').innerText = score;
+
+// =========================
+// MOVER TUBOS
+// =========================
+function moverTubos() {
+    tubos.forEach(t => {
+        t.x -= velocidadJuego;
+        t.sup.style.left = t.x + "px";
+        t.inf.style.left = t.x + "px";
+        if (t.planeta) t.planeta.style.left = (t.x + ANCHO_TUBO / 2 - 35) + "px";
+    });
+
+    tubos = tubos.filter(t => {
+        if (t.x < -ANCHO_TUBO - 200) {
+            t.sup.remove();
+            t.inf.remove();
+            if (t.planeta) t.planeta.remove();
+            return false;
         }
+        return true;
     });
 }
 
-/* ============================================================
-   COLISIONES
-============================================================ */
-function detectCollision(naveRect) {
-    const PAD_L = 15, PAD_R = 15, PAD_T = 10, PAD_B = 10;
+// =========================
+// PUNTAJE
+// =========================
+function sumarPuntos(nRect) {
+    tubos.forEach(t => {
+        if (!t.sumado && t.x + ANCHO_TUBO < nRect.left) {
+            t.sumado = true;
+            puntaje++;
+            document.getElementById('score').innerText = puntaje;
+        }
+    });
+}
 
-    const hitbox = {
-        left: naveRect.left + PAD_L,
-        right: naveRect.right - PAD_R,
-        top: naveRect.top + PAD_T,
-        bottom: naveRect.bottom - PAD_B
+// =========================
+// COLISIÓN
+// =========================
+function hayColision(nRect) {
+    const margen = { l: 15, r: 15, t: 10, b: 10 };
+
+    const caja = {
+        izq: nRect.left + margen.l,
+        der: nRect.right - margen.r,
+        sup: nRect.top + margen.t,
+        inf: nRect.bottom - margen.b
     };
 
-    for (let pipe of pipes) {
-        const topRect = pipe.topPipe.getBoundingClientRect();
-        const bottomRect = pipe.bottomPipe.getBoundingClientRect();
+    for (let t of tubos) {
+        const sup = t.sup.getBoundingClientRect();
+        const inf = t.inf.getBoundingClientRect();
 
-        if (hitbox.right > topRect.left && hitbox.left < topRect.right && hitbox.top < topRect.bottom) {
-            return true;
-        }
-        if (hitbox.right > bottomRect.left && hitbox.left < bottomRect.right && hitbox.bottom > bottomRect.top) {
-            return true;
-        }
+        if (caja.der > sup.left && caja.izq < sup.right && caja.sup < sup.bottom) return true;
+        if (caja.der > inf.left && caja.izq < inf.right && caja.inf > inf.top) return true;
     }
     return false;
 }
 
-/* ============================================================
-   NAVE
-============================================================ */
-const nave = document.getElementById('nave');
-nave.style.width = DISPLAY_WIDTH + 'px';
-nave.style.height = DISPLAY_HEIGHT + 'px';
+// =========================
+// CONFIGURAR NAVE
+// =========================
+nave.style.width = DISPLAY_W + 'px';
+nave.style.height = DISPLAY_H + 'px';
 nave.style.left = '150px';
 
-let y = (GAME_HEIGHT - DISPLAY_HEIGHT) / 2;
-nave.style.top = y + 'px';
+posNaveY = (ALTO_JUEGO - DISPLAY_H) / 2;
+nave.style.top = posNaveY + 'px';
 
-/* ============================================================
-   GAME OVER
-============================================================ */
-function endGame() {
-    gameOver = true;
-    gameStarted = false;
+// =========================
+// FIN DEL JUEGO
+// =========================
+function terminarJuego() {
+    juegoTerminado = true;
+    juegoIniciado = false;
 
-    nave.style.animation = 'none';
     nave.style.filter = 'grayscale(1) brightness(0.6)';
     nave.style.transform = 'rotate(90deg)';
 
-    // Comprobamos si el puntaje actual es un nuevo récord
-    if (score > highScore) {
-        highScore = score;
-        localStorage.setItem('flappyShipHighScore', highScore);
-        
-        // Actualizamos el texto. Si no existe el elemento, evitamos el error con un 'if'
-        const endDisplay = document.getElementById('best-score-gameover');
-        if (endDisplay) {
-            endDisplay.innerText = `¡NUEVO RÉCORD!: ${highScore}`;
-            endDisplay.style.color = '#00ff00'; // Truco visual: ponerlo verde si es récord
-        }
+    const mejorTxt = document.getElementById('best-score-gameover');
+
+    if (puntaje > mejorPuntaje) {
+        mejorPuntaje = puntaje;
+        localStorage.setItem('mejorPuntajeNave', mejorPuntaje);
+
+        mejorTxt.innerText = `¡NUEVO RÉCORD!: ${mejorPuntaje}`;
+        mejorTxt.style.color = '#00ff00';
     } else {
-        // Si no es récord, mostramos el récord actual normal
-        const endDisplay = document.getElementById('best-score-gameover');
-        if (endDisplay) {
-            endDisplay.innerText = `Mejor: ${highScore}`;
-            endDisplay.style.color = '#ffc107'; // Volver a dorado
-        }
+        mejorTxt.innerText = `Mejor: ${mejorPuntaje}`;
+        mejorTxt.style.color = '#ffc107';
     }
 
-    finalScore.innerText = score;
-    // Usamos setTimeout para asegurar que la pantalla se muestre de forma fiable
-    setTimeout(() => {
-        gameoverScreen.style.display = 'flex';
-    }, 0);
+    puntajeFinalTxt.innerText = puntaje;
+    pantallaFinal.style.display = 'flex';
 }
+
+// =========================
+// BUCLE PRINCIPAL
+// =========================
 function loop() {
-    if (!gameStarted || gameOver) return;
+    if (!juegoIniciado || juegoTerminado) return;
 
-  if (pipes.length === 0) {
-      createPipe();
-  } 
-  else {
-      const lastPipe = pipes[pipes.length - 1];
-      
-      const distanceTravelled = GAME_WIDTH - lastPipe.x;
-      
-      if (distanceTravelled >= PIPE_SPACING) {
-          createPipe();
-      }
-  }
+    if (tubos.length === 0 || (ANCHO_JUEGO - tubos[tubos.length - 1].x) >= DISTANCIA_TUBO) {
+        crearTubo();
+    }
 
- if (gameSpeed < MAX_SPEED) {
-      gameSpeed += SPEED_INCREMENT; 
-  }
-  updatePipes();
+    if (velocidadJuego < VELOCIDAD_MAX) velocidadJuego += ACELERACION;
 
-    velocity += GRAVITY;
-    if (holdingMouse) velocity += HOLD_FORCE;
+    moverTubos();
 
-    velocity *= 0.98;
-    y += velocity;
+    // Física de la nave
+    velocidad += GRAVEDAD;
+    velocidad *= 0.98;
+    posNaveY += velocidad;
 
-    if (y < 0) { y = 0; velocity = 0; }
-    if (y > GAME_HEIGHT - DISPLAY_HEIGHT) { y = GAME_HEIGHT - DISPLAY_HEIGHT; velocity = 0; }
+    if (posNaveY < 0) posNaveY = 0;
+    if (posNaveY > ALTO_JUEGO - DISPLAY_H) posNaveY = ALTO_JUEGO - DISPLAY_H;
 
-    nave.style.top = y + 'px';
+    nave.style.top = posNaveY + 'px';
 
-    const naveRect = nave.getBoundingClientRect();
+    const nRect = nave.getBoundingClientRect();
 
-    updateScore(naveRect);
+    sumarPuntos(nRect);
+    detectarPlanetas(nRect);
 
-    checkPlanetCollection(naveRect);
-
-    if (detectCollision(naveRect)) {
-        endGame();
+    if (hayColision(nRect)) {
+        terminarJuego();
         return;
     }
 
     requestAnimationFrame(loop);
 }
 
+// =========================
+// PLANETAS (BONO +3)
+// =========================
+function detectarPlanetas(nRect) {
+    tubos.forEach(t => {
+        if (!t.planeta || t.planeta.tocado) return;
 
-/* ============================================================
-   REINICIAR
-============================================================ */
+        const pRect = t.planeta.getBoundingClientRect();
+
+        const colision =
+            nRect.right > pRect.left + 10 &&
+            nRect.left < pRect.right - 10 &&
+            nRect.bottom > pRect.top + 10 &&
+            nRect.top < pRect.bottom - 10;
+
+        if (!colision) return;
+
+        t.planeta.tocado = true;
+        t.planeta.classList.add('collected');
+
+        puntaje += 3;
+        document.getElementById('score').innerText = puntaje;
+
+        mostrarPopup(
+            parseFloat(t.planeta.style.left),
+            parseFloat(t.planeta.style.top)
+        );
+
+        const ref = t.planeta;
+        setTimeout(() => ref?.remove(), 500);
+
+        t.planeta = null;
+    });
+}
+
+function mostrarPopup(x, y) {
+    const pop = document.createElement('div');
+    pop.className = 'score-popup';
+    pop.innerText = "+3";
+    pop.style.left = (x + 20) + 'px';
+    pop.style.top = (y - 20) + 'px';
+    juego.appendChild(pop);
+    setTimeout(() => pop.remove(), 1000);
+}
+
+// =========================
+// REINICIAR
+// =========================
 document.getElementById('restart-btn').addEventListener('click', () => {
     location.reload();
 });
 
-/* ============================================================
-   RECOLECCIÓN DE PLANETAS (Activa la animación CSS)
-============================================================ */
-function checkPlanetCollection(naveRect) {
-    pipes.forEach(pipe => {
-        if (pipe.planet && !pipe.planet.isCollected) {
-            const planetRect = pipe.planet.getBoundingClientRect();
-
-            if (
-                naveRect.right > planetRect.left + 10 &&
-                naveRect.left < planetRect.right - 10 &&
-                naveRect.bottom > planetRect.top + 10 &&
-                naveRect.top < planetRect.bottom - 10
-            ) {
-                pipe.planet.isCollected = true;
-
-                pipe.planet.classList.add('collected');
-
-                score += 3;
-                document.getElementById('score').innerText = score;
-
-                const pX = parseFloat(pipe.planet.style.left);
-                const pY = parseFloat(pipe.planet.style.top);
-
-                showFloatingScore(pX, pY);
-
-                const planetElement = pipe.planet;
-                setTimeout(() => {
-                    if (planetElement && planetElement.parentNode) {
-                        planetElement.remove();
-                    }
-                }, 500);
-                pipe.planet = null;
-            }
-        }
-    });
-}
-
-
-
-function showFloatingScore(x, y) {
-    const popup = document.createElement('div');
-    popup.innerText = "+3";
-    popup.className = 'score-popup';
-
-    popup.style.left = (x + 20) + 'px';
-    popup.style.top = (y - 20) + 'px';
-
-    game.appendChild(popup);
-
-    setTimeout(() => {
-        popup.remove();
-    }, 1000);
-}
-
-// Llamamos a la función una vez al cargar la página para mostrar el récord guardado.
-loadHighScore();
+// Cargar mejores puntajes
+cargarMejorPuntaje();
