@@ -828,7 +828,7 @@
             position: relative;
             overflow: hidden;
 
-            &:nth-of-type(1) {
+             &:nth-of-type(1) {
                 background: url("../assets/imgs/thumbnails/Deportes/copa-toon.jpg") no-repeat 40%/ cover;
             }
 
@@ -837,16 +837,16 @@
             }
 
             &:nth-of-type(3) {
-                background: url("../assets/imgs/thumbnails/pegarg.png") no-repeat 50% / cover;
+                background: url("../assets/peg/portada.jpg") no-repeat 50% / cover;
             }
 
             &:nth-of-type(4) {
                 background: url("../assets/imgs/thumbnails/Deportes/table-tennis-ultra-mega-tournament.jpg") no-repeat 50% / cover;
             }
-             &:nth-of-type(5) {
-                background: url("../assets/imgs/logo_perfil.png") no-repeat 50% / cover;
-            }
 
+            &:nth-of-type(5) {
+                background: url("../assets/imgs/thumbnails/puzzle.jpg") no-repeat 50% / cover;
+            }
             .content {
                 font-size: 0.5rem;
                 color: #fff;
